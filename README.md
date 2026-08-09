@@ -94,6 +94,21 @@ actions tied to the current ChatGPT user. Leave public content anonymous.
 - `npm test`: build the starter and verify its rendered loading skeleton
 - `npm run db:generate`: generate Drizzle migrations after schema changes
 
+## Deploy with GitHub Pages
+
+This repository includes an automatic GitHub Pages workflow. It produces a
+static, repository-path-safe version of the Jenergie website whenever the
+`main` branch is updated.
+
+1. Push this repository to GitHub.
+2. Open **Settings → Pages** in the GitHub repository.
+3. Under **Build and deployment**, choose **GitHub Actions** as the source.
+4. Open the **Actions** tab and run **Deploy Jenergie to GitHub Pages**, or push
+   another change to `main`.
+
+To verify the export locally, run `pnpm run build:pages`. The generated site is
+written to `github-pages/` and is intentionally not committed.
+
 ## Learn More
 
 - [vinext Documentation](https://github.com/cloudflare/vinext)
