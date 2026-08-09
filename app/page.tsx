@@ -1,5 +1,16 @@
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
+const BrandLockup = ({ dark = false }: { dark?: boolean }) => (
+  <span className={`brand-lockup${dark ? " brand-lockup-dark" : ""}`}>
+    <img className="lockup-icon" src="/brand/jenergie-icon.png" alt="" />
+    <span className="lockup-copy">
+      <strong>Jenergie</strong>
+      <small>Sports Massage Therapy</small>
+      <i>Personal Training</i>
+    </span>
+  </span>
+);
+
 const services = [
   {
     number: "01",
@@ -31,11 +42,12 @@ export default function Home() {
   return (
     <main>
       <nav className="nav shell" aria-label="Main navigation">
-        <a className="brand brand-image" href="#top" aria-label="Jenergie home">
-          <img src="/brand/jenergie-logo.png" alt="Jenergie — Sports Massage Therapy and Personal Training" />
+        <a className="brand" href="#top" aria-label="Jenergie home">
+          <BrandLockup />
         </a>
         <div className="nav-links">
           <a href="#treatments">Treatments</a>
+          <a href="#prices">Prices</a>
           <a href="#approach">Approach</a>
           <a href="#why">Why Jenergie</a>
         </div>
@@ -44,10 +56,10 @@ export default function Home() {
 
       <section className="hero shell" id="top">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="pulse" /> Sports massage therapy</p>
-          <h1>Move freely.<br />Perform <em>fully.</em></h1>
+          <p className="eyebrow"><span className="pulse" /> Jenergie · Sports massage therapy</p>
+          <h1 className="tagline-heading">Energy for your body.<br /><em>Care for your muscles.</em></h1>
           <p className="hero-intro">
-            Tailored sports massage to ease tension, improve the way you move and help you feel more at home in your body—whether you train hard or simply want to feel better.
+            Tailored sports massage with Jenni in Higham Ferrers, helping you ease tension, move more freely and feel more at home in your body.
           </p>
           <div className="hero-actions">
             <a className="button" href="#contact">Book your treatment <Arrow /></a>
@@ -117,6 +129,60 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="pricing-section" id="prices">
+        <div className="shell">
+          <div className="pricing-heading">
+            <div>
+              <p className="eyebrow">Simple, transparent pricing</p>
+              <h2>Choose the support<br /><em>your body needs.</em></h2>
+            </div>
+            <p>Sports massage therapy is Jenergie’s core service. Personal training can be added when you want more structured support with strength and movement.</p>
+          </div>
+
+          <div className="pricing-grid">
+            <article className="price-panel price-panel-primary">
+              <div className="price-panel-top">
+                <div><span>Primary service</span><h3>Sports massage therapy</h3></div>
+                <span className="price-badge">SMT</span>
+              </div>
+              <div className="price-list">
+                <div className="price-row">
+                  <div><strong>Initial appointment</strong><small>Your first focused appointment</small></div>
+                  <span>45 min</span><b>£45</b>
+                </div>
+                <div className="price-row">
+                  <div><strong>One area</strong><small>Focused treatment for one area</small></div>
+                  <span>30 min</span><b>£35</b>
+                </div>
+                <div className="price-row">
+                  <div><strong>Two areas</strong><small>Extended treatment across two areas</small></div>
+                  <span>60 min</span><b>£55</b>
+                </div>
+              </div>
+              <a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20booking">Book sports massage <Arrow /></a>
+            </article>
+
+            <article className="price-panel price-panel-secondary">
+              <div className="price-panel-top">
+                <div><span>Optional extra</span><h3>Personal training</h3></div>
+                <span className="price-badge">PT</span>
+              </div>
+              <div className="price-list">
+                <div className="price-row">
+                  <div><strong>One-to-one session</strong><small>Personal training tailored to you</small></div>
+                  <span>1 hour</span><b>£45</b>
+                </div>
+                <div className="price-row">
+                  <div><strong>Bespoke exercise plan</strong><small>A plan built around your goals</small></div>
+                  <span>One-off</span><b>£70</b>
+                </div>
+              </div>
+              <a href="mailto:Jen@jenergie.co.uk?subject=Personal%20training%20enquiry">Ask about personal training <Arrow /></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="dark-section" id="approach">
         <div className="shell">
           <div className="approach-intro">
@@ -176,22 +242,25 @@ export default function Home() {
           <p className="eyebrow light">Your next move starts here</p>
           <h2>Ready to feel<br /><em>more like you?</em></h2>
           <p>Tell me what’s going on and what you’d like help with.</p>
-          <a className="button button-light" href="mailto:hello@jenergie.co.uk?subject=Sports%20massage%20enquiry">Book a session <Arrow /></a>
+          <div className="contact-actions">
+            <a className="button button-light" href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Email Jen <Arrow /></a>
+            <a className="contact-phone" href="tel:+447547254349">07547 254349</a>
+          </div>
         </div>
       </section>
 
       <footer className="footer">
         <div className="shell footer-main">
-          <a className="brand brand-image footer-brand" href="#top" aria-label="Jenergie home">
-            <img src="/brand/jenergie-logo-dark.png" alt="Jenergie — Sports Massage Therapy and Personal Training" />
+          <a className="brand footer-brand" href="#top" aria-label="Jenergie home">
+            <BrandLockup dark />
           </a>
           <p>Move freely.<br />Feel stronger.</p>
           <div className="footer-links">
-            <div><span>Explore</span><a href="#treatments">Treatments</a><a href="#approach">My approach</a><a href="#why">Why Jenergie</a></div>
-            <div><span>Connect</span><a href="mailto:hello@jenergie.co.uk?subject=Sports%20massage%20enquiry">Email Jenergie</a><a href="#contact">Book a session</a></div>
+            <div><span>Explore</span><a href="#treatments">Treatments</a><a href="#prices">Prices</a><a href="#approach">My approach</a><a href="#why">Why Jenergie</a></div>
+            <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><a href="#contact">Book a session</a></div>
           </div>
         </div>
-        <div className="shell footer-bottom"><span>© {new Date().getFullYear()} Jenergie</span><span>Sports massage therapy · Personal training</span></div>
+        <div className="shell footer-bottom"><span>© {new Date().getFullYear()} Jenergie · Higham Ferrers</span><span>Energy for your body. Care for your muscles.</span></div>
       </footer>
     </main>
   );
