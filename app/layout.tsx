@@ -13,8 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jenergie | Smarter energy, made human",
-  description: "Joined-up solar, storage, heating and EV charging—designed around your home, business and future.",
+  title: "Jenergie | Sports Massage Therapy",
+  description: "Tailored sports massage therapy to ease tension, support mobility and help you move with confidence. Personal training is also available as an extra.",
+  icons: {
+    icon: "/brand/jenergie-icon.png",
+    shortcut: "/brand/jenergie-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

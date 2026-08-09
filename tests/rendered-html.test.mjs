@@ -10,12 +10,13 @@ async function render() {
   }, { waitUntil() {}, passThroughOnException() {} });
 }
 
-test("renders the Jenergie homepage", async () => {
+test("renders the Jenergie sports massage homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Jenergie \| Smarter energy, made human/);
-  assert.match(html, /Power your/);
-  assert.match(html, /Plan your energy future/);
+  assert.match(html, /Jenergie \| Sports Massage Therapy/);
+  assert.match(html, /Move freely/);
+  assert.match(html, /Book your treatment/);
+  assert.match(html, /Personal training/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
 });
