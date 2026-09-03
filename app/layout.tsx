@@ -3,9 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const siteUrl = "https://jenergie.co.uk";
-const siteTitle = "Sports Massage Higham Ferrers & Rushden | Jenergie";
+const siteTitle = "Higham Ferrers Sports Massage & Personal Training | Jenergie";
 const siteDescription =
-  "Sports massage therapy in Higham Ferrers, near Rushden, serving North Northamptonshire. Tailored treatment to ease tension, support mobility and recovery.";
+  "Sports massage and one-to-one personal training in Higham Ferrers, near Rushden, serving clients across North Northamptonshire. Book with Jenergie.";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1731,
         height: 909,
-        alt: "Jenergie sports massage therapy in Higham Ferrers and Rushden",
+        alt: "Jenergie sports massage and personal training in Higham Ferrers and Rushden",
       },
     ],
   },

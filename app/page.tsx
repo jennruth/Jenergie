@@ -21,10 +21,17 @@ const structuredData = [
     logo: `${siteUrl}/brand/jenergie-icon.png`,
     image: `${siteUrl}/og.png`,
     description:
-      "Tailored sports massage therapy in Higham Ferrers, near Rushden, serving clients across North Northamptonshire. Personal training is available as an optional extra.",
+      "Sports massage therapy and one-to-one personal training in Higham Ferrers, near Rushden, serving clients across North Northamptonshire.",
     telephone: "+447547254349",
     email: "Jen@jenergie.co.uk",
     priceRange: "£35–£70",
+    knowsAbout: [
+      "Sports massage therapy",
+      "Muscle tension and mobility",
+      "Exercise and recovery",
+      "One-to-one personal training",
+      "Bespoke exercise plans",
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Higham Ferrers",
@@ -80,6 +87,16 @@ const structuredData = [
             serviceType: "Personal training",
           },
         },
+        {
+          "@type": "Offer",
+          price: "70",
+          priceCurrency: "GBP",
+          itemOffered: {
+            "@type": "Service",
+            name: "Bespoke exercise plan",
+            serviceType: "Personal training",
+          },
+        },
       ],
     },
   },
@@ -99,8 +116,8 @@ const BrandLockup = ({ dark = false }: { dark?: boolean }) => (
 const services = [
   {
     number: "01",
-    title: "Sports massage",
-    copy: "Focused, hands-on treatment to ease muscular tension, support mobility and help your body feel ready for whatever comes next.",
+    title: "Sports massage therapy",
+    copy: "Focused, hands-on sports massage in Higham Ferrers to ease muscular tension, support mobility and help your body feel ready for whatever comes next.",
     tag: "Primary service",
   },
   {
@@ -111,8 +128,8 @@ const services = [
   },
   {
     number: "03",
-    title: "Personal training",
-    copy: "Optional one-to-one training to build strength, confidence and movement quality alongside your treatment plan.",
+    title: "One-to-one personal training",
+    copy: "Personal training in Higham Ferrers to build strength, confidence and movement quality, available alongside your sports massage treatment plan.",
     tag: "Available as an extra",
   },
 ];
@@ -150,7 +167,7 @@ export default function Home() {
           <p className="eyebrow"><span className="pulse" /> Sports massage · Higham Ferrers</p>
           <h1 className="tagline-heading">Energy for your body.<br /><em>Care for your muscles.</em></h1>
           <p className="hero-intro">
-            Tailored sports massage in Higham Ferrers, near Rushden, helping clients across North Northamptonshire ease tension, move more freely and support recovery.
+            Sports massage therapy and optional one-to-one personal training with Jenni in Higham Ferrers, near Rushden, supporting clients across North Northamptonshire.
           </p>
           <div className="hero-actions">
             <a className="button" href="#contact">Book your treatment <Arrow /></a>
@@ -331,9 +348,9 @@ export default function Home() {
         <div className="shell location-layout">
           <div className="location-copy">
             <p className="eyebrow">Local sports massage</p>
-            <h2 id="areas-heading">Based in Higham Ferrers.<br /><em>Here for North Northamptonshire.</em></h2>
+            <h2 id="areas-heading">Sports massage and personal training<br /><em>in Higham Ferrers.</em></h2>
             <p>
-              Jenergie offers personalised sports massage therapy in Higham Ferrers, conveniently located for Rushden and surrounding North Northamptonshire communities. Sessions support active people, busy working bodies and anyone who wants to move with less tension and more confidence.
+              Jenergie offers personalised sports massage therapy and one-to-one personal training in Higham Ferrers. The practice is conveniently located for Rushden and welcomes clients from across North Northamptonshire who want to move with less tension, recover well and build confidence.
             </p>
             <a className="button button-dark" href="#contact">Book sports massage <Arrow /></a>
           </div>
@@ -341,17 +358,17 @@ export default function Home() {
             <article>
               <span>01</span>
               <h3>Higham Ferrers</h3>
-              <p>Local, tailored sports massage treatment at the home of Jenergie.</p>
+              <p>Local sports massage therapy, personal training and bespoke exercise plans.</p>
             </article>
             <article>
               <span>02</span>
               <h3>Rushden</h3>
-              <p>Convenient sports massage support for clients from nearby Rushden.</p>
+              <p>Conveniently located for people seeking sports massage or personal training near Rushden.</p>
             </article>
             <article>
               <span>03</span>
               <h3>North Northamptonshire</h3>
-              <p>Welcoming clients from across the local area for treatment and recovery support.</p>
+              <p>Welcoming clients from across the local area for massage, recovery and fitness support.</p>
             </article>
           </div>
         </div>

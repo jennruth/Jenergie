@@ -14,11 +14,12 @@ test("renders the Jenergie sports massage homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Sports Massage Higham Ferrers &amp; Rushden \| Jenergie/);
+  assert.match(html, /Higham Ferrers Sports Massage &amp; Personal Training \| Jenergie/);
   assert.match(html, /Energy for your body/);
   assert.match(html, /Care for your muscles/);
   assert.match(html, /Book your treatment/);
   assert.match(html, /Personal training/);
+  assert.match(html, /One-to-one personal training/);
   assert.match(html, /£55/);
   assert.match(html, /Jen@jenergie\.co\.uk/);
   assert.match(html, /North Northamptonshire/);
