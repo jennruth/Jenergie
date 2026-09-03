@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render() {
@@ -32,4 +33,18 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.match(html, /Your privacy choices/);
   assert.match(html, /data-analytics-choice="granted"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
+});
+
+test("exports a discoverable canonical sitemap", async () => {
+  const [sitemap, robots] = await Promise.all([
+    readFile(new URL("../github-pages/sitemap.xml", import.meta.url), "utf8"),
+    readFile(new URL("../github-pages/robots.txt", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(sitemap, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
+  assert.match(sitemap, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
+  assert.match(sitemap, /<loc>https:\/\/jenergie\.co\.uk\/<\/loc>/);
+  assert.match(sitemap, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 1);
+  assert.match(robots, /Sitemap: https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
 });
