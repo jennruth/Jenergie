@@ -48,3 +48,17 @@ test("exports a discoverable canonical sitemap", async () => {
   assert.equal((sitemap.match(/<url>/g) ?? []).length, 1);
   assert.match(robots, /Sitemap: https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
 });
+
+test("exports an llms.txt discovery guide", async () => {
+  const llms = await readFile(
+    new URL("../github-pages/llms.txt", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(llms, /^# Jenergie/m);
+  assert.match(llms, /sports massage therapy practice in Higham Ferrers/i);
+  assert.match(llms, /North Northamptonshire/);
+  assert.match(llms, /https:\/\/jenergie\.co\.uk\/#treatments/);
+  assert.match(llms, /https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
+  assert.doesNotMatch(llms, /https?:\/\/www\.jenergie\.co\.uk/);
+});
