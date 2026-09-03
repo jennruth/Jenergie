@@ -24,7 +24,7 @@ const structuredData = [
       "Sports massage therapy and one-to-one personal training in Higham Ferrers, near Rushden, serving clients across North Northamptonshire.",
     telephone: "+447547254349",
     email: "Jen@jenergie.co.uk",
-    priceRange: "£35–£70",
+    priceRange: "£35 to £70",
     knowsAbout: [
       "Sports massage therapy",
       "Muscle tension and mobility",
@@ -117,27 +117,27 @@ const services = [
   {
     number: "01",
     title: "Sports massage therapy",
-    copy: "Focused, hands-on sports massage in Higham Ferrers to ease muscular tension, support mobility and help your body feel ready for whatever comes next.",
+    copy: "Sports massage treatment in Higham Ferrers to help ease muscular tension and improve the way you move.",
     tag: "Primary service",
   },
   {
     number: "02",
     title: "Recovery & mobility",
-    copy: "A tailored approach for training fatigue, day-to-day stiffness or ongoing maintenance—built around how you move and feel.",
+    copy: "Useful for tired muscles after training, everyday stiffness or regular maintenance. Each appointment is based on how your body feels on the day.",
     tag: "Move with ease",
   },
   {
     number: "03",
     title: "One-to-one personal training",
-    copy: "Personal training in Higham Ferrers to build strength, confidence and movement quality, available alongside your sports massage treatment plan.",
+    copy: "One-to-one sessions in Higham Ferrers for people who want help building strength and moving well. Available as an extra alongside sports massage.",
     tag: "Available as an extra",
   },
 ];
 
 const process = [
-  ["Talk", "We start with you—what feels restricted, what you want to get back to and what your body has been doing lately."],
-  ["Assess", "A movement-led assessment helps identify where tension, compensation or reduced mobility may be holding you back."],
-  ["Treat", "Your session is shaped around what your body needs, with clear aftercare and practical next steps to support progress."],
+  ["Talk", "First, we talk about what feels tight or uncomfortable, what you want to get back to and anything else that may affect the session."],
+  ["Assess", "I look at how you move and check where tension or restricted movement may be coming from."],
+  ["Treat", "I focus the treatment on what we find and explain any simple aftercare that may help."],
 ];
 
 export default function Home() {
@@ -167,7 +167,7 @@ export default function Home() {
           <p className="eyebrow"><span className="pulse" /> Sports massage · Higham Ferrers</p>
           <h1 className="tagline-heading">Energy for your body.<br /><em>Care for your muscles.</em></h1>
           <p className="hero-intro">
-            Sports massage therapy and optional one-to-one personal training with Jenni in Higham Ferrers, near Rushden, supporting clients across North Northamptonshire.
+            Sports massage therapy with Jenni in Higham Ferrers, near Rushden. Personal training is also available as an extra for clients across North Northamptonshire.
           </p>
           <div className="hero-actions">
             <a className="button" href="#contact">Book your treatment <Arrow /></a>
@@ -175,7 +175,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="energy-stage treatment-stage" aria-label="Jenergie sports massage, tailored around your body and goals">
+        <div className="energy-stage treatment-stage" aria-label="Jenergie sports massage planned around your body and goals">
           <div className="sun-orbit orbit-one" />
           <div className="sun-orbit orbit-two" />
           <img className="body-mark" src="/brand/jenergie-icon.png" alt="" />
@@ -218,7 +218,7 @@ export default function Home() {
             <p className="eyebrow">How Jenergie can help</p>
             <h2>Sports massage shaped<br />around <em>your body.</em></h2>
           </div>
-          <p>Sports massage is at the heart of Jenergie in Higham Ferrers. Every treatment responds to your body, your routine and the way you want to feel.</p>
+          <p>Sports massage is the main service at Jenergie. I plan each treatment around what feels uncomfortable, how you move and what you would like help with.</p>
         </div>
 
         <div className="service-grid">
@@ -244,7 +244,7 @@ export default function Home() {
               <p className="eyebrow">Simple, transparent pricing</p>
               <h2>Choose the support<br /><em>your body needs.</em></h2>
             </div>
-            <p>Sports massage therapy is Jenergie’s core service. Personal training can be added when you want more structured support with strength and movement.</p>
+            <p>Sports massage is Jenergie’s main service. Personal training is an optional extra if you would like help with strength, exercise or movement.</p>
           </div>
 
           <div className="pricing-grid">
@@ -277,7 +277,7 @@ export default function Home() {
               </div>
               <div className="price-list">
                 <div className="price-row">
-                  <div><strong>One-to-one session</strong><small>Personal training tailored to you</small></div>
+                  <div><strong>One-to-one session</strong><small>Personal training planned around you</small></div>
                   <span>1 hour</span><b>£45</b>
                 </div>
                 <div className="price-row">
@@ -296,7 +296,7 @@ export default function Home() {
           <div className="approach-intro">
             <p className="eyebrow light">The Jenergie approach</p>
             <h2>Listen first.<br /><em>Treat with purpose.</em></h2>
-            <p>No two bodies arrive with the same story. Your treatment starts with what you feel, how you move and what you want to achieve.</p>
+            <p>No two appointments are exactly the same. I start by listening to what is bothering you, then look at how you move before beginning treatment.</p>
           </div>
           <div className="process-list">
             {process.map(([title, copy], index) => (
@@ -317,7 +317,7 @@ export default function Home() {
         <div className="impact-copy">
           <p className="eyebrow">Why Jenergie</p>
           <h2>Your body.<br />Your goals. <em>Your session.</em></h2>
-          <p>Jenergie combines attentive, hands-on treatment with a practical understanding of movement, training and everyday life.</p>
+          <p>I take your work, exercise and day-to-day life into account, so the treatment makes sense for you.</p>
           <a className="button button-dark" href="#contact">Start feeling better <Arrow /></a>
         </div>
         <div className="proof-grid">
@@ -325,7 +325,7 @@ export default function Home() {
             <span className="proof-symbol" aria-hidden="true">◎</span>
             <strong>One</strong>
             <h3>treatment shaped around you</h3>
-            <p>Your needs guide the session—not a standard routine.</p>
+            <p>Your needs guide the session. I do not use a set routine.</p>
           </article>
           <article className="proof-card">
             <span className="proof-symbol" aria-hidden="true">↗</span>
@@ -339,7 +339,7 @@ export default function Home() {
               <strong>Real</strong>
               <h3>care, practical support</h3>
             </div>
-            <blockquote>“You don’t have to be an athlete to benefit from sports massage. You just need a body that deserves to feel better.”</blockquote>
+            <p className="proof-quote">Sports massage is not only for athletes. It can help with aches, tight muscles and stiffness from everyday life.</p>
           </article>
         </div>
       </section>
@@ -350,7 +350,7 @@ export default function Home() {
             <p className="eyebrow">Local sports massage</p>
             <h2 id="areas-heading">Sports massage and personal training<br /><em>in Higham Ferrers.</em></h2>
             <p>
-              Jenergie offers personalised sports massage therapy and one-to-one personal training in Higham Ferrers. The practice is conveniently located for Rushden and welcomes clients from across North Northamptonshire who want to move with less tension, recover well and build confidence.
+              Jenergie is based in Higham Ferrers and is easy to reach from Rushden. Clients also visit from across North Northamptonshire for sports massage, personal training and exercise plans.
             </p>
             <a className="button button-dark" href="#contact">Book sports massage <Arrow /></a>
           </div>
@@ -377,9 +377,9 @@ export default function Home() {
       <section className="contact-section" id="contact">
         <div className="contact-glow" aria-hidden="true" />
         <div className="shell contact-inner">
-          <p className="eyebrow light">Your next move starts here</p>
-          <h2>Ready to feel<br /><em>more like you?</em></h2>
-          <p>Tell me what’s going on and what you’d like help with. Based in Higham Ferrers, near Rushden.</p>
+          <p className="eyebrow light">Book an appointment</p>
+          <h2>Want to book or<br /><em>ask a question?</em></h2>
+          <p>Tell me what is bothering you or what you would like help with. I am based in Higham Ferrers, near Rushden.</p>
           <div className="contact-actions">
             <a className="button button-light" href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Email Jen <Arrow /></a>
             <a className="contact-phone" href="tel:+447547254349">07547 254349</a>
@@ -417,7 +417,7 @@ export default function Home() {
         <div>
           <strong id="analytics-consent-title">Your privacy choices</strong>
           <p id="analytics-consent-description">
-            Optional Google Analytics cookies help Jenergie understand how the website and booking links are used. Analytics only loads if you allow it. Read Google’s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a>.
+            Jenergie uses optional Google Analytics cookies to see how people use the website and booking links. Analytics only loads if you allow it. Read Google’s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a>.
           </p>
         </div>
         <div className="cookie-actions">

@@ -230,7 +230,7 @@ h1 em, h2 em { color: transparent; -webkit-text-stroke: 1.8px currentColor; font
 .proof-card strong { font-size: 50px; line-height: 1; letter-spacing: -.06em; font-weight: 560; }
 .proof-card h3 { margin: 5px 0 0; font-size: 18px; font-weight: 600; letter-spacing: -.03em; }
 .proof-card p { margin: 13px 0 0; font-size: 12px; line-height: 1.6; color: #626762; max-width: 250px; }
-.proof-wide blockquote { margin: 0; font-size: 20px; line-height: 1.45; letter-spacing: -.025em; color: rgba(255,255,255,.73); }
+.proof-wide .proof-quote { margin: 0; font-size: 20px; line-height: 1.45; letter-spacing: -.025em; color: rgba(255,255,255,.73); }
 
 .location-section { background: var(--cream); padding: 130px 0 140px; border-top: 1px solid var(--line); }
 .location-layout { display: grid; grid-template-columns: .95fr 1.05fr; gap: 90px; align-items: start; }

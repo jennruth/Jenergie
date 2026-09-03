@@ -32,6 +32,7 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.match(html, /analytics_storage.*denied/s);
   assert.match(html, /Your privacy choices/);
   assert.match(html, /data-analytics-choice="granted"/);
+  assert.doesNotMatch(html, /—/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
 });
 
