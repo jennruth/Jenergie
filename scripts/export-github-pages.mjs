@@ -42,7 +42,7 @@ let html = await response.text();
 // export a small, durable static site that GitHub Pages can serve directly.
 html = html
   .replace(
-    /<script\b(?![^>]*\btype=["']application\/ld\+json["'])[^>]*>[\s\S]*?<\/script>/gi,
+    /<script\b(?![^>]*\btype=["']application\/ld\+json["'])(?![^>]*\bdata-jenergie-analytics(?:=|\s|>))[^>]*>[\s\S]*?<\/script>/gi,
     "",
   )
   .replace(/<link\b(?=[^>]*\brel=["']modulepreload["'])[^>]*\/?>/gi, "")
@@ -66,6 +66,8 @@ if (
   !html.includes("Energy for your body") ||
   !html.includes("£55") ||
   !html.includes("HealthAndBeautyBusiness") ||
+  !html.includes("G-T8LFTR9P1B") ||
+  !html.includes("data-jenergie-analytics") ||
   !html.includes('rel="canonical" href="https://jenergie.co.uk"')
 ) {
   throw new Error("The exported page is missing required Jenergie content.");

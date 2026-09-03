@@ -26,5 +26,10 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.match(html, /rel="canonical" href="https:\/\/jenergie\.co\.uk\/?"/);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /HealthAndBeautyBusiness/);
+  assert.match(html, /G-T8LFTR9P1B/);
+  assert.match(html, /data-jenergie-analytics="consent"/);
+  assert.match(html, /analytics_storage.*denied/s);
+  assert.match(html, /Your privacy choices/);
+  assert.match(html, /data-analytics-choice="granted"/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
 });

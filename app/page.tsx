@@ -398,8 +398,33 @@ export default function Home() {
             <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><a href="#contact">Book a session</a></div>
           </div>
         </div>
-        <div className="shell footer-bottom"><span>© {new Date().getFullYear()} Jenergie · Higham Ferrers · Rushden · North Northamptonshire</span><span>Energy for your body. Care for your muscles.</span></div>
+        <div className="shell footer-bottom">
+          <span>© {new Date().getFullYear()} Jenergie · Higham Ferrers · Rushden · North Northamptonshire</span>
+          <span>Energy for your body. Care for your muscles.</span>
+          <button className="cookie-settings" type="button" data-cookie-settings>Cookie settings</button>
+        </div>
       </footer>
+
+      <aside
+        className="cookie-banner"
+        id="analytics-consent"
+        role="dialog"
+        aria-labelledby="analytics-consent-title"
+        aria-describedby="analytics-consent-description"
+        aria-live="polite"
+        hidden
+      >
+        <div>
+          <strong id="analytics-consent-title">Your privacy choices</strong>
+          <p id="analytics-consent-description">
+            Optional Google Analytics cookies help Jenergie understand how the website and booking links are used. Analytics only loads if you allow it. Read Google’s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a>.
+          </p>
+        </div>
+        <div className="cookie-actions">
+          <button type="button" data-analytics-choice="denied">Necessary only</button>
+          <button className="cookie-accept" type="button" data-analytics-choice="granted">Allow analytics</button>
+        </div>
+      </aside>
     </main>
   );
 }
