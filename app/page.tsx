@@ -1,5 +1,90 @@
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
+const siteUrl = "https://jenergie.co.uk";
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    url: `${siteUrl}/`,
+    name: "Jenergie",
+    alternateName: "Jenergie Sports Massage Therapy",
+    inLanguage: "en-GB",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "@id": `${siteUrl}/#business`,
+    name: "Jenergie",
+    url: `${siteUrl}/`,
+    logo: `${siteUrl}/brand/jenergie-icon.png`,
+    image: `${siteUrl}/og.png`,
+    description:
+      "Tailored sports massage therapy in Higham Ferrers, near Rushden, serving clients across North Northamptonshire. Personal training is available as an optional extra.",
+    telephone: "+447547254349",
+    email: "Jen@jenergie.co.uk",
+    priceRange: "£35–£70",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Higham Ferrers",
+      addressRegion: "North Northamptonshire",
+      addressCountry: "GB",
+    },
+    areaServed: [
+      { "@type": "City", name: "Higham Ferrers" },
+      { "@type": "City", name: "Rushden" },
+      { "@type": "AdministrativeArea", name: "North Northamptonshire" },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Jenergie treatments and training",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          price: "45",
+          priceCurrency: "GBP",
+          itemOffered: {
+            "@type": "Service",
+            name: "Initial sports massage appointment",
+            serviceType: "Sports massage therapy",
+          },
+        },
+        {
+          "@type": "Offer",
+          price: "35",
+          priceCurrency: "GBP",
+          itemOffered: {
+            "@type": "Service",
+            name: "30-minute sports massage",
+            serviceType: "Sports massage therapy",
+          },
+        },
+        {
+          "@type": "Offer",
+          price: "55",
+          priceCurrency: "GBP",
+          itemOffered: {
+            "@type": "Service",
+            name: "60-minute sports massage",
+            serviceType: "Sports massage therapy",
+          },
+        },
+        {
+          "@type": "Offer",
+          price: "45",
+          priceCurrency: "GBP",
+          itemOffered: {
+            "@type": "Service",
+            name: "One-to-one personal training",
+            serviceType: "Personal training",
+          },
+        },
+      ],
+    },
+  },
+];
+
 const BrandLockup = ({ dark = false }: { dark?: boolean }) => (
   <span className={`brand-lockup${dark ? " brand-lockup-dark" : ""}`}>
     <img className="lockup-icon" src="/brand/jenergie-icon.png" alt="" />
@@ -41,6 +126,12 @@ const process = [
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <nav className="nav shell" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="Jenergie home">
           <BrandLockup />
@@ -49,17 +140,17 @@ export default function Home() {
           <a href="#treatments">Treatments</a>
           <a href="#prices">Prices</a>
           <a href="#approach">Approach</a>
-          <a href="#why">Why Jenergie</a>
+          <a href="#areas">Areas</a>
         </div>
         <a className="button button-small" href="#contact">Book a session <Arrow /></a>
       </nav>
 
       <section className="hero shell" id="top">
         <div className="hero-copy">
-          <p className="eyebrow"><span className="pulse" /> Jenergie · Sports massage therapy</p>
+          <p className="eyebrow"><span className="pulse" /> Sports massage · Higham Ferrers</p>
           <h1 className="tagline-heading">Energy for your body.<br /><em>Care for your muscles.</em></h1>
           <p className="hero-intro">
-            Tailored sports massage with Jenni in Higham Ferrers, helping you ease tension, move more freely and feel more at home in your body.
+            Tailored sports massage in Higham Ferrers, near Rushden, helping clients across North Northamptonshire ease tension, move more freely and support recovery.
           </p>
           <div className="hero-actions">
             <a className="button" href="#contact">Book your treatment <Arrow /></a>
@@ -108,9 +199,9 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">How Jenergie can help</p>
-            <h2>Feel better in the body<br />you move through <em>life in.</em></h2>
+            <h2>Sports massage shaped<br />around <em>your body.</em></h2>
           </div>
-          <p>Sports massage is at the heart of Jenergie. Every treatment responds to your body, your routine and the way you want to feel.</p>
+          <p>Sports massage is at the heart of Jenergie in Higham Ferrers. Every treatment responds to your body, your routine and the way you want to feel.</p>
         </div>
 
         <div className="service-grid">
@@ -236,12 +327,42 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="location-section" id="areas" aria-labelledby="areas-heading">
+        <div className="shell location-layout">
+          <div className="location-copy">
+            <p className="eyebrow">Local sports massage</p>
+            <h2 id="areas-heading">Based in Higham Ferrers.<br /><em>Here for North Northamptonshire.</em></h2>
+            <p>
+              Jenergie offers personalised sports massage therapy in Higham Ferrers, conveniently located for Rushden and surrounding North Northamptonshire communities. Sessions support active people, busy working bodies and anyone who wants to move with less tension and more confidence.
+            </p>
+            <a className="button button-dark" href="#contact">Book sports massage <Arrow /></a>
+          </div>
+          <div className="area-grid" aria-label="Areas served">
+            <article>
+              <span>01</span>
+              <h3>Higham Ferrers</h3>
+              <p>Local, tailored sports massage treatment at the home of Jenergie.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Rushden</h3>
+              <p>Convenient sports massage support for clients from nearby Rushden.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>North Northamptonshire</h3>
+              <p>Welcoming clients from across the local area for treatment and recovery support.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="contact-section" id="contact">
         <div className="contact-glow" aria-hidden="true" />
         <div className="shell contact-inner">
           <p className="eyebrow light">Your next move starts here</p>
           <h2>Ready to feel<br /><em>more like you?</em></h2>
-          <p>Tell me what’s going on and what you’d like help with.</p>
+          <p>Tell me what’s going on and what you’d like help with. Based in Higham Ferrers, near Rushden.</p>
           <div className="contact-actions">
             <a className="button button-light" href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Email Jen <Arrow /></a>
             <a className="contact-phone" href="tel:+447547254349">07547 254349</a>
@@ -256,11 +377,11 @@ export default function Home() {
           </a>
           <p>Move freely.<br />Feel stronger.</p>
           <div className="footer-links">
-            <div><span>Explore</span><a href="#treatments">Treatments</a><a href="#prices">Prices</a><a href="#approach">My approach</a><a href="#why">Why Jenergie</a></div>
+            <div><span>Explore</span><a href="#treatments">Treatments</a><a href="#prices">Prices</a><a href="#approach">My approach</a><a href="#areas">Areas served</a></div>
             <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><a href="#contact">Book a session</a></div>
           </div>
         </div>
-        <div className="shell footer-bottom"><span>© {new Date().getFullYear()} Jenergie · Higham Ferrers</span><span>Energy for your body. Care for your muscles.</span></div>
+        <div className="shell footer-bottom"><span>© {new Date().getFullYear()} Jenergie · Higham Ferrers · Rushden · North Northamptonshire</span><span>Energy for your body. Care for your muscles.</span></div>
       </footer>
     </main>
   );

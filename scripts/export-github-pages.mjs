@@ -41,7 +41,10 @@ let html = await response.text();
 // The page is fully usable without hydration. Removing runtime scripts makes the
 // export a small, durable static site that GitHub Pages can serve directly.
 html = html
-  .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+  .replace(
+    /<script\b(?![^>]*\btype=["']application\/ld\+json["'])[^>]*>[\s\S]*?<\/script>/gi,
+    "",
+  )
   .replace(/<link\b(?=[^>]*\brel=["']modulepreload["'])[^>]*\/?>/gi, "")
   .replace(/\sdata-rsc-css-href=["'][^"']*["']/gi, "")
   .replace(/\sdata-precedence=["'][^"']*["']/gi, "")
@@ -59,7 +62,12 @@ for (const reference of new Set(localReferences)) {
   await stat(path.join(outputDirectory, ...reference.split("/")));
 }
 
-if (!html.includes("Energy for your body") || !html.includes("£55")) {
+if (
+  !html.includes("Energy for your body") ||
+  !html.includes("£55") ||
+  !html.includes("HealthAndBeautyBusiness") ||
+  !html.includes('rel="canonical" href="https://jenergie.co.uk"')
+) {
   throw new Error("The exported page is missing required Jenergie content.");
 }
 
