@@ -159,7 +159,7 @@ export default function Home() {
           <a href="#approach">Approach</a>
           <a href="#areas">Areas</a>
         </div>
-        <a className="button button-small" href="#contact">Book a session <Arrow /></a>
+        <a className="button button-small" href="#contact">Contact Jenni <Arrow /></a>
       </nav>
 
       <section className="hero shell" id="top">
@@ -170,7 +170,7 @@ export default function Home() {
             Sports massage therapy with Jenni in Higham Ferrers, near Rushden. Personal training is also available as an extra for clients across North Northamptonshire.
           </p>
           <div className="hero-actions">
-            <a className="button" href="#contact">Book your treatment <Arrow /></a>
+            <a className="button" href="#contact">Contact Jenni <Arrow /></a>
             <a className="text-link" href="#treatments">See how I can help <span aria-hidden="true">↓</span></a>
           </div>
         </div>
@@ -267,7 +267,7 @@ export default function Home() {
                   <span>60 min</span><b>£55</b>
                 </div>
               </div>
-              <a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20booking">Book sports massage <Arrow /></a>
+              <a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Enquire about sports massage <Arrow /></a>
             </article>
 
             <article className="price-panel price-panel-secondary">
@@ -352,7 +352,7 @@ export default function Home() {
             <p>
               Jenergie is based in Higham Ferrers and is easy to reach from Rushden. Clients also visit from across North Northamptonshire for sports massage, personal training and exercise plans.
             </p>
-            <a className="button button-dark" href="#contact">Book sports massage <Arrow /></a>
+            <a className="button button-dark" href="#contact">Contact Jenni <Arrow /></a>
           </div>
           <div className="area-grid" aria-label="Areas served">
             <article>
@@ -377,8 +377,8 @@ export default function Home() {
       <section className="contact-section" id="contact">
         <div className="contact-glow" aria-hidden="true" />
         <div className="shell contact-inner">
-          <p className="eyebrow light">Book an appointment</p>
-          <h2>Want to book or<br /><em>ask a question?</em></h2>
+          <p className="eyebrow light">Contact Jenni</p>
+          <h2>Want to arrange a session<br /><em>or ask a question?</em></h2>
           <p>Tell me what is bothering you or what you would like help with. I am based in Higham Ferrers, near Rushden.</p>
           <div className="contact-actions">
             <a className="button button-light" href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Email Jen <Arrow /></a>
@@ -395,7 +395,7 @@ export default function Home() {
           <p>Move freely.<br />Feel stronger.</p>
           <div className="footer-links">
             <div><span>Explore</span><a href="#treatments">Treatments</a><a href="#prices">Prices</a><a href="#approach">My approach</a><a href="#areas">Areas served</a></div>
-            <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><a href="#contact">Book a session</a></div>
+            <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><a href="#contact">Contact Jenni</a></div>
           </div>
         </div>
         <div className="shell footer-bottom">
@@ -417,7 +417,7 @@ export default function Home() {
         <div>
           <strong id="analytics-consent-title">Your privacy choices</strong>
           <p id="analytics-consent-description">
-            Jenergie uses optional Google Analytics cookies to see how people use the website and booking links. Analytics only loads if you allow it. Read Google’s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a>.
+            Jenergie uses optional Google Analytics cookies to see how people use the website and contact links. Analytics only loads if you allow it. Read Google’s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a>.
           </p>
         </div>
         <div className="cookie-actions">

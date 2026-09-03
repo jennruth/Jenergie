@@ -18,7 +18,8 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.match(html, /Higham Ferrers Sports Massage &amp; Personal Training \| Jenergie/);
   assert.match(html, /Energy for your body/);
   assert.match(html, /Care for your muscles/);
-  assert.match(html, /Book your treatment/);
+  assert.match(html, /Contact Jenni/);
+  assert.doesNotMatch(html, /Book your treatment/);
   assert.match(html, /Personal training/);
   assert.match(html, /One-to-one personal training/);
   assert.match(html, /£55/);
