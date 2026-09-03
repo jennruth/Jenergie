@@ -22,6 +22,7 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.doesNotMatch(html, /Book your treatment/);
   assert.match(html, /Personal training/);
   assert.match(html, /One-to-one personal training/);
+  assert.match(html, /Initial appointment[\s\S]*55 min[\s\S]*£45/);
   assert.match(html, /£55/);
   assert.match(html, /Jen@jenergie\.co\.uk/);
   assert.match(html, /North Northamptonshire/);

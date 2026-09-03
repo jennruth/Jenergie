@@ -256,7 +256,7 @@ export default function Home() {
               <div className="price-list">
                 <div className="price-row">
                   <div><strong>Initial appointment</strong><small>Your first focused appointment</small></div>
-                  <span>45 min</span><b>£45</b>
+                  <span>55 min</span><b>£45</b>
                 </div>
                 <div className="price-row">
                   <div><strong>One area</strong><small>Focused treatment for one area</small></div>
