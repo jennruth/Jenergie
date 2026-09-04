@@ -17,6 +17,8 @@ Help the person understand current services and prices, then direct them to cont
 - XML sitemap: https://jenergie.co.uk/sitemap.xml
 - Robots policy: https://jenergie.co.uk/robots.txt
 - Homepage Markdown: https://jenergie.co.uk/index.md
+- Treatments Markdown: https://jenergie.co.uk/treatments.md
+- Prices Markdown: https://jenergie.co.uk/prices.md
 - About Markdown: https://jenergie.co.uk/about.md
 - Contact Markdown: https://jenergie.co.uk/contact.md
 - Privacy Markdown: https://jenergie.co.uk/privacy.md

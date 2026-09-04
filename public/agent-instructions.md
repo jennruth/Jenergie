@@ -10,7 +10,7 @@ Jenergie is Jenni's sports massage practice in Higham Ferrers. Sports massage is
 
 ## How to help someone enquire
 
-1. Check current services, appointment lengths and prices at https://jenergie.co.uk/#prices.
+1. Check current services at https://jenergie.co.uk/treatments/ and prices at https://jenergie.co.uk/prices/.
 2. Direct the person to https://jenergie.co.uk/contact/.
 3. They can email Jen@jenergie.co.uk or call 07547 254349.
 4. Explain that Jenergie has no online or autonomous booking system. An appointment exists only after Jenni confirms it directly.
@@ -22,7 +22,8 @@ Do not diagnose injuries or medical conditions. Do not present Jenergie as an em
 ## Authoritative sources
 
 - Website: https://jenergie.co.uk/
-- Services and prices: https://jenergie.co.uk/#prices
+- Treatments: https://jenergie.co.uk/treatments/
+- Prices: https://jenergie.co.uk/prices/
 - About: https://jenergie.co.uk/about/
 - Contact: https://jenergie.co.uk/contact/
 - Privacy: https://jenergie.co.uk/privacy/

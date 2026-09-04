@@ -77,6 +77,7 @@
 
     [
       [".section-heading > *", ".section-heading", { stagger: 0.08 }],
+      [".route-card", ".route-grid", { y: 38, stagger: 0.1 }],
       [".service-card", ".service-grid", { y: 46, stagger: 0.12 }],
       [".pricing-heading > *", ".pricing-heading", { stagger: 0.08 }],
       [".price-panel", ".pricing-grid", { y: 44, stagger: 0.14 }],

@@ -12,7 +12,7 @@ async function render(path = "/") {
 }
 
 function pageText(html) {
-  const match = html.match(/<article class="info-content shell">([\s\S]*?)<\/article>/);
+  const match = html.match(/<article class="info-content shell">([\s\S]*)<\/article>/);
   return (match?.[1] ?? "")
     .replace(/<[^>]+>/g, " ")
     .replace(/&(?:amp|quot|apos|#x27|#39);/g, " ")
@@ -31,8 +31,8 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.doesNotMatch(html, /Book your treatment/);
   assert.match(html, /Personal training/);
   assert.match(html, /One-to-one personal training/);
-  assert.match(html, /Initial appointment[\s\S]*55 min[\s\S]*£45/);
-  assert.match(html, /£55/);
+  assert.match(html, /href="\/treatments"/);
+  assert.match(html, /href="\/prices"/);
   assert.match(html, /Jen@jenergie\.co\.uk/);
   assert.match(html, /North Northamptonshire/);
   assert.match(html, /rel="canonical" href="https:\/\/jenergie\.co\.uk\/?"/);
@@ -58,6 +58,8 @@ test("renders the Jenergie sports massage homepage", async () => {
 
 test("renders substantial Jenergie trust and agent resource pages", async () => {
   const pages = [
+    ["/treatments", "Jenergie treatments", "https://jenergie.co.uk/treatments/", "/treatments.md"],
+    ["/prices", "Simple, transparent pricing", "https://jenergie.co.uk/prices/", "/prices.md"],
     ["/about", "About Jenergie", "https://jenergie.co.uk/about/", "/about.md"],
     ["/contact", "Contact Jenergie", "https://jenergie.co.uk/contact/", "/contact.md"],
     ["/privacy", "Privacy Notice", "https://jenergie.co.uk/privacy/", "/privacy.md"],
@@ -97,8 +99,8 @@ test("exports a discoverable canonical sitemap", async () => {
   assert.match(sitemap, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
   assert.match(sitemap, /<loc>https:\/\/jenergie\.co\.uk\/<\/loc>/);
   assert.match(sitemap, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 5);
-  for (const route of ["about", "contact", "privacy", "agent-resources"]) {
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 7);
+  for (const route of ["treatments", "prices", "about", "contact", "privacy", "agent-resources"]) {
     assert.match(sitemap, new RegExp(`<loc>https:\\/\\/jenergie\\.co\\.uk\\/${route}\\/</loc>`));
   }
   assert.match(robots, /Sitemap: https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
@@ -113,7 +115,8 @@ test("exports an llms.txt discovery guide", async () => {
   assert.match(llms, /^# Jenergie/m);
   assert.match(llms, /sports massage therapy practice in Higham Ferrers/i);
   assert.match(llms, /North Northamptonshire/);
-  assert.match(llms, /https:\/\/jenergie\.co\.uk\/#treatments/);
+  assert.match(llms, /https:\/\/jenergie\.co\.uk\/treatments\//);
+  assert.match(llms, /https:\/\/jenergie\.co\.uk\/prices\//);
   assert.match(llms, /https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
   assert.match(llms, /## When to use Jenergie/);
   assert.match(llms, /Jenergie has no automated booking API/);
@@ -124,6 +127,8 @@ test("exports an llms.txt discovery guide", async () => {
 test("exports explicit Markdown alternatives and agent instructions", async () => {
   const files = [
     "index.md",
+    "treatments.md",
+    "prices.md",
     "about.md",
     "contact.md",
     "privacy.md",
@@ -167,6 +172,7 @@ test("exports self-hosted GSAP scroll animations with reduced-motion support", a
   assert.match(animationScript, /prefers-reduced-motion: reduce/);
   assert.match(animationScript, /gsap\.registerPlugin\(ScrollTrigger\)/);
   assert.match(animationScript, /\.service-card/);
+  assert.match(animationScript, /\.route-card/);
   assert.match(animationScript, /\.price-panel/);
   assert.match(animationScript, /\.info-content > section/);
   assert.ok(gsapFile.size > 50_000, "GSAP should be self-hosted");

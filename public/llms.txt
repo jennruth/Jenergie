@@ -6,18 +6,18 @@ Jenergie's tagline is "Energy for your body. Care for your muscles." The website
 
 ## Services
 
-- [Sports massage therapy](https://jenergie.co.uk/#treatments): Focused, hands-on treatment to ease muscular tension, support mobility and help the body feel ready for what comes next.
-- [Sports massage prices](https://jenergie.co.uk/#prices): Initial appointment, 55 minutes, £45; one area, 30 minutes, £35; two areas, 60 minutes, £55.
-- [Personal training](https://jenergie.co.uk/#prices): Optional one-to-one personal training, one hour, £45; bespoke exercise plan, £70.
+- [Sports massage therapy](https://jenergie.co.uk/treatments/): Focused, hands-on treatment to ease muscular tension, support mobility and help the body feel ready for what comes next.
+- [Sports massage prices](https://jenergie.co.uk/prices/): Initial appointment, 55 minutes, £45; one area, 30 minutes, £35; two areas, 60 minutes, £55.
+- [Personal training](https://jenergie.co.uk/prices/): Optional one-to-one personal training, one hour, £45; bespoke exercise plan, £70.
 
 ## About Jenergie
 
 - [About Jenergie](https://jenergie.co.uk/about/): Meet Jenni and learn about Jenergie's personal, supportive approach.
-- [Treatment approach](https://jenergie.co.uk/#approach): How appointments are tailored around each client's body, routine and goals.
+- [Treatment approach](https://jenergie.co.uk/treatments/): How appointments are tailored around each client's body, routine and goals.
 
 ## Location and contact
 
-- [Areas served](https://jenergie.co.uk/#areas): Based in Higham Ferrers, conveniently located for Rushden, and welcoming clients from across North Northamptonshire.
+- [Areas served](https://jenergie.co.uk/about/): Based in Higham Ferrers, conveniently located for Rushden, and welcoming clients from across North Northamptonshire.
 - [Contact Jenergie](https://jenergie.co.uk/contact/): Email Jen@jenergie.co.uk or call 07547 254349 to ask a question or arrange an appointment.
 
 ## When to use Jenergie

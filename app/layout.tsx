@@ -111,8 +111,8 @@ const analyticsScript = `
         window.gtag("event", "generate_lead", { method: "email" });
       } else if (href.indexOf("tel:") === 0) {
         window.gtag("event", "generate_lead", { method: "phone" });
-      } else if (href === "#contact") {
-        window.gtag("event", "contact_section_click");
+      } else if (href === "/contact" || href === "/contact/") {
+        window.gtag("event", "contact_page_click");
       }
     });
   }

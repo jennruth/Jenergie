@@ -42,9 +42,9 @@ export default function AboutPage() {
       <section>
         <h2>Local to Higham Ferrers and Rushden</h2>
         <p>
-          Jenergie is based in Higham Ferrers, close to Rushden, and welcomes clients from across North Northamptonshire. To ask a question or arrange an appointment, contact Jenni by email or phone. Current appointment lengths and prices are always listed on the Jenergie homepage.
+          Jenergie is based in Higham Ferrers, close to Rushden, and welcomes clients from across North Northamptonshire. To ask a question or arrange an appointment, contact Jenni by email or phone. Current appointment lengths and prices are listed on the dedicated prices page.
         </p>
-        <a className="button button-dark" href="/contact/">Contact Jenni <span aria-hidden="true">↗</span></a>
+        <a className="button button-dark" href="/prices/">View prices <span aria-hidden="true">↗</span></a>
       </section>
     </InfoPage>
   );

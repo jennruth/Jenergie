@@ -175,7 +175,8 @@ for (const route of routes) {
   if (
     route === "/" &&
     (!html.includes("Energy for your body") ||
-      !html.includes("£55") ||
+      !html.includes('href="/treatments"') ||
+      !html.includes('href="/prices"') ||
       !html.includes("HealthAndBeautyBusiness") ||
       !html.includes('"@type":"Organization"') ||
       !html.includes('"@type":"ContactPoint"') ||
@@ -184,6 +185,15 @@ for (const route of routes) {
       !html.includes('rel="canonical" href="https://jenergie.co.uk"'))
   ) {
     throw new Error("The exported homepage is missing required Jenergie content.");
+  }
+
+  if (
+    route === "/prices" &&
+    (!html.includes("Initial appointment") ||
+      !html.includes("55 min") ||
+      !html.includes("£55"))
+  ) {
+    throw new Error("The exported prices page is missing required Jenergie pricing.");
   }
 }
 

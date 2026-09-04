@@ -27,8 +27,8 @@ export function InfoPage({ eyebrow, title, intro, children }: InfoPageProps) {
         </Link>
         <div className="nav-links">
           <Link href="/">Home</Link>
-          <Link href="/#treatments">Treatments</Link>
-          <Link href="/#prices">Prices</Link>
+          <Link href="/treatments/">Treatments</Link>
+          <Link href="/prices/">Prices</Link>
           <Link href="/about/">About</Link>
         </div>
         <Link className="button button-small" href="/contact/">Contact Jenni <Arrow /></Link>
@@ -52,6 +52,8 @@ export function InfoPage({ eyebrow, title, intro, children }: InfoPageProps) {
           </div>
           <InsuranceBadge />
           <div className="info-footer-links">
+            <Link href="/treatments/">Treatments</Link>
+            <Link href="/prices/">Prices</Link>
             <Link href="/about/">About</Link>
             <Link href="/contact/">Contact</Link>
             <Link href="/privacy/">Privacy</Link>
