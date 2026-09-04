@@ -198,6 +198,21 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en-GB">
       <head>
         <script
+          src="/vendor/gsap.min.js"
+          defer
+          data-jenergie-animation="gsap"
+        />
+        <script
+          src="/vendor/ScrollTrigger.min.js"
+          defer
+          data-jenergie-animation="scroll-trigger"
+        />
+        <script
+          src="/animations.js"
+          defer
+          data-jenergie-animation="setup"
+        />
+        <script
           data-jenergie-analytics="consent"
           dangerouslySetInnerHTML={{ __html: analyticsScript }}
         />

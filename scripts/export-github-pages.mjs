@@ -116,7 +116,7 @@ async function renderRoute(worker, route) {
 function prepareStaticHtml(html, assetPrefix) {
   return html
     .replace(
-      /<script\b(?![^>]*\btype=["']application\/ld\+json["'])(?![^>]*\bdata-jenergie-analytics(?:=|\s|>))[^>]*>[\s\S]*?<\/script>/gi,
+      /<script\b(?![^>]*\btype=["']application\/ld\+json["'])(?![^>]*\bdata-jenergie-analytics(?:=|\s|>))(?![^>]*\bdata-jenergie-animation(?:=|\s|>))[^>]*>[\s\S]*?<\/script>/gi,
       "",
     )
     .replace(/<link\b(?=[^>]*\brel=["']modulepreload["'])[^>]*\/?>/gi, "")

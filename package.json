@@ -7,16 +7,18 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "vinext dev",
-    "build": "vinext build",
-    "build:pages": "vinext build && node scripts/export-github-pages.mjs",
+    "prepare:vendor": "node scripts/prepare-vendor.mjs",
+    "dev": "pnpm run prepare:vendor && vinext dev",
+    "build": "pnpm run prepare:vendor && vinext build",
+    "build:pages": "pnpm run build && node scripts/export-github-pages.mjs",
     "start": "vinext start",
     "test": "pnpm run build:pages && node --test tests/rendered-html.test.mjs",
-    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern github-pages --ignore-pattern work",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern github-pages --ignore-pattern work --ignore-pattern public/vendor",
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",
+    "gsap": "3.15.0",
     "react": "19.2.6",
     "react-dom": "19.2.6"
   },

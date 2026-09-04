@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import test from "node:test";
 
 async function render(path = "/") {
@@ -46,6 +46,9 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.match(html, /analytics_storage.*denied/s);
   assert.match(html, /Your privacy choices/);
   assert.match(html, /data-analytics-choice="granted"/);
+  assert.match(html, /data-jenergie-animation="gsap"/);
+  assert.match(html, /data-jenergie-animation="scroll-trigger"/);
+  assert.match(html, /data-jenergie-animation="setup"/);
   assert.doesNotMatch(html, /—/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
 });
@@ -144,4 +147,24 @@ test("exports a dedicated 404 recovery document", async () => {
   assert.match(html, /# Jenergie page not found/);
   assert.match(html, /https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
   assert.doesNotMatch(html, /Energy for your body\.<br\/><em>Care for your muscles/);
+});
+
+test("exports self-hosted GSAP scroll animations with reduced-motion support", async () => {
+  const [html, animationScript, gsapFile, scrollTriggerFile] = await Promise.all([
+    readFile(new URL("../github-pages/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../github-pages/animations.js", import.meta.url), "utf8"),
+    stat(new URL("../github-pages/vendor/gsap.min.js", import.meta.url)),
+    stat(new URL("../github-pages/vendor/ScrollTrigger.min.js", import.meta.url)),
+  ]);
+
+  assert.match(html, /data-jenergie-animation="gsap"/);
+  assert.match(html, /data-jenergie-animation="scroll-trigger"/);
+  assert.match(html, /data-jenergie-animation="setup"/);
+  assert.match(animationScript, /prefers-reduced-motion: reduce/);
+  assert.match(animationScript, /gsap\.registerPlugin\(ScrollTrigger\)/);
+  assert.match(animationScript, /\.service-card/);
+  assert.match(animationScript, /\.price-panel/);
+  assert.match(animationScript, /\.info-content > section/);
+  assert.ok(gsapFile.size > 50_000, "GSAP should be self-hosted");
+  assert.ok(scrollTriggerFile.size > 20_000, "ScrollTrigger should be self-hosted");
 });
