@@ -137,10 +137,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: "Jenergie",
   title: siteTitle,
   description: siteDescription,
+  keywords: [
+    "Jenergie",
+    "Jenergie sports massage",
+    "sports massage Higham Ferrers",
+    "sports massage Rushden",
+    "personal training Higham Ferrers",
+    "North Northamptonshire sports massage",
+  ],
   alternates: {
     canonical: "/",
+    types: { "text/markdown": "/index.md" },
   },
   openGraph: {
     type: "website",

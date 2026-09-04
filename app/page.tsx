@@ -100,6 +100,33 @@ const structuredData = [
       ],
     },
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${siteUrl}/#organization`,
+    name: "Jenergie",
+    alternateName: "Jenergie Sports Massage Therapy",
+    url: `${siteUrl}/`,
+    logo: `${siteUrl}/brand/jenergie-icon.png`,
+    description:
+      "Jenergie provides sports massage therapy in Higham Ferrers, near Rushden, with optional personal training for clients across North Northamptonshire.",
+    email: "Jen@jenergie.co.uk",
+    telephone: "+447547254349",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer enquiries",
+      email: "Jen@jenergie.co.uk",
+      telephone: "+447547254349",
+      areaServed: "GB",
+      availableLanguage: "English",
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Higham Ferrers",
+      addressRegion: "North Northamptonshire",
+      addressCountry: "GB",
+    },
+  },
 ];
 
 const BrandLockup = ({ dark = false }: { dark?: boolean }) => (
@@ -394,8 +421,8 @@ export default function Home() {
           </a>
           <p>Move freely.<br />Feel stronger.</p>
           <div className="footer-links">
-            <div><span>Explore</span><a href="#treatments">Treatments</a><a href="#prices">Prices</a><a href="#approach">My approach</a><a href="#areas">Areas served</a></div>
-            <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><a href="#contact">Contact Jenni</a></div>
+            <div><span>Explore</span><a href="#treatments">Treatments</a><a href="#prices">Prices</a><a href="/about/">About Jenergie</a><a href="/privacy/">Privacy</a></div>
+            <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><a href="/contact/">Contact Jenni</a><a href="/agent-resources/">Agent resources</a></div>
           </div>
         </div>
         <div className="shell footer-bottom">
