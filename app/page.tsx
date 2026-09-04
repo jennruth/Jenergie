@@ -1,3 +1,5 @@
+import { InsuranceBadge } from "./components/insurance-badge";
+
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
 const siteUrl = "https://jenergie.co.uk";
@@ -416,9 +418,12 @@ export default function Home() {
 
       <footer className="footer">
         <div className="shell footer-main">
-          <a className="brand footer-brand" href="#top" aria-label="Jenergie home">
-            <BrandLockup dark />
-          </a>
+          <div className="footer-brand-column">
+            <a className="brand footer-brand" href="#top" aria-label="Jenergie home">
+              <BrandLockup dark />
+            </a>
+            <InsuranceBadge />
+          </div>
           <p>Move freely.<br />Feel stronger.</p>
           <div className="footer-links">
             <div><span>Explore</span><a href="#treatments">Treatments</a><a href="#prices">Prices</a><a href="/about/">About Jenergie</a><a href="/privacy/">Privacy</a></div>

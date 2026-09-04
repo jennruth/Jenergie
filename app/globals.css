@@ -263,6 +263,11 @@ h1 em, h2 em { color: transparent; -webkit-text-stroke: 1.8px currentColor; font
 .footer-brand .lockup-icon { width: 72px; height: 72px; }
 .footer-brand .lockup-copy strong { font-size: 35px; }
 .footer-brand .lockup-copy small, .footer-brand .lockup-copy i { font-size: 8px; }
+.footer-brand-column { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; }
+.insurance-badge { display: inline-flex; width: 118px; border-radius: 50%; transition: opacity .2s ease, transform .2s ease; }
+.insurance-badge:hover { opacity: .88; transform: translateY(-2px); }
+.insurance-badge:focus-visible { outline: 2px solid var(--energy); outline-offset: 5px; }
+.insurance-badge img { display: block; width: 118px; height: auto; }
 .footer-main > p { margin: 0; font-size: 28px; line-height: 1.25; letter-spacing: -.04em; color: rgba(255,255,255,.74); }
 .footer-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
 .footer-links > div { display: flex; flex-direction: column; gap: 13px; }
@@ -308,6 +313,7 @@ h1 em, h2 em { color: transparent; -webkit-text-stroke: 1.8px currentColor; font
 .agent-recovery { grid-column: 2; max-width: 760px; overflow-x: auto; margin: 28px 0 0; padding: 24px; border: 1px solid var(--line); background: #f2f0e9; color: #454945; font: 12px/1.7 var(--font-geist-mono), monospace; white-space: pre-wrap; }
 .info-footer { padding-top: 55px; }
 .info-footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 50px; padding-bottom: 30px; }
+.info-footer-inner .insurance-badge { margin-left: auto; }
 .info-footer-inner strong { color: var(--energy); font-size: 26px; }
 .info-footer-inner p { margin: 8px 0 0; color: rgba(255,255,255,.58); font-size: 13px; }
 .info-footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 22px; }
@@ -399,6 +405,7 @@ h1 em, h2 em { color: transparent; -webkit-text-stroke: 1.8px currentColor; font
   .contact-details > div { min-height: 140px; }
   .resource-list li { grid-template-columns: 1fr; gap: 8px; }
   .info-footer-inner { flex-direction: column; }
+  .info-footer-inner .insurance-badge { margin-left: 0; }
   .info-footer-links { justify-content: flex-start; }
 }
 

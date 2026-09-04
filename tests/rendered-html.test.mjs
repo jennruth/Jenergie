@@ -49,6 +49,9 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.match(html, /data-jenergie-animation="gsap"/);
   assert.match(html, /data-jenergie-animation="scroll-trigger"/);
   assert.match(html, /data-jenergie-animation="setup"/);
+  assert.match(html, /href="https:\/\/www\.insure4sport\.co\.uk\/covertypes\/ptandfitnessinstructor\/ref=badge"/);
+  assert.match(html, /src="\/trust\/insure4sport-insured-badge\.png"/);
+  assert.match(html, /alt="Insure4Sport Personal Trainer Insurance"/);
   assert.doesNotMatch(html, /—/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
 });
@@ -70,6 +73,7 @@ test("renders substantial Jenergie trust and agent resource pages", async () => 
     assert.ok(html.includes(`rel="canonical" href="${canonical}"`), `${path} canonical`);
     assert.ok(html.includes('type="text/markdown"'), `${path} markdown alternate type`);
     assert.ok(html.includes(`href="${markdown}"`) || html.includes(`href="https://jenergie.co.uk${markdown}"`), `${path} markdown alternate URL`);
+    assert.match(html, /Insure4Sport Personal Trainer Insurance/, `${path} insurance badge`);
   }
 });
 

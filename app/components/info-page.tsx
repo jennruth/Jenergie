@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { InsuranceBadge } from "./insurance-badge";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -49,6 +50,7 @@ export function InfoPage({ eyebrow, title, intro, children }: InfoPageProps) {
             <strong>Jenergie</strong>
             <p>Energy for your body. Care for your muscles.</p>
           </div>
+          <InsuranceBadge />
           <div className="info-footer-links">
             <Link href="/about/">About</Link>
             <Link href="/contact/">Contact</Link>
