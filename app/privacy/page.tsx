@@ -47,7 +47,7 @@ export default function PrivacyPage() {
       <section>
         <h2>Information you choose to provide</h2>
         <p>
-          This website has no contact form and does not create customer accounts. If you follow an email or phone link, you decide what information to share. An enquiry may include your name, contact details, availability and information about what you would like help with. Jenergie uses this information to reply, discuss whether a service is suitable, arrange an appointment and keep appropriate records relating to the service you request. Please do not send information that is not needed for your enquiry.
+          The website contact form collects your name, email address, optional phone number and message through Tally. We use these details to respond to your enquiry and arrange requested services. Tally stores form responses in Europe on our behalf. Please do not include detailed medical or health information in a general enquiry. The website does not create customer accounts. You can also contact us by email or phone. An enquiry may include your name, contact details, availability and information about what you would like help with. Jenergie uses this information to reply, discuss whether a service is suitable, arrange an appointment and keep appropriate records relating to the service you request. Please do not send information that is not needed for your enquiry.
         </p>
       </section>
 
@@ -81,3 +81,4 @@ export default function PrivacyPage() {
     </InfoPage>
   );
 }
+
