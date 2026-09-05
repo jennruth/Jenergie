@@ -40,7 +40,7 @@ export default function PrivacyPage() {
       <section>
         <h2>Who is responsible for your information</h2>
         <p>
-          Jenergie is responsible for personal information used in connection with this website and enquiries about its services. Jenergie is a sports massage and personal training business based in Higham Ferrers, North Northamptonshire. If you have a privacy question, want to exercise a data protection right or want information corrected, email Jen@jenergie.co.uk or call 07547 254349.
+          Jenergie is responsible for personal information used in connection with this website and enquiries about its services. Jenergie is a sports massage and personal training business based in Higham Ferrers, North Northamptonshire. If you have a privacy question, want to exercise a data protection right or want information corrected, email jen@jenergie.co.uk or call 07547 254349.
         </p>
       </section>
 
