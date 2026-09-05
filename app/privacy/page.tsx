@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { InfoPage } from "../components/info-page";
+import clientNotice from "./client-notice.json";
 
 export const metadata: Metadata = {
   title: "Privacy Notice | Jenergie",
   description:
-    "How Jenergie handles contact information, website analytics, cookies and privacy choices for visitors and clients.",
+    "How Jenergie handles consultation and treatment records, Tally forms, Proton Drive storage, website analytics and your privacy choices.",
   alternates: {
     canonical: "/privacy/",
     types: { "text/markdown": "/privacy.md" },
@@ -16,8 +17,26 @@ export default function PrivacyPage() {
     <InfoPage
       eyebrow="Jenergie privacy notice"
       title="Your information and your choices."
-      intro="This notice explains what information Jenergie receives through the website, why it may be used and the choices available to you. Last updated 4 September 2026."
+      intro="How Jenergie handles client records and website information, and the choices available to you. Last updated 5 September 2026."
     >
+      <section id="client-records">
+        <h2>Client consultation and treatment records</h2>
+        <p>This is the Jenergie Privacy Notice referred to in your consultation form.</p>
+      </section>
+      {clientNotice.map(({ title, text }) => (
+        <section key={title}>
+          <h2>{title}</h2>
+          <p>{text}</p>
+        </section>
+      ))}
+      <section>
+        <h2>Contact Jenergie about your information</h2>
+        <p><a href="mailto:jen@jenergie.co.uk">jen@jenergie.co.uk</a> · <a href="https://ico.org.uk/make-a-complaint/" target="_blank" rel="noopener noreferrer">Make a complaint to the ICO</a></p>
+      </section>
+      <section id="website-privacy">
+        <h2>Website enquiries, analytics and cookies</h2>
+        <p>The following additional information applies when you use this website.</p>
+      </section>
       <section>
         <h2>Who is responsible for your information</h2>
         <p>
