@@ -16,8 +16,18 @@ export default function ContactPage() {
     <InfoPage
       eyebrow="Contact Jenergie"
       title="Ask a question or arrange a session."
-      intro="Jenergie does not use an online booking system. Contact Jenni directly by email or phone and she will help you choose the right appointment."
+      intro="Send Jenni a message using the form below, or get in touch by email or phone. She will help you choose the right appointment and confirm availability."
     >
+      <section aria-label="Contact Jenni enquiry form">
+        <iframe
+          src="https://tally.so/embed/xXqDQJ?alignLeft=1&hideTitle=1&transparentBackground=1"
+          title="Contact Jenni enquiry form"
+          width="100%"
+          height="950"
+          style={{ border: 0 }}
+        />
+        <p>Having trouble with the form? <a href="https://tally.so/r/xXqDQJ" target="_blank" rel="noopener noreferrer">Open the contact form in a new tab</a> or email <a href="mailto:jen@jenergie.co.uk">jen@jenergie.co.uk</a>.</p>
+      </section>
       <section className="contact-details" aria-label="Jenergie contact details">
         <div>
           <span>Email</span>
@@ -36,7 +46,7 @@ export default function ContactPage() {
       <section>
         <h2>What to include in your message</h2>
         <p>
-          Briefly explain what you would like help with, which area feels tight or uncomfortable and whether you are asking about sports massage, personal training or an exercise plan. You can also mention the days or times that usually work for you. Jenni will reply to discuss the most suitable appointment and confirm availability. Sending a message is an enquiry and does not create a booking until Jenni confirms it with you.
+          Let Jenni know whether you are asking about sports massage, personal training or an exercise plan, along with the days or times that usually work for you. Please keep detailed medical and health information for your consultation. Jenni will reply to discuss the most suitable appointment and confirm availability. Sending a message is an enquiry and does not create a booking until Jenni confirms it with you.
         </p>
       </section>
 
