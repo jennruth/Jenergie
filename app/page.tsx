@@ -174,7 +174,7 @@ export default function Home() {
           <div className="footer-brand-column"><Link className="brand footer-brand" href="/" aria-label="Jenergie home"><BrandLockup dark /></Link><InsuranceBadge /></div>
           <p>Move freely.<br />Feel stronger.</p>
           <div className="footer-links">
-            <div><span>Explore</span><Link href="/treatments/">Treatments</Link><Link href="/prices/">Prices</Link><Link href="/about/">About Jenergie</Link><Link href="/privacy/">Privacy</Link></div>
+            <div><span>Explore</span><Link href="/treatments/">Treatments</Link><Link href="/prices/">Prices</Link><Link href="/about/">About Jenergie</Link><Link href="/cancellation-policy/">Cancellation policy</Link><Link href="/privacy/">Privacy</Link></div>
             <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><Link href="/contact/">Contact Jenni</Link><Link href="/agent-resources/">Agent resources</Link></div>
           </div>
         </div>

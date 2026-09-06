@@ -33,6 +33,7 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.match(html, /One-to-one personal training/);
   assert.match(html, /href="\/treatments"/);
   assert.match(html, /href="\/prices"/);
+  assert.match(html, /href="\/cancellation-policy"/);
   assert.match(html, /Jen@jenergie\.co\.uk/);
   assert.match(html, /North Northamptonshire/);
   assert.match(html, /rel="canonical" href="https:\/\/jenergie\.co\.uk\/?"/);
@@ -62,6 +63,7 @@ test("renders substantial Jenergie trust and agent resource pages", async () => 
     ["/prices", "Simple, transparent pricing", "https://jenergie.co.uk/prices/", "/prices.md"],
     ["/about", "About Jenergie", "https://jenergie.co.uk/about/", "/about.md"],
     ["/contact", "Contact Jenergie", "https://jenergie.co.uk/contact/", "/contact.md"],
+    ["/cancellation-policy", "Cancellation and Appointment Policy", "https://jenergie.co.uk/cancellation-policy/", "/cancellation-policy.md"],
     ["/privacy", "Privacy Notice", "https://jenergie.co.uk/privacy/", "/privacy.md"],
     ["/agent-resources", "Jenergie Agent and Developer Resources", "https://jenergie.co.uk/agent-resources/", "/agent-resources.md"],
   ];
@@ -90,6 +92,18 @@ test("renders the About page in Jenni's friendly first-person voice", async () =
   assert.doesNotMatch(html, /Jenni will ask|Jenni can talk|Jenni asks/);
 });
 
+test("renders the published cancellation policy and its key terms", async () => {
+  const response = await render("/cancellation-policy");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /24 hours or more/);
+  assert.match(html, /up to 50% of the appointment fee/i);
+  assert.match(html, /up to 100% of the appointment fee/i);
+  assert.match(html, /Exceptional circumstances/);
+  assert.match(html, /Effective from 5 September 2026/);
+  assert.match(html, /href="\/contact"/);
+});
+
 test("returns a real 404 with agent recovery links", async () => {
   const response = await render("/this-page-does-not-exist");
   assert.equal(response.status, 404);
@@ -110,8 +124,8 @@ test("exports a discoverable canonical sitemap", async () => {
   assert.match(sitemap, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
   assert.match(sitemap, /<loc>https:\/\/jenergie\.co\.uk\/<\/loc>/);
   assert.match(sitemap, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 7);
-  for (const route of ["treatments", "prices", "about", "contact", "privacy", "agent-resources"]) {
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 8);
+  for (const route of ["treatments", "prices", "about", "contact", "cancellation-policy", "privacy", "agent-resources"]) {
     assert.match(sitemap, new RegExp(`<loc>https:\\/\\/jenergie\\.co\\.uk\\/${route}\\/</loc>`));
   }
   assert.match(robots, /Sitemap: https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
@@ -142,6 +156,7 @@ test("exports explicit Markdown alternatives and agent instructions", async () =
     "prices.md",
     "about.md",
     "contact.md",
+    "cancellation-policy.md",
     "privacy.md",
     "agent-resources.md",
     "agent-instructions.md",
