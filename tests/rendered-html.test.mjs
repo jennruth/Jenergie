@@ -79,6 +79,17 @@ test("renders substantial Jenergie trust and agent resource pages", async () => 
   }
 });
 
+test("renders the About page in Jenni's friendly first-person voice", async () => {
+  const response = await render("/about");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Hi, I(?:&#x27;|')m Jenni/);
+  assert.match(html, /I run Jenergie/);
+  assert.match(html, /People come to see me for all sorts of reasons/);
+  assert.match(html, /Your appointment is about you/);
+  assert.doesNotMatch(html, /Jenni will ask|Jenni can talk|Jenni asks/);
+});
+
 test("returns a real 404 with agent recovery links", async () => {
   const response = await render("/this-page-does-not-exist");
   assert.equal(response.status, 404);
