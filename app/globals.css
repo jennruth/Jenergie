@@ -358,8 +358,9 @@ h1 em, h2 em { color: transparent; -webkit-text-stroke: 1.8px currentColor; font
 
 @media (max-width: 640px) {
   .shell { width: calc(100% - 30px); }
-  .nav { height: 78px; }
-  .nav .button { padding: 0 16px; min-height: 40px; }
+  .nav { height: 78px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; }
+  .nav > .brand { min-width: 0; justify-self: start; }
+  .nav .button { min-height: 40px; padding: 0 16px; justify-self: end; align-self: center; flex: 0 0 auto; line-height: 1; white-space: nowrap; }
   .nav .button span { display: none; }
   .brand { font-size: 18px; }
   .brand-mark { width: 28px; height: 28px; }

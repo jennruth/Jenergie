@@ -204,3 +204,12 @@ test("exports self-hosted GSAP scroll animations with reduced-motion support", a
   assert.ok(gsapFile.size > 50_000, "GSAP should be self-hosted");
   assert.ok(scrollTriggerFile.size > 20_000, "ScrollTrigger should be self-hosted");
 });
+
+test("keeps the main navigation button aligned on mobile", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  const mobileStyles = css.match(/@media \(max-width: 640px\) \{([\s\S]*?)\n\}/)?.[1] ?? "";
+
+  assert.match(mobileStyles, /\.nav \{[^}]*display: grid;[^}]*grid-template-columns: minmax\(0, 1fr\) auto;/);
+  assert.match(mobileStyles, /\.nav \.button \{[^}]*justify-self: end;[^}]*align-self: center;/);
+  assert.match(mobileStyles, /\.nav \.button \{[^}]*white-space: nowrap;/);
+});
