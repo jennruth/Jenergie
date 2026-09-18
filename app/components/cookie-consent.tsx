@@ -1,6 +1,6 @@
 export function CookieConsent() {
   return (
-    <aside className="cookie-banner" id="analytics-consent" role="dialog" aria-labelledby="analytics-consent-title" aria-describedby="analytics-consent-description" aria-live="polite" hidden>
+    <aside className="cookie-banner" id="analytics-consent" role="dialog" aria-labelledby="analytics-consent-title" aria-describedby="analytics-consent-description" aria-live="polite" hidden suppressHydrationWarning>
       <div>
         <strong id="analytics-consent-title">Your privacy choices</strong>
         <p id="analytics-consent-description">Jenergie uses optional Google Analytics cookies to see how people use the website and contact links. Analytics only loads if you allow it. Read Google’s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a>.</p>
