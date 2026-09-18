@@ -6,9 +6,9 @@ Jenergie provides sports massage therapy in Higham Ferrers, near Rushden, for pe
 
 Focused, hands-on treatment is planned around what feels tight or uncomfortable, how you move and what you would like help with. People may visit after exercise, because work or everyday routines leave them feeling stiff, or for regular muscular maintenance. You do not need to be an athlete.
 
-## Recovery and mobility
+## Recovery and movement within sports massage
 
-Treatment may support tired muscles after training, everyday stiffness and movement confidence. Each appointment starts with a conversation, followed by a simple movement assessment where useful. Jenni then focuses the treatment on what you have discussed and explains any straightforward aftercare.
+Sports massage may support tired muscles after training, everyday stiffness and movement confidence. This is a focus for your massage, not a separate appointment. Each session starts with a conversation, followed by a simple movement assessment where useful. Jenni then focuses the treatment on what you have discussed and explains any straightforward aftercare.
 
 ## Personal training
 

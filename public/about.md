@@ -4,6 +4,8 @@ Hi, I'm Jenni. I run Jenergie, my sports massage practice in Higham Ferrers, clo
 
 People come to see me for all sorts of reasons. You might have tight or tired muscles after training, feel stiff after a long week at work, have an area that never seems to move quite right or simply want some regular maintenance. You do not need to be an athlete. Whatever brings you in, I will take the time to understand what is going on and what you would like to get from the session.
 
+I hold a Focus Awards Level 3 Diploma in Sports Massage Therapy (RQF). I bring that training to every appointment, alongside the time to listen to you and tailor the session to what you need.
+
 We will start your appointment with a chat about how you are feeling and anything that could affect your treatment. I may also look at how you move before we begin. During the massage, I will explain what I am doing and check that you are comfortable. If it would help, I can give you a few simple ideas for looking after the area afterwards. There is no one-size-fits-all routine here. Your appointment is about you.
 
 I also offer one-to-one personal training and bespoke exercise plans. These are completely optional, but they may be useful if you would like more structure with strength, movement or feeling confident with exercise. If you are curious, just ask me and we can talk through whether it would suit you and your goals.

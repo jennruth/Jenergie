@@ -78,6 +78,10 @@ test("renders substantial Jenergie trust and agent resource pages", async () => 
     assert.ok(html.includes('type="text/markdown"'), `${path} markdown alternate type`);
     assert.ok(html.includes(`href="${markdown}"`) || html.includes(`href="https://jenergie.co.uk${markdown}"`), `${path} markdown alternate URL`);
     assert.match(html, /Insure4Sport Personal Trainer Insurance/, `${path} insurance badge`);
+    assert.match(html, /data-cookie-settings/, `${path} cookie settings control`);
+    assert.match(html, /id="analytics-consent"/, `${path} privacy choices banner`);
+    assert.match(html, /data-analytics-choice="denied"/, `${path} necessary-only choice`);
+    assert.match(html, /data-analytics-choice="granted"/, `${path} analytics choice`);
   }
 });
 
@@ -89,7 +93,17 @@ test("renders the About page in Jenni's friendly first-person voice", async () =
   assert.match(html, /I run Jenergie/);
   assert.match(html, /People come to see me for all sorts of reasons/);
   assert.match(html, /Your appointment is about you/);
+  assert.match(html, /Focus Awards Level 3 Diploma in Sports Massage Therapy \(RQF\)/);
+  assert.doesNotMatch(html, /CUST180780|RQF135949/);
   assert.doesNotMatch(html, /Jenni will ask|Jenni can talk|Jenni asks/);
+});
+
+test("presents recovery as part of sports massage rather than a separate appointment", async () => {
+  const response = await render("/treatments");
+  const html = await response.text();
+  assert.match(html, /Part of sports massage/);
+  assert.match(html, /This is a focus for your massage, not a separate appointment/);
+  assert.match(html, /Enquire about sports massage/);
 });
 
 test("renders the published cancellation policy and its key terms", async () => {
@@ -205,11 +219,19 @@ test("exports self-hosted GSAP scroll animations with reduced-motion support", a
   assert.ok(scrollTriggerFile.size > 20_000, "ScrollTrigger should be self-hosted");
 });
 
-test("keeps the main navigation button aligned on mobile", async () => {
+test("keeps mobile contact aligned and exposes the full menu on every page", async () => {
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   const mobileStyles = css.match(/@media \(max-width: 640px\) \{([\s\S]*?)\n\}/)?.[1] ?? "";
 
-  assert.match(mobileStyles, /\.nav \{[^}]*display: grid;[^}]*grid-template-columns: minmax\(0, 1fr\) auto;/);
+  assert.match(mobileStyles, /\.nav \{[^}]*display: grid;[^}]*grid-template-columns: minmax\(0, 1fr\) auto auto;/);
   assert.match(mobileStyles, /\.nav \.button \{[^}]*justify-self: end;[^}]*align-self: center;/);
   assert.match(mobileStyles, /\.nav \.button \{[^}]*white-space: nowrap;/);
+  assert.match(mobileStyles, /\.mobile-menu \{[^}]*position: static;/);
+  for (const path of ["/", "/about", "/treatments", "/prices", "/contact", "/privacy"]) {
+    const html = await (await render(path)).text();
+    assert.match(html, /<details class="mobile-menu">/, path);
+    for (const label of ["Home", "Treatments", "Prices", "About", "Contact Jenni"]) {
+      assert.match(html, new RegExp(`>${label}</a>`), `${path}: ${label}`);
+    }
+  }
 });

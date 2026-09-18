@@ -20,9 +20,10 @@ const services = [
   },
   {
     number: "02",
-    title: "Recovery and mobility",
-    copy: "Useful for tired muscles after training, everyday stiffness or regular maintenance. Each appointment is based on how your body feels on the day.",
-    tag: "Move with ease",
+    title: "Recovery and movement",
+    copy: "Sports massage can be tailored to tired muscles after training, everyday stiffness or regular maintenance. This is a focus for your massage, not a separate appointment.",
+    tag: "Part of sports massage",
+    enquiry: "sports massage",
   },
   {
     number: "03",
@@ -56,7 +57,7 @@ export default function TreatmentsPage() {
               <p className="service-tag">{service.tag}</p>
               <h2>{service.title}</h2>
               <p>{service.copy}</p>
-              <a href="/contact/" aria-label={`Enquire about ${service.title}`}>Contact Jenni <span aria-hidden="true">↗</span></a>
+              <a href="/contact/" aria-label={`Enquire about ${service.enquiry ?? service.title}`}>Contact Jenni <span aria-hidden="true">↗</span></a>
             </article>
           ))}
         </div>

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { InsuranceBadge } from "./insurance-badge";
+import { MobileNav } from "./mobile-nav";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
@@ -31,6 +32,7 @@ export function InfoPage({ eyebrow, title, intro, children }: InfoPageProps) {
           <Link href="/prices/">Prices</Link>
           <Link href="/about/">About</Link>
         </div>
+        <MobileNav />
         <Link className="button button-small" href="/contact/">Contact Jenni <Arrow /></Link>
       </nav>
 
@@ -60,6 +62,7 @@ export function InfoPage({ eyebrow, title, intro, children }: InfoPageProps) {
             <Link href="/privacy/">Privacy</Link>
             <Link href="/agent-resources/">Agent resources</Link>
           </div>
+          <button className="cookie-settings" type="button" data-cookie-settings>Cookie settings</button>
         </div>
       </footer>
     </main>

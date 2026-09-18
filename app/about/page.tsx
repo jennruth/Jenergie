@@ -26,6 +26,13 @@ export default function AboutPage() {
       </section>
 
       <section>
+        <h2>My qualification</h2>
+        <p>
+          I hold a Focus Awards Level 3 Diploma in Sports Massage Therapy (RQF). I bring that training to every appointment, alongside the time to listen to you and tailor the session to what you need.
+        </p>
+      </section>
+
+      <section>
         <h2>What to expect when you visit</h2>
         <p>
           We will start with a chat about how you are feeling, what you have noticed and anything that could affect your treatment. I may also look at how you move before we begin. During the massage, I will explain what I am doing and check that you are comfortable. If it would be helpful, I can also give you a few simple ideas for looking after the area afterwards. There is no one-size-fits-all routine here. Your appointment is about you.

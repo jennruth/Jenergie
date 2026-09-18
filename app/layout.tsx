@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { CookieConsent } from "./components/cookie-consent";
 import "./globals.css";
 
 const siteUrl = "https://jenergie.co.uk";
@@ -217,7 +218,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: analyticsScript }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}<CookieConsent /></body>
     </html>
   );
 }
