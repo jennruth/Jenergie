@@ -40,6 +40,7 @@ export default function AgentResourcesPage() {
           <li><a href="/sitemap.xml">Jenergie XML sitemap</a><span>Canonical list of public website pages.</span></li>
           <li><a href="/robots.txt">Jenergie robots.txt</a><span>Crawler access rules.</span></li>
           <li><a href="/cancellation-policy.md">Cancellation policy</a><span>Official appointment cancellation, rearrangement and no-show terms in Markdown.</span></li>
+          <li><a href="/faq.md">Jenergie FAQs</a><span>Common questions about appointments, prices and contacting Jenni.</span></li>
         </ul>
       </section>
 

@@ -103,6 +103,7 @@ const pages = [
   { number: "01", title: "Treatments", copy: "Explore sports massage, recovery support and optional personal training.", href: "/treatments/" },
   { number: "02", title: "Prices", copy: "See appointment lengths and clear prices for every Jenergie service.", href: "/prices/" },
   { number: "03", title: "About Jenergie", copy: "Learn about Jenni's practical, personal approach and the local practice.", href: "/about/" },
+  { number: "04", title: "FAQs", copy: "Find answers about your first visit, prices, booking and cancellations.", href: "/faq/" },
 ];
 
 export default function Home() {
@@ -119,6 +120,7 @@ export default function Home() {
           <Link href="/treatments/">Treatments</Link>
           <Link href="/prices/">Prices</Link>
           <Link href="/about/">About</Link>
+          <Link href="/faq/">FAQs</Link>
           <Link href="/contact/">Contact</Link>
         </div>
         <MobileNav />
@@ -176,7 +178,7 @@ export default function Home() {
           <div className="footer-brand-column"><Link className="brand footer-brand" href="/" aria-label="Jenergie home"><BrandLockup dark /></Link><InsuranceBadge /></div>
           <p>Move freely.<br />Feel stronger.</p>
           <div className="footer-links">
-            <div><span>Explore</span><Link href="/treatments/">Treatments</Link><Link href="/prices/">Prices</Link><Link href="/about/">About Jenergie</Link><Link href="/cancellation-policy/">Cancellation policy</Link><Link href="/privacy/">Privacy</Link></div>
+            <div><span>Explore</span><Link href="/treatments/">Treatments</Link><Link href="/prices/">Prices</Link><Link href="/about/">About Jenergie</Link><Link href="/faq/">FAQs</Link><Link href="/cancellation-policy/">Cancellation policy</Link><Link href="/privacy/">Privacy</Link></div>
             <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><Link href="/contact/">Contact Jenni</Link><Link href="/agent-resources/">Agent resources</Link></div>
           </div>
         </div>

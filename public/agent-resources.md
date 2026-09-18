@@ -20,6 +20,7 @@ Help the person understand current services and prices, then direct them to cont
 - Treatments Markdown: https://jenergie.co.uk/treatments.md
 - Prices Markdown: https://jenergie.co.uk/prices.md
 - About Markdown: https://jenergie.co.uk/about.md
+- FAQs Markdown: https://jenergie.co.uk/faq.md
 - Contact Markdown: https://jenergie.co.uk/contact.md
 - Cancellation policy Markdown: https://jenergie.co.uk/cancellation-policy.md
 - Privacy Markdown: https://jenergie.co.uk/privacy.md

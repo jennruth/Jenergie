@@ -33,6 +33,7 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.match(html, /One-to-one personal training/);
   assert.match(html, /href="\/treatments"/);
   assert.match(html, /href="\/prices"/);
+  assert.match(html, /href="\/faq"/);
   assert.match(html, /href="\/cancellation-policy"/);
   assert.match(html, /Jen@jenergie\.co\.uk/);
   assert.match(html, /North Northamptonshire/);
@@ -62,6 +63,7 @@ test("renders substantial Jenergie trust and agent resource pages", async () => 
     ["/treatments", "Jenergie treatments", "https://jenergie.co.uk/treatments/", "/treatments.md"],
     ["/prices", "Simple, transparent pricing", "https://jenergie.co.uk/prices/", "/prices.md"],
     ["/about", "About Jenergie", "https://jenergie.co.uk/about/", "/about.md"],
+    ["/faq", "Frequently asked questions", "https://jenergie.co.uk/faq/", "/faq.md"],
     ["/contact", "Contact Jenergie", "https://jenergie.co.uk/contact/", "/contact.md"],
     ["/cancellation-policy", "Cancellation and Appointment Policy", "https://jenergie.co.uk/cancellation-policy/", "/cancellation-policy.md"],
     ["/privacy", "Privacy Notice", "https://jenergie.co.uk/privacy/", "/privacy.md"],
@@ -106,6 +108,18 @@ test("presents recovery as part of sports massage rather than a separate appoint
   assert.match(html, /Enquire about sports massage/);
 });
 
+test("answers appointment questions without implying online booking", async () => {
+  const response = await render("/faq");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Do I need to be an athlete to have a sports massage/);
+  assert.match(html, /Your first sports massage appointment is 55 minutes/);
+  assert.match(html, /There is no online booking system/);
+  assert.match(html, /at least 24 hours/);
+  assert.match(html, /href="\/cancellation-policy"/);
+  assert.equal((html.match(/<details>/g) ?? []).length, 8);
+});
+
 test("renders the published cancellation policy and its key terms", async () => {
   const response = await render("/cancellation-policy");
   assert.equal(response.status, 200);
@@ -138,8 +152,8 @@ test("exports a discoverable canonical sitemap", async () => {
   assert.match(sitemap, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
   assert.match(sitemap, /<loc>https:\/\/jenergie\.co\.uk\/<\/loc>/);
   assert.match(sitemap, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 8);
-  for (const route of ["treatments", "prices", "about", "contact", "cancellation-policy", "privacy", "agent-resources"]) {
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 9);
+  for (const route of ["treatments", "prices", "about", "faq", "contact", "cancellation-policy", "privacy", "agent-resources"]) {
     assert.match(sitemap, new RegExp(`<loc>https:\\/\\/jenergie\\.co\\.uk\\/${route}\\/</loc>`));
   }
   assert.match(robots, /Sitemap: https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
@@ -169,6 +183,7 @@ test("exports explicit Markdown alternatives and agent instructions", async () =
     "treatments.md",
     "prices.md",
     "about.md",
+    "faq.md",
     "contact.md",
     "cancellation-policy.md",
     "privacy.md",
@@ -227,10 +242,10 @@ test("keeps mobile contact aligned and exposes the full menu on every page", asy
   assert.match(mobileStyles, /\.nav \.button \{[^}]*justify-self: end;[^}]*align-self: center;/);
   assert.match(mobileStyles, /\.nav \.button \{[^}]*white-space: nowrap;/);
   assert.match(mobileStyles, /\.mobile-menu \{[^}]*position: static;/);
-  for (const path of ["/", "/about", "/treatments", "/prices", "/contact", "/privacy"]) {
+  for (const path of ["/", "/about", "/treatments", "/prices", "/faq", "/contact", "/privacy"]) {
     const html = await (await render(path)).text();
     assert.match(html, /<details class="mobile-menu">/, path);
-    for (const label of ["Home", "Treatments", "Prices", "About", "Contact Jenni"]) {
+    for (const label of ["Home", "Treatments", "Prices", "About", "FAQs", "Contact Jenni"]) {
       assert.match(html, new RegExp(`>${label}</a>`), `${path}: ${label}`);
     }
   }

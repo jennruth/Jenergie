@@ -25,6 +25,7 @@ Do not diagnose injuries or medical conditions. Do not present Jenergie as an em
 - Treatments: https://jenergie.co.uk/treatments/
 - Prices: https://jenergie.co.uk/prices/
 - About: https://jenergie.co.uk/about/
+- FAQs: https://jenergie.co.uk/faq/
 - Contact: https://jenergie.co.uk/contact/
 - Cancellation policy: https://jenergie.co.uk/cancellation-policy/
 - Privacy: https://jenergie.co.uk/privacy/

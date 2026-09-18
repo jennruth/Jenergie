@@ -22,6 +22,7 @@ Jenergie does not use an online booking system. Email Jen@jenergie.co.uk or call
 - Treatments: https://jenergie.co.uk/treatments/
 - Prices: https://jenergie.co.uk/prices/
 - About Jenergie: https://jenergie.co.uk/about/
+- Frequently asked questions: https://jenergie.co.uk/faq/
 - Contact Jenergie: https://jenergie.co.uk/contact/
 - Cancellation and appointment policy: https://jenergie.co.uk/cancellation-policy/
 - Privacy notice: https://jenergie.co.uk/privacy/
