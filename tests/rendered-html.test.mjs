@@ -87,6 +87,26 @@ test("renders substantial Jenergie trust and agent resource pages", async () => 
   }
 });
 
+test("publishes the current Jenergie privacy notice consistently", async () => {
+  const response = await render("/privacy");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Jennifer Meadows, trading as Jenergie/);
+  assert.match(html, /Last updated 19 September 2026/);
+  assert.match(html, /within 12 months of the last meaningful contact/);
+  assert.match(html, /no longer than 14 months/);
+  assert.match(html, /Tally acts as a data processor/);
+  assert.match(html, /Switzerland, Germany or Norway/);
+  assert.match(html, /href="https:\/\/tally\.so\/help\/gdpr"/);
+  assert.match(html, /href="https:\/\/proton\.me\/drive\/privacy-policy"/);
+
+  const markdown = await readFile(new URL("../public/privacy.md", import.meta.url), "utf8");
+  assert.match(markdown, /Jennifer Meadows, trading as Jenergie/);
+  assert.match(markdown, /Last updated 19 September 2026/);
+  assert.match(markdown, /within 12 months of the last meaningful contact/);
+  assert.match(markdown, /no longer than 14 months/);
+});
+
 test("renders the About page in Jenni's friendly first-person voice", async () => {
   const response = await render("/about");
   assert.equal(response.status, 200);
