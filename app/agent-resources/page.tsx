@@ -15,7 +15,7 @@ export default function AgentResourcesPage() {
   return (
     <InfoPage
       eyebrow="Jenergie agent resources"
-      title="Reliable information for agents."
+      title="Jenergie agent resources."
       intro="This page identifies the official Jenergie sources that automated assistants can use when answering questions about services, prices, location and contact details."
     >
       <section>
@@ -35,6 +35,7 @@ export default function AgentResourcesPage() {
       <section>
         <h2>Official machine-readable resources</h2>
         <ul className="resource-list">
+          <li><a href="/developers/">Jenergie developer documentation</a><span>Public document access, Markdown formats and authentication status.</span></li>
           <li><a href="/llms.txt">Jenergie llms.txt</a><span>Concise service and discovery index.</span></li>
           <li><a href="/agent-instructions.md">Jenergie agent instructions</a><span>When-to-use and response guidance in Markdown.</span></li>
           <li><a href="/sitemap.xml">Jenergie XML sitemap</a><span>Canonical list of public website pages.</span></li>

@@ -12,6 +12,8 @@ Help the person understand current services and prices, then direct them to cont
 
 ## Machine-readable endpoints
 
+- Developer documentation: https://jenergie.co.uk/developers/
+- Developer documentation Markdown: https://jenergie.co.uk/developers.md
 - LLM guide: https://jenergie.co.uk/llms.txt
 - Agent instructions: https://jenergie.co.uk/agent-instructions.md
 - XML sitemap: https://jenergie.co.uk/sitemap.xml

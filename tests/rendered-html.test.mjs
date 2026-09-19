@@ -68,6 +68,7 @@ test("renders substantial Jenergie trust and agent resource pages", async () => 
     ["/cancellation-policy", "Cancellation and Appointment Policy", "https://jenergie.co.uk/cancellation-policy/", "/cancellation-policy.md"],
     ["/privacy", "Privacy Notice", "https://jenergie.co.uk/privacy/", "/privacy.md"],
     ["/agent-resources", "Jenergie Agent and Developer Resources", "https://jenergie.co.uk/agent-resources/", "/agent-resources.md"],
+    ["/developers", "Jenergie Developer Documentation", "https://jenergie.co.uk/developers/", "/developers.md"],
   ];
 
   for (const [path, title, canonical, markdown] of pages) {
@@ -194,9 +195,8 @@ test("exports a discoverable canonical sitemap", async () => {
   assert.match(sitemap, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
   assert.match(sitemap, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
   assert.match(sitemap, /<loc>https:\/\/jenergie\.co\.uk\/<\/loc>/);
-  assert.match(sitemap, /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/);
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 9);
-  for (const route of ["treatments", "prices", "about", "faq", "contact", "cancellation-policy", "privacy", "agent-resources"]) {
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 10);
+  for (const route of ["treatments", "prices", "about", "faq", "contact", "cancellation-policy", "privacy", "agent-resources", "developers"]) {
     assert.match(sitemap, new RegExp(`<loc>https:\\/\\/jenergie\\.co\\.uk\\/${route}\\/</loc>`));
   }
   assert.match(robots, /Sitemap: https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
@@ -232,6 +232,7 @@ test("exports explicit Markdown alternatives and agent instructions", async () =
     "privacy.md",
     "agent-resources.md",
     "agent-instructions.md",
+    "developers.md",
   ];
 
   for (const file of files) {

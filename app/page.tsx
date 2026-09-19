@@ -14,11 +14,13 @@ const structuredData = [
     name: "Jenergie",
     alternateName: "Jenergie Sports Massage Therapy",
     inLanguage: "en-GB",
+    publisher: { "@id": `${siteUrl}/#organization` },
   },
   {
     "@context": "https://schema.org",
     "@type": "HealthAndBeautyBusiness",
     "@id": `${siteUrl}/#business`,
+    parentOrganization: { "@id": `${siteUrl}/#organization` },
     name: "Jenergie",
     url: `${siteUrl}/`,
     logo: `${siteUrl}/brand/jenergie-icon.png`,

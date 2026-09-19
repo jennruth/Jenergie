@@ -12,7 +12,10 @@
     "build": "pnpm run prepare:vendor && vinext build",
     "build:pages": "pnpm run build && node scripts/export-github-pages.mjs",
     "start": "vinext start",
-    "test": "pnpm run build:pages && node --test tests/rendered-html.test.mjs",
+    "test": "pnpm run build:pages && node --test tests/*.test.mjs",
+    "test:http": "node --test tests/agent-http.test.mjs",
+    "verify:public": "node scripts/verify-public.mjs",
+    "preview:agent": "wrangler dev --config wrangler.agent.jsonc --port 8787",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern github-pages --ignore-pattern work --ignore-pattern public/vendor",
     "db:generate": "drizzle-kit generate"
   },

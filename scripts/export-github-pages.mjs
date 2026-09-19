@@ -1,8 +1,7 @@
-import { execFile } from "node:child_process";
 import { cp, mkdir, readdir, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { promisify } from "node:util";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { publicPages, sitemapXml } from "../worker/public-pages.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectDirectory = path.resolve(scriptDirectory, "..");
@@ -10,8 +9,6 @@ const clientDirectory = path.join(projectDirectory, "dist", "client");
 const serverEntry = path.join(projectDirectory, "dist", "server", "index.js");
 const outputDirectory = path.join(projectDirectory, "github-pages");
 const appDirectory = path.join(projectDirectory, "app");
-const canonicalSiteUrl = "https://jenergie.co.uk";
-const execFileAsync = promisify(execFile);
 
 async function discoverPublicRoutes(directory = appDirectory, segments = []) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -43,57 +40,6 @@ async function discoverPublicRoutes(directory = appDirectory, segments = []) {
   }
 
   return [...new Set(routes)].sort();
-}
-
-function escapeXml(value) {
-  return value.replace(/[<>&'"]/g, (character) => ({
-    "<": "&lt;",
-    ">": "&gt;",
-    "&": "&amp;",
-    "'": "&apos;",
-    '"': "&quot;",
-  })[character]);
-}
-
-async function getSiteLastModified() {
-  const { stdout } = await execFileAsync(
-    "git",
-    ["log", "-1", "--format=%cI", "--", "app", "public"],
-    { cwd: projectDirectory },
-  );
-  const value = stdout.trim();
-
-  if (!value || Number.isNaN(Date.parse(value))) {
-    throw new Error("Unable to determine the site's last modification date.");
-  }
-
-  return value.slice(0, 10);
-}
-
-async function createSitemap(routes) {
-  const lastModified = await getSiteLastModified();
-  if (!routes.includes("/")) {
-    throw new Error("The sitemap is missing the homepage.");
-  }
-
-  const urls = routes.map((route) => {
-    const canonicalRoute = route === "/" ? route : `${route}/`;
-    const location = new URL(canonicalRoute, `${canonicalSiteUrl}/`).href;
-    return [
-      "  <url>",
-      `    <loc>${escapeXml(location)}</loc>`,
-      `    <lastmod>${lastModified}</lastmod>`,
-      "  </url>",
-    ].join("\n");
-  });
-
-  return [
-    '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ...urls,
-    "</urlset>",
-    "",
-  ].join("\n");
 }
 
 async function renderRoute(worker, route) {
@@ -156,6 +102,9 @@ const workerUrl = pathToFileURL(serverEntry);
 workerUrl.searchParams.set("pages-export", `${Date.now()}`);
 const { default: worker } = await import(workerUrl.href);
 const routes = await discoverPublicRoutes();
+if (JSON.stringify(routes) !== JSON.stringify(Object.keys(publicPages).sort())) {
+  throw new Error("Public page registry must match every exported route for Markdown negotiation.");
+}
 
 for (const route of routes) {
   const response = await renderRoute(worker, route);
@@ -213,6 +162,6 @@ if (
 await validateAssetReferences(notFoundHtml, outputDirectory);
 await writeFile(path.join(outputDirectory, "404.html"), notFoundHtml, "utf8");
 await writeFile(path.join(outputDirectory, ".nojekyll"), "", "utf8");
-await writeFile(path.join(outputDirectory, "sitemap.xml"), await createSitemap(routes), "utf8");
+await writeFile(path.join(outputDirectory, "sitemap.xml"), sitemapXml(), "utf8");
 
 console.log(`GitHub Pages export created with ${routes.length} routes at ${outputDirectory}`);
