@@ -16,30 +16,26 @@ export default function ContactPage() {
     <InfoPage
       eyebrow="Contact Jenergie"
       title="Ask a question or arrange a session."
-      intro="Send Jenni a message using the form below, or get in touch by email or phone. She will help you choose the right appointment and confirm availability."
+      intro="Send me a message using the form below, or email or call me directly. I can help you choose the right appointment and confirm availability."
     >
-      <section aria-label="Contact Jenni enquiry form">
-        <iframe
-          src="https://tally.so/embed/xXqDQJ?alignLeft=1&hideTitle=1&transparentBackground=1"
-          title="Contact Jenni enquiry form"
-          width="100%"
-          height="950"
-          style={{ border: 0 }}
-        />
-        <p>Having trouble with the form? <a href="https://tally.so/r/xXqDQJ" target="_blank" rel="noopener noreferrer">Open the contact form in a new tab</a> or email <a href="mailto:jen@jenergie.co.uk">jen@jenergie.co.uk</a>.</p>
-      </section>
-      <section className="contact-details" aria-label="Jenergie contact details">
-        <div>
-          <span>Email</span>
-          <a href="mailto:Jen@jenergie.co.uk?subject=Jenergie%20enquiry">Jen@jenergie.co.uk</a>
+      <section className="contact-enquiry" aria-label="Contact Jenni">
+        <div className="contact-options">
+          <h2>Email or call</h2>
+          <p>I am happy to talk through the options before you decide.</p>
+          <a href="mailto:Jen@jenergie.co.uk?subject=Jenergie%20enquiry"><span>Email</span><strong>Jen@jenergie.co.uk</strong></a>
+          <a href="tel:+447547254349"><span>Phone</span><strong>07547 254349</strong></a>
+          <p className="contact-location">Based in Higham Ferrers, North Northamptonshire, close to Rushden.</p>
         </div>
-        <div>
-          <span>Phone</span>
-          <a href="tel:+447547254349">07547 254349</a>
-        </div>
-        <div>
-          <span>Location</span>
-          <strong>Higham Ferrers, North Northamptonshire</strong>
+        <div className="contact-form-wrap">
+          <h2>Send a message</h2>
+          <iframe
+            src="https://tally.so/embed/xXqDQJ?alignLeft=1&hideTitle=1&transparentBackground=1"
+            title="Contact Jenni enquiry form"
+            width="100%"
+            height="950"
+            style={{ border: 0 }}
+          />
+          <p>Having trouble with the form? <a href="https://tally.so/r/xXqDQJ" target="_blank" rel="noopener noreferrer">Open it in a new tab</a> or email <a href="mailto:jen@jenergie.co.uk">jen@jenergie.co.uk</a>.</p>
         </div>
       </section>
 

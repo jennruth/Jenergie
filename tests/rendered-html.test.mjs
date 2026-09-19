@@ -120,6 +120,29 @@ test("answers appointment questions without implying online booking", async () =
   assert.equal((html.match(/<details>/g) ?? []).length, 8);
 });
 
+test("puts direct contact choices beside a wider enquiry form", async () => {
+  const html = await (await render("/contact")).text();
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(html, /class="contact-enquiry"/);
+  assert.match(html, /class="contact-options"/);
+  assert.match(html, /href="tel:\+447547254349"/);
+  assert.match(html, /href="mailto:Jen@jenergie\.co\.uk\?subject=Jenergie%20enquiry"/);
+  assert.ok(html.indexOf("class=\"contact-options\"") < html.indexOf("title=\"Contact Jenni enquiry form\""));
+  assert.match(css, /\.contact-enquiry \{[^}]*grid-template-columns: minmax\(0, \.65fr\) minmax\(0, 1\.35fr\)/);
+  assert.match(css, /\.contact-form-wrap iframe \{[^}]*width: 100%/);
+  assert.match(css, /\.info-content > \.contact-enquiry \{[^}]*grid-template-columns: 1fr/);
+});
+
+test("uses shorter inner-page introductions on desktop and mobile", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  const mobileStyles = css.match(/@media \(max-width: 640px\) \{([\s\S]*?)\n\}/)?.[1] ?? "";
+
+  assert.match(css, /\.info-hero-inner \{ padding-top: 76px; padding-bottom: 74px; \}/);
+  assert.match(mobileStyles, /\.info-hero-inner \{ padding-top: 48px; padding-bottom: 50px; \}/);
+  assert.match(mobileStyles, /\.info-hero h1 \{ font-size: 48px; \}/);
+});
+
 test("renders the published cancellation policy and its key terms", async () => {
   const response = await render("/cancellation-policy");
   assert.equal(response.status, 200);
