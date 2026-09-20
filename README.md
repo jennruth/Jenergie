@@ -145,10 +145,13 @@ pnpm run verify:public -- https://jenergie.co.uk --static-host --report work/age
 ```
 
 The verifier checks all public page URLs and slash variants, every Markdown
-document, llms.txt, robots.txt, sitemap.xml, exported public assets, trust-page
+document, llms.txt, robots.txt, sitemap.xml, public assets, trust-page
 lengths, identity data, HEAD, 404 recovery and negotiation. `--static-host`
 records unsupported server behavior as hosting limitations; it never hides
-missing content, broken links or incorrect status codes. CI builds and runs
+missing content, broken links or incorrect status codes. Local verification
+includes all generated assets; live verification follows the deployed HTML/CSS
+and public asset files because internal build IDs differ between builds.
+CI builds and runs
 the regression tests before publishing to Pages.
 
 The `worker/public-pages.mjs` registry is checked against every exported app

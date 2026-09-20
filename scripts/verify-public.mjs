@@ -127,9 +127,11 @@ for (const [accept, expected] of [["application/json", 406], ["text/html;q=0.2,t
     assertVary(response);
   }, true);
 }
-// Verify every exported public asset, including fonts/chunks referenced by CSS
-// or scripts rather than directly by HTML. Hosting control files are not URLs.
-async function exportedAssets(directory = new URL("../github-pages/", import.meta.url), prefix = "/") {
+// Independent builds have different internal chunk/build IDs. Locally verify
+// the complete export; remotely check authored public assets and the URLs
+// actually referenced by live HTML/CSS instead of assuming local build IDs.
+const local = ["localhost", "127.0.0.1", "[::1]"].includes(new URL(base).hostname);
+async function exportedAssets(directory = new URL(local ? "../github-pages/" : "../public/", import.meta.url), prefix = "/") {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     if (entry.name.startsWith(".") || ["_headers", "_redirects"].includes(entry.name)) continue;
     if (entry.isDirectory()) await exportedAssets(new URL(`${entry.name}/`, directory), `${prefix}${entry.name}/`);
@@ -137,6 +139,16 @@ async function exportedAssets(directory = new URL("../github-pages/", import.met
   }
 }
 await exportedAssets();
+for (const path of [...assetUrls].filter((path) => path.endsWith(".css"))) {
+  await check(`Stylesheet dependencies ${path}`, async () => {
+    const response = await inspect(path);
+    assert.equal(response.status, 200);
+    for (const match of response.body.matchAll(/url\(["']?([^"')]+)["']?\)/g)) {
+      const url = new URL(match[1], response.url);
+      if (url.origin === new URL(base).origin) assetUrls.add(url.pathname);
+    }
+  });
+}
 for (const path of assetUrls) await check(`Asset ${path}`, async () => {
   const response = await inspect(path, "*/*", "HEAD");
   assert.equal(response.status, 200);
