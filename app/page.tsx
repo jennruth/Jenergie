@@ -162,9 +162,9 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">Explore Jenergie</p>
-            <h2 id="explore-heading">Find what you need,<br /><em>without the long scroll.</em></h2>
+            <h2 id="explore-heading">Everything you need<br /><em>to get started.</em></h2>
           </div>
-          <p>Each area now has its own page, so treatments, prices and contact details are quicker to find.</p>
+          <p>Explore treatments, check current prices, learn what to expect and contact Jenni when you are ready.</p>
         </div>
         <div className="route-grid">
           {pages.map((page) => (
@@ -181,7 +181,7 @@ export default function Home() {
           <p>Move freely.<br />Feel stronger.</p>
           <div className="footer-links">
             <div><span>Explore</span><Link href="/treatments/">Treatments</Link><Link href="/prices/">Prices</Link><Link href="/about/">About Jenergie</Link><Link href="/faq/">FAQs</Link><Link href="/cancellation-policy/">Cancellation policy</Link><Link href="/privacy/">Privacy</Link></div>
-            <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><Link href="/contact/">Contact Jenni</Link><Link href="/agent-resources/">Agent resources</Link></div>
+            <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><Link href="/contact/">Contact Jenni</Link></div>
           </div>
         </div>
         <div className="shell footer-bottom">

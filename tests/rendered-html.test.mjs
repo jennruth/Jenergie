@@ -27,6 +27,10 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.match(html, /Higham Ferrers Sports Massage &amp; Personal Training \| Jenergie/);
   assert.match(html, /Energy for your body/);
   assert.match(html, /Care for your muscles/);
+  assert.match(html, /Everything you need/);
+  assert.match(html, /to get started/);
+  assert.match(html, /Explore treatments, check current prices, learn what to expect/);
+  assert.doesNotMatch(html, /without the long scroll|Each area now has its own page/);
   assert.match(html, /Contact Jenni/);
   assert.doesNotMatch(html, /Book your treatment/);
   assert.match(html, /Personal training/);
@@ -54,6 +58,7 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.match(html, /href="https:\/\/www\.insure4sport\.co\.uk\/covertypes\/ptandfitnessinstructor\/ref=badge"/);
   assert.match(html, /src="\/trust\/insure4sport-insured-badge\.png"/);
   assert.match(html, /alt="Insure4Sport Personal Trainer Insurance"/);
+  assert.doesNotMatch(html, />Agent resources</);
   assert.doesNotMatch(html, /—/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
 });
@@ -144,6 +149,7 @@ test("answers appointment questions without implying online booking", async () =
 test("puts direct contact choices beside a wider enquiry form", async () => {
   const html = await (await render("/contact")).text();
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  const markdown = await readFile(new URL("../public/contact.md", import.meta.url), "utf8");
 
   assert.match(html, /class="contact-enquiry"/);
   assert.match(html, /class="contact-options"/);
@@ -153,6 +159,11 @@ test("puts direct contact choices beside a wider enquiry form", async () => {
   assert.match(css, /\.contact-enquiry \{[^}]*grid-template-columns: minmax\(0, \.65fr\) minmax\(0, 1\.35fr\)/);
   assert.match(css, /\.contact-form-wrap iframe \{[^}]*width: 100%/);
   assert.match(css, /\.info-content > \.contact-enquiry \{[^}]*grid-template-columns: 1fr/);
+  assert.match(html, /covered securely as part of your consultation/);
+  assert.match(html, /do not include detailed health information in your initial enquiry/);
+  assert.doesNotMatch(html, /health conditions or changes in how you feel when you make contact/);
+  assert.match(markdown, /Do not include detailed health information in your initial enquiry/);
+  assert.doesNotMatch(html, />Agent resources</);
 });
 
 test("uses shorter inner-page introductions on desktop and mobile", async () => {

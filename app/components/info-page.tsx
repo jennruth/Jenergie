@@ -62,7 +62,6 @@ export function InfoPage({ eyebrow, title, intro, children }: InfoPageProps) {
             <Link href="/contact/">Contact</Link>
             <Link href="/cancellation-policy/">Cancellation policy</Link>
             <Link href="/privacy/">Privacy</Link>
-            <Link href="/agent-resources/">Agent resources</Link>
           </div>
           <button className="cookie-settings" type="button" data-cookie-settings>Cookie settings</button>
         </div>
