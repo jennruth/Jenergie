@@ -38,6 +38,7 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.match(html, /href="\/treatments"/);
   assert.match(html, /href="\/prices"/);
   assert.match(html, /href="\/faq"/);
+  assert.match(html, /href="\/reviews"/);
   assert.match(html, /href="\/cancellation-policy"/);
   assert.match(html, /Jen@jenergie\.co\.uk/);
   assert.match(html, /North Northamptonshire/);
@@ -70,6 +71,7 @@ test("renders substantial Jenergie trust and agent resource pages", async () => 
     ["/about", "About Jenergie", "https://jenergie.co.uk/about/", "/about.md"],
     ["/faq", "Frequently asked questions", "https://jenergie.co.uk/faq/", "/faq.md"],
     ["/contact", "Contact Jenergie", "https://jenergie.co.uk/contact/", "/contact.md"],
+    ["/reviews", "Jenergie reviews", "https://jenergie.co.uk/reviews/", "/reviews.md"],
     ["/cancellation-policy", "Cancellation and Appointment Policy", "https://jenergie.co.uk/cancellation-policy/", "/cancellation-policy.md"],
     ["/privacy", "Privacy Notice", "https://jenergie.co.uk/privacy/", "/privacy.md"],
     ["/agent-resources", "Jenergie Agent and Developer Resources", "https://jenergie.co.uk/agent-resources/", "/agent-resources.md"],
@@ -90,6 +92,21 @@ test("renders substantial Jenergie trust and agent resource pages", async () => 
     assert.match(html, /id="analytics-consent"/, `${path} privacy choices banner`);
     assert.match(html, /data-analytics-choice="denied"/, `${path} necessary-only choice`);
     assert.match(html, /data-analytics-choice="granted"/, `${path} analytics choice`);
+  }
+});
+
+test("publishes verified Google feedback without ineligible self-serving review schema", async () => {
+  const response = await render("/reviews");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  const markdown = await readFile(new URL("../public/reviews.md", import.meta.url), "utf8");
+
+  for (const body of [html, markdown]) {
+    assert.match(body, /10\/10 service, would recommend Jen to anyone looking for a personal trainer/);
+    assert.match(body, /5\.0/);
+    assert.match(body, /1 (?:public )?Google review/i);
+    assert.match(body, /https:\/\/maps\.app\.goo\.gl\/WaAbT69aPrdSKALi8/);
+    assert.doesNotMatch(body, /aggregateRating|"@type"\s*:\s*"Review"/);
   }
 });
 
@@ -206,8 +223,8 @@ test("exports a discoverable canonical sitemap", async () => {
   assert.match(sitemap, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
   assert.match(sitemap, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
   assert.match(sitemap, /<loc>https:\/\/jenergie\.co\.uk\/<\/loc>/);
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 10);
-  for (const route of ["treatments", "prices", "about", "faq", "contact", "cancellation-policy", "privacy", "agent-resources", "developers"]) {
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 11);
+  for (const route of ["treatments", "prices", "about", "faq", "reviews", "contact", "cancellation-policy", "privacy", "agent-resources", "developers"]) {
     assert.match(sitemap, new RegExp(`<loc>https:\\/\\/jenergie\\.co\\.uk\\/${route}\\/</loc>`));
   }
   assert.match(robots, /Sitemap: https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
@@ -238,6 +255,7 @@ test("exports explicit Markdown alternatives and agent instructions", async () =
     "prices.md",
     "about.md",
     "faq.md",
+    "reviews.md",
     "contact.md",
     "cancellation-policy.md",
     "privacy.md",
@@ -300,7 +318,7 @@ test("keeps mobile contact aligned and exposes the full menu on every page", asy
   for (const path of ["/", "/about", "/treatments", "/prices", "/faq", "/contact", "/privacy"]) {
     const html = await (await render(path)).text();
     assert.match(html, /<details class="mobile-menu">/, path);
-    for (const label of ["Home", "Treatments", "Prices", "About", "FAQs", "Contact Jenni"]) {
+    for (const label of ["Home", "Treatments", "Prices", "About", "FAQs", "Reviews", "Contact Jenni"]) {
       assert.match(html, new RegExp(`>${label}</a>`), `${path}: ${label}`);
     }
   }

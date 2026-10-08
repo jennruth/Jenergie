@@ -45,6 +45,23 @@ test("homepage JSON-LD supplies linked business identity, contact and verified l
   assert.equal(entities.find((item) => item["@type"] === "HealthAndBeautyBusiness").parentOrganization["@id"], organization["@id"]);
 });
 
+test("review content is crawlable through the sitemap and Markdown discovery files", async () => {
+  const [sitemap, robots, llms, index, reviews] = await Promise.all([
+    readFile(new URL("../github-pages/sitemap.xml", import.meta.url), "utf8"),
+    readFile(new URL("../github-pages/robots.txt", import.meta.url), "utf8"),
+    readFile(new URL("../github-pages/llms.txt", import.meta.url), "utf8"),
+    readFile(new URL("../github-pages/index.md", import.meta.url), "utf8"),
+    readFile(new URL("../github-pages/reviews.md", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(sitemap, /<loc>https:\/\/jenergie\.co\.uk\/reviews\/<\/loc>/);
+  assert.match(robots, /Allow: \//);
+  assert.match(robots, /Sitemap: https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
+  assert.match(llms, /https:\/\/jenergie\.co\.uk\/reviews\//);
+  assert.match(index, /https:\/\/jenergie\.co\.uk\/reviews\//);
+  assert.match(reviews, /Google Business Profile/);
+});
+
 test("developer guidance is discoverable, branded and does not invent a booking integration", async () => {
   for (const file of ["developers/index.html", "developers.md"]) {
     const body = await readFile(new URL(`../github-pages/${file}`, import.meta.url), "utf8");

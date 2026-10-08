@@ -123,6 +123,7 @@ export default function Home() {
           <Link href="/prices/">Prices</Link>
           <Link href="/about/">About</Link>
           <Link href="/faq/">FAQs</Link>
+          <Link href="/reviews/">Reviews</Link>
           <Link href="/contact/">Contact</Link>
         </div>
         <MobileNav />
@@ -175,12 +176,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="home-reviews section shell" aria-labelledby="home-reviews-heading">
+        <div className="home-review-copy">
+          <p className="eyebrow">Client feedback</p>
+          <h2 id="home-reviews-heading">Kind words,<br /><em>shared on Google.</em></h2>
+          <p>Read verified feedback from Jenergie clients and follow the link to the original Google Business Profile.</p>
+          <Link className="text-link" href="/reviews/">Read all reviews <Arrow /></Link>
+        </div>
+        <article className="home-review-card">
+          <div className="review-card-top">
+            <span className="review-stars" aria-label="5 out of 5 stars">★★★★★</span>
+            <span>Google review</span>
+          </div>
+          <blockquote>“10/10 service, would recommend Jen to anyone looking for a personal trainer”</blockquote>
+          <footer><strong>Adam M.</strong><span>5.0 from 1 Google review</span></footer>
+        </article>
+      </section>
+
       <footer className="footer">
         <div className="shell footer-main">
           <div className="footer-brand-column"><Link className="brand footer-brand" href="/" aria-label="Jenergie home"><BrandLockup dark /></Link><InsuranceBadge /></div>
           <p>Move freely.<br />Feel stronger.</p>
           <div className="footer-links">
-            <div><span>Explore</span><Link href="/treatments/">Treatments</Link><Link href="/prices/">Prices</Link><Link href="/about/">About Jenergie</Link><Link href="/faq/">FAQs</Link><Link href="/cancellation-policy/">Cancellation policy</Link><Link href="/privacy/">Privacy</Link></div>
+            <div><span>Explore</span><Link href="/treatments/">Treatments</Link><Link href="/prices/">Prices</Link><Link href="/about/">About Jenergie</Link><Link href="/faq/">FAQs</Link><Link href="/reviews/">Reviews</Link><Link href="/cancellation-policy/">Cancellation policy</Link><Link href="/privacy/">Privacy</Link></div>
             <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><Link href="/contact/">Contact Jenni</Link></div>
           </div>
         </div>

@@ -325,6 +325,28 @@ h1 em, h2 em { color: transparent; -webkit-text-stroke: 1.8px currentColor; font
 .route-card h3 { margin: auto 0 13px; font-size: 32px; line-height: 1; letter-spacing: -.045em; font-weight: 600; }
 .route-card p { min-height: 66px; margin: 0 0 24px; color: #666b66; font-size: 14px; line-height: 1.55; }
 .route-card strong { display: flex; justify-content: space-between; padding-top: 17px; border-top: 1px solid var(--line); font-size: 12px; }
+.home-reviews { display: grid; grid-template-columns: .78fr 1.22fr; gap: 80px; align-items: center; border-top: 1px solid var(--line); }
+.home-review-copy h2 { margin: 0; }
+.home-review-copy > p:not(.eyebrow) { max-width: 470px; margin: 28px 0 24px; color: #646964; font-size: 16px; line-height: 1.72; }
+.home-review-card, .review-card { padding: clamp(30px, 5vw, 58px); border-radius: 4px; background: var(--ink); color: white; }
+.review-card-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.16); }
+.review-card-top > span:last-child { color: rgba(255,255,255,.58); text-transform: uppercase; letter-spacing: .13em; font: 600 10px var(--font-geist-mono), monospace; }
+.review-stars { color: var(--energy); letter-spacing: .13em; }
+.home-review-card blockquote, .review-card blockquote { margin: 42px 0; font-size: clamp(28px, 3.25vw, 48px); line-height: 1.08; letter-spacing: -.045em; font-weight: 540; }
+.home-review-card footer, .review-card footer { display: flex; align-items: end; justify-content: space-between; gap: 18px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.16); }
+.home-review-card footer strong, .review-card footer strong { font-size: 15px; }
+.home-review-card footer span, .review-card footer span { color: rgba(255,255,255,.58); font-size: 12px; }
+.reviews-overview { align-items: center; }
+.review-updated { margin-top: 12px !important; font-size: 12px !important; }
+.google-rating { padding: 34px; border: 1px solid var(--line); background: var(--cream); }
+.google-rating > strong { display: block; font-size: 62px; line-height: 1; letter-spacing: -.06em; }
+.google-rating .review-stars { display: block; margin-top: 12px; font-size: 20px; }
+.google-rating p { margin: 12px 0 20px; font-size: 14px; }
+.google-rating a { font-size: 13px; font-weight: 650; }
+.review-list-section { align-items: start; }
+.review-list-section > div > p { margin-top: 14px; font-size: 13px; }
+.review-list-section .review-card { min-width: 0; }
+.review-list-section .review-card blockquote { color: white; }
 .faq-list { border-top: 1px solid var(--line); }
 .faq-list details { border-bottom: 1px solid var(--line); }
 .faq-list summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 23px 0; cursor: pointer; list-style: none; font-size: 18px; font-weight: 620; line-height: 1.35; letter-spacing: -.025em; }
@@ -379,7 +401,7 @@ h1 em, h2 em { color: transparent; -webkit-text-stroke: 1.8px currentColor; font
   .hero { grid-template-columns: 1fr; gap: 70px; padding-top: 70px; }
   .hero-copy { max-width: 680px; }
   .energy-stage { width: min(650px, 100%); margin: 0 auto; }
-  .section-heading, .pricing-heading, .dark-section > .shell, .impact, .location-layout { grid-template-columns: 1fr; gap: 55px; }
+  .section-heading, .pricing-heading, .dark-section > .shell, .impact, .location-layout, .home-reviews { grid-template-columns: 1fr; gap: 55px; }
   .service-grid { grid-template-columns: 1fr 1fr; }
   .service-card:last-child { grid-column: 1 / -1; }
   .route-grid { grid-template-columns: 1fr 1fr; }
@@ -428,6 +450,10 @@ h1 em, h2 em { color: transparent; -webkit-text-stroke: 1.8px currentColor; font
   .service-card, .service-card:last-child { grid-column: auto; min-height: 500px; }
   .route-grid { grid-template-columns: 1fr; }
   .route-card, .route-card:last-child { grid-column: auto; min-height: 250px; }
+  .home-reviews { gap: 38px; }
+  .home-review-card, .review-card { padding: 28px 22px; }
+  .home-review-card blockquote, .review-card blockquote { margin: 32px 0; font-size: 30px; }
+  .home-review-card footer, .review-card footer { align-items: flex-start; flex-direction: column; }
   .faq-list summary { font-size: 17px; }
   .pricing-section { padding: 90px 0; }
   .pricing-heading { margin-bottom: 42px; gap: 27px; }

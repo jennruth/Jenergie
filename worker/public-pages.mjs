@@ -9,6 +9,7 @@ export const publicPages = Object.freeze({
   "/faq": "/faq.md",
   "/prices": "/prices.md",
   "/privacy": "/privacy.md",
+  "/reviews": "/reviews.md",
   "/treatments": "/treatments.md",
 });
 

@@ -13,6 +13,7 @@ export function MobileNav() {
         <Link href="/prices/">Prices</Link>
         <Link href="/about/">About</Link>
         <Link href="/faq/">FAQs</Link>
+        <Link href="/reviews/">Reviews</Link>
         <Link href="/contact/">Contact Jenni</Link>
       </div>
     </details>

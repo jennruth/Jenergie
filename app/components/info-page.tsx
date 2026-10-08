@@ -32,6 +32,7 @@ export function InfoPage({ eyebrow, title, intro, children }: InfoPageProps) {
           <Link href="/prices/">Prices</Link>
           <Link href="/about/">About</Link>
           <Link href="/faq/">FAQs</Link>
+          <Link href="/reviews/">Reviews</Link>
         </div>
         <MobileNav />
         <Link className="button button-small" href="/contact/">Contact Jenni <Arrow /></Link>
@@ -59,6 +60,7 @@ export function InfoPage({ eyebrow, title, intro, children }: InfoPageProps) {
             <Link href="/prices/">Prices</Link>
             <Link href="/about/">About</Link>
             <Link href="/faq/">FAQs</Link>
+            <Link href="/reviews/">Reviews</Link>
             <Link href="/contact/">Contact</Link>
             <Link href="/cancellation-policy/">Cancellation policy</Link>
             <Link href="/privacy/">Privacy</Link>
