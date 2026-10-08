@@ -13,6 +13,20 @@ Jenergie provides sports massage therapy in Higham Ferrers, near Rushden, for cl
 - One-to-one personal training: one hour, £45
 - Bespoke exercise plan: £70
 
+## Detailed service guides
+
+- Sports massage therapy: https://jenergie.co.uk/smt/
+- Recovery and movement: https://jenergie.co.uk/rm/
+- Personal training: https://jenergie.co.uk/pt/
+
+## Nearby areas served
+
+- Wellingborough: https://jenergie.co.uk/wellingborough/
+- Burton Latimer: https://jenergie.co.uk/burton-latimer/
+- Raunds: https://jenergie.co.uk/raunds/
+- Podington: https://jenergie.co.uk/podington/
+- Irchester: https://jenergie.co.uk/irchester/
+
 ## Contact
 
 Jenergie does not use an online booking system. Email Jen@jenergie.co.uk or call 07547 254349 to ask a question or arrange an appointment.

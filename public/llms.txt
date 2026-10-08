@@ -7,8 +7,19 @@ Jenergie's tagline is "Energy for your body. Care for your muscles." The website
 ## Services
 
 - [Sports massage therapy](https://jenergie.co.uk/treatments/): Focused, hands-on treatment to ease muscular tension, support mobility and help the body feel ready for what comes next.
+- [Sports massage service](https://jenergie.co.uk/smt/): Detailed sports massage expectations, prices and nearby areas served.
+- [Recovery and movement](https://jenergie.co.uk/rm/): A recovery, movement or maintenance focus within a sports massage appointment.
+- [One-to-one personal training](https://jenergie.co.uk/pt/): Individual exercise sessions and bespoke exercise plans available as optional extras.
 - [Sports massage prices](https://jenergie.co.uk/prices/): Initial appointment, 55 minutes, £45; one area, 30 minutes, £35; two areas, 60 minutes, £55.
 - [Personal training](https://jenergie.co.uk/prices/): Optional one-to-one personal training, one hour, £45; bespoke exercise plan, £70.
+
+## Nearby areas served
+
+- [Wellingborough](https://jenergie.co.uk/wellingborough/): Sports massage, recovery support and personal training near Wellingborough, provided from Higham Ferrers.
+- [Burton Latimer](https://jenergie.co.uk/burton-latimer/): Jenergie service guide for clients travelling from Burton Latimer.
+- [Raunds](https://jenergie.co.uk/raunds/): Jenergie service guide for clients travelling from Raunds.
+- [Podington](https://jenergie.co.uk/podington/): Jenergie service guide for clients travelling from Podington.
+- [Irchester](https://jenergie.co.uk/irchester/): Jenergie service guide for clients travelling from Irchester.
 
 ## About Jenergie
 

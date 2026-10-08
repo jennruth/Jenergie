@@ -347,6 +347,25 @@ h1 em, h2 em { color: transparent; -webkit-text-stroke: 1.8px currentColor; font
 .review-list-section > div > p { margin-top: 14px; font-size: 13px; }
 .review-list-section .review-card { min-width: 0; }
 .review-list-section .review-card blockquote { color: white; }
+.section-support-copy { max-width: 700px !important; margin: 18px 0 30px !important; }
+.local-service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 30px; }
+.local-service-card { min-height: 280px; padding: 25px; border: 1px solid var(--line); background: var(--cream); display: flex; flex-direction: column; text-decoration: none !important; transition: transform .25s ease, box-shadow .25s ease; }
+.local-service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 44px rgba(40,45,36,.08); }
+.local-service-card > span { color: #817970; font: 600 10px var(--font-geist-mono), monospace; }
+.local-service-card h3 { margin: auto 0 12px; font-size: 28px; line-height: 1.05; letter-spacing: -.04em; }
+.local-service-card p { min-height: 88px; margin-bottom: 20px; font-size: 14px; line-height: 1.6; }
+.local-service-card strong { display: flex; justify-content: space-between; padding-top: 16px; border-top: 1px solid var(--line); font-size: 12px; }
+.service-check-list { max-width: 760px; margin: 0; padding: 0; list-style: none; }
+.service-check-list li { position: relative; padding: 18px 0 18px 34px; border-bottom: 1px solid var(--line); color: #5f645f; line-height: 1.55; }
+.service-check-list li:first-child { border-top: 1px solid var(--line); }
+.service-check-list li::before { content: "✓"; position: absolute; left: 4px; color: #b54470; font-weight: 700; }
+.location-link-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 28px; }
+.location-link-grid a, .related-service-links a { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 18px 20px; border: 1px solid var(--line); background: var(--cream); text-decoration: none !important; font-size: 15px; font-weight: 630; }
+.location-link-grid a:hover, .related-service-links a:hover { border-color: var(--energy-warm); }
+.related-service-links { display: grid; gap: 12px; }
+.home-areas { border-top: 1px solid var(--line); }
+.location-link-grid-home { grid-template-columns: repeat(5, 1fr); margin-top: 0; }
+.location-link-grid-home a { min-height: 110px; align-items: end; }
 .faq-list { border-top: 1px solid var(--line); }
 .faq-list details { border-bottom: 1px solid var(--line); }
 .faq-list summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 23px 0; cursor: pointer; list-style: none; font-size: 18px; font-weight: 620; line-height: 1.35; letter-spacing: -.025em; }
@@ -403,6 +422,8 @@ h1 em, h2 em { color: transparent; -webkit-text-stroke: 1.8px currentColor; font
   .energy-stage { width: min(650px, 100%); margin: 0 auto; }
   .section-heading, .pricing-heading, .dark-section > .shell, .impact, .location-layout, .home-reviews { grid-template-columns: 1fr; gap: 55px; }
   .service-grid { grid-template-columns: 1fr 1fr; }
+  .local-service-grid { grid-template-columns: 1fr 1fr; }
+  .location-link-grid-home { grid-template-columns: repeat(2, 1fr); }
   .service-card:last-child { grid-column: 1 / -1; }
   .route-grid { grid-template-columns: 1fr 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
@@ -455,6 +476,7 @@ h1 em, h2 em { color: transparent; -webkit-text-stroke: 1.8px currentColor; font
   .home-review-card blockquote, .review-card blockquote { margin: 32px 0; font-size: 30px; }
   .home-review-card footer, .review-card footer { align-items: flex-start; flex-direction: column; }
   .faq-list summary { font-size: 17px; }
+  .local-service-grid, .location-link-grid, .location-link-grid-home { grid-template-columns: 1fr; }
   .pricing-section { padding: 90px 0; }
   .pricing-heading { margin-bottom: 42px; gap: 27px; }
   .price-panel { padding: 23px 20px; min-height: 0; }

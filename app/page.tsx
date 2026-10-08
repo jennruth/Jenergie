@@ -193,6 +193,20 @@ export default function Home() {
         </article>
       </section>
 
+      <section className="home-areas section shell" id="areas" aria-labelledby="areas-heading">
+        <div className="section-heading">
+          <div><p className="eyebrow">Areas served</p><h2 id="areas-heading">Local care from<br /><em>Higham Ferrers.</em></h2></div>
+          <p>Jenergie welcomes clients from nearby towns. Each guide explains the services available and what to know before travelling.</p>
+        </div>
+        <div className="location-link-grid location-link-grid-home">
+          <Link href="/wellingborough/">Wellingborough <Arrow /></Link>
+          <Link href="/burton-latimer/">Burton Latimer <Arrow /></Link>
+          <Link href="/raunds/">Raunds <Arrow /></Link>
+          <Link href="/podington/">Podington <Arrow /></Link>
+          <Link href="/irchester/">Irchester <Arrow /></Link>
+        </div>
+      </section>
+
       <footer className="footer">
         <div className="shell footer-main">
           <div className="footer-brand-column"><Link className="brand footer-brand" href="/" aria-label="Jenergie home"><BrandLockup dark /></Link><InsuranceBadge /></div>

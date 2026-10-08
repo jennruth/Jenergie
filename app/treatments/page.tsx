@@ -17,6 +17,7 @@ const services = [
     title: "Sports massage therapy",
     copy: "Focused treatment to help ease muscular tension and improve the way you move. Your session is planned around what feels uncomfortable and what you would like help with.",
     tag: "Primary service",
+    href: "/smt/",
   },
   {
     number: "02",
@@ -24,12 +25,14 @@ const services = [
     copy: "Sports massage can be tailored to tired muscles after training, everyday stiffness or regular maintenance. This is a focus for your massage, not a separate appointment.",
     tag: "Part of sports massage",
     enquiry: "sports massage",
+    href: "/rm/",
   },
   {
     number: "03",
     title: "One-to-one personal training",
     copy: "Individual sessions for people who want help building strength and moving well. Personal training is available as an extra alongside sports massage.",
     tag: "Available as an extra",
+    href: "/pt/",
   },
 ];
 
@@ -57,7 +60,7 @@ export default function TreatmentsPage() {
               <p className="service-tag">{service.tag}</p>
               <h2>{service.title}</h2>
               <p>{service.copy}</p>
-              <a href="/contact/" aria-label={`Enquire about ${service.enquiry ?? service.title}`}>Contact Jenni <span aria-hidden="true">↗</span></a>
+              <a href={service.href} aria-label={`Learn more about ${service.enquiry ?? service.title}`}>Explore service <span aria-hidden="true">↗</span></a>
             </article>
           ))}
         </div>

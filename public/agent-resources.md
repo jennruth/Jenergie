@@ -20,6 +20,9 @@ Help the person understand current services and prices, then direct them to cont
 - Robots policy: https://jenergie.co.uk/robots.txt
 - Homepage Markdown: https://jenergie.co.uk/index.md
 - Treatments Markdown: https://jenergie.co.uk/treatments.md
+- Sports massage service Markdown: https://jenergie.co.uk/smt.md
+- Recovery and movement Markdown: https://jenergie.co.uk/rm.md
+- Personal training Markdown: https://jenergie.co.uk/pt.md
 - Prices Markdown: https://jenergie.co.uk/prices.md
 - About Markdown: https://jenergie.co.uk/about.md
 - FAQs Markdown: https://jenergie.co.uk/faq.md

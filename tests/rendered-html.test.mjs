@@ -110,6 +110,47 @@ test("publishes verified Google feedback without ineligible self-serving review 
   }
 });
 
+test("publishes substantial service and nearby-town pages with honest local signals", async () => {
+  const serviceRoutes = ["smt", "rm", "pt"];
+  const towns = ["burton-latimer", "irchester", "podington", "raunds", "wellingborough"];
+  const seenTitles = new Set();
+
+  for (const route of serviceRoutes) {
+    const response = await render(`/${route}`);
+    assert.equal(response.status, 200, route);
+    const html = await response.text();
+    assert.ok(pageText(html).length >= 800, `${route} should have useful service content`);
+    assert.ok(html.includes(`rel="canonical" href="https://jenergie.co.uk/${route}/"`), `${route} canonical`);
+    assert.match(html, /"@type":"Service"/, `${route} service schema`);
+    assert.match(html, /Appointments take place.*Higham Ferrers/i, `${route} must state the real location`);
+  }
+
+  for (const town of towns) {
+    const townResponse = await render(`/${town}`);
+    assert.equal(townResponse.status, 200, town);
+    const townHtml = await townResponse.text();
+    assert.ok(pageText(townHtml).length >= 800, `${town} should have useful local content`);
+    assert.match(townHtml, /"@type":"CollectionPage"/, `${town} collection schema`);
+    assert.doesNotMatch(townHtml, /"@type":"LocalBusiness"/, `${town} must not imply another business location`);
+
+    for (const service of serviceRoutes) {
+      const route = `/${town}/${service}`;
+      const response = await render(route);
+      assert.equal(response.status, 200, route);
+      const html = await response.text();
+      const title = html.match(/<title>(.*?)<\/title>/)?.[1];
+      assert.ok(title && !seenTitles.has(title), `${route} should have a unique title`);
+      seenTitles.add(title);
+      assert.ok(pageText(html).length >= 900, `${route} should have useful local service content`);
+      assert.ok(html.includes(`rel="canonical" href="https://jenergie.co.uk${route}/"`), `${route} canonical`);
+      assert.match(html, /"@type":"Service"/, `${route} service schema`);
+      assert.match(html, /"@type":"BreadcrumbList"/, `${route} breadcrumb schema`);
+      assert.match(html, /Appointments take place.*Higham Ferrers/i, `${route} must state the real location`);
+      assert.doesNotMatch(html, /"@type":"LocalBusiness"/, `${route} must not imply another business location`);
+    }
+  }
+});
+
 test("publishes the current Jenergie privacy notice consistently", async () => {
   const response = await render("/privacy");
   assert.equal(response.status, 200);
@@ -148,7 +189,8 @@ test("presents recovery as part of sports massage rather than a separate appoint
   const html = await response.text();
   assert.match(html, /Part of sports massage/);
   assert.match(html, /This is a focus for your massage, not a separate appointment/);
-  assert.match(html, /Enquire about sports massage/);
+  assert.match(html, /href="\/rm\/?"/);
+  assert.match(html, /Explore service/);
 });
 
 test("answers appointment questions without implying online booking", async () => {
@@ -223,8 +265,8 @@ test("exports a discoverable canonical sitemap", async () => {
   assert.match(sitemap, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
   assert.match(sitemap, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
   assert.match(sitemap, /<loc>https:\/\/jenergie\.co\.uk\/<\/loc>/);
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 11);
-  for (const route of ["treatments", "prices", "about", "faq", "reviews", "contact", "cancellation-policy", "privacy", "agent-resources", "developers"]) {
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 34);
+  for (const route of ["treatments", "prices", "about", "faq", "reviews", "contact", "cancellation-policy", "privacy", "agent-resources", "developers", "smt", "rm", "pt", "burton-latimer", "irchester", "podington", "raunds", "wellingborough", "burton-latimer/smt", "burton-latimer/rm", "burton-latimer/pt", "irchester/smt", "irchester/rm", "irchester/pt", "podington/smt", "podington/rm", "podington/pt", "raunds/smt", "raunds/rm", "raunds/pt", "wellingborough/smt", "wellingborough/rm", "wellingborough/pt"]) {
     assert.match(sitemap, new RegExp(`<loc>https:\\/\\/jenergie\\.co\\.uk\\/${route}\\/</loc>`));
   }
   assert.match(robots, /Sitemap: https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
