@@ -17,7 +17,7 @@ export default function ContactPage() {
     <InfoPage
       eyebrow="Contact Jenergie"
       title="Ask a question or arrange a session."
-      intro="Send me a message using the form below, or email or call me directly. I can help you choose the right appointment and confirm availability."
+      intro="Book online with Fresha, or email or call me directly if you would like help choosing the right appointment."
     >
       <section><h2>Book your appointment</h2><p>Choose a service and see available appointments on Fresha. You can also get in touch below if you need help choosing.</p><a className="button button-dark" href={bookingUrl}>Book now on Fresha</a></section><section className="contact-enquiry" aria-label="Contact Jenni">
         <div className="contact-options">
@@ -26,17 +26,6 @@ export default function ContactPage() {
           <a href="mailto:Jen@jenergie.co.uk?subject=Jenergie%20enquiry"><span>Email</span><strong>Jen@jenergie.co.uk</strong></a>
           <a href="tel:+447547254349"><span>Phone</span><strong>07547 254349</strong></a>
           <p className="contact-location">Based in Higham Ferrers, North Northamptonshire, close to Rushden.</p>
-        </div>
-        <div className="contact-form-wrap">
-          <h2>Send a message</h2>
-          <iframe
-            src="https://tally.so/embed/xXqDQJ?alignLeft=1&hideTitle=1&transparentBackground=1"
-            title="Contact Jenni enquiry form"
-            width="100%"
-            height="950"
-            style={{ border: 0 }}
-          />
-          <p>Having trouble with the form? <a href="https://tally.so/r/xXqDQJ" target="_blank" rel="noopener noreferrer">Open it in a new tab</a> or email <a href="mailto:jen@jenergie.co.uk">jen@jenergie.co.uk</a>.</p>
         </div>
       </section>
 

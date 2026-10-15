@@ -5,7 +5,7 @@ import clientNotice from "./client-notice.json";
 export const metadata: Metadata = {
   title: "Privacy Notice | Jenergie",
   description:
-    "How Jenergie handles consultation and treatment records, Tally forms, Proton Drive storage, website analytics and your privacy choices.",
+    "How Jenergie handles consultation and treatment records, online booking, Proton Drive storage, website analytics and your privacy choices.",
   alternates: {
     canonical: "/privacy/",
     types: { "text/markdown": "/privacy.md" },
@@ -17,7 +17,7 @@ export default function PrivacyPage() {
     <InfoPage
       eyebrow="Jenergie privacy notice"
       title="Your information and your choices."
-      intro="How Jenergie handles client records and website information, and the choices available to you. Last updated 19 September 2026."
+      intro="How Jenergie handles client records and website information, and the choices available to you. Last updated 15 October 2026."
     >
       <section id="client-records">
         <h2>Client consultation and treatment records</h2>
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
       <section>
         <h2>Information you choose to provide</h2>
         <p>
-          The website contact form collects your name, email address, optional phone number and message through Tally. We use these details to respond to your enquiry and arrange requested services. Tally stores form responses in Europe on our behalf. Please do not include detailed medical or health information in a general enquiry. The website does not create customer accounts. You can also contact us by email or phone. An enquiry may include your name, contact details, availability and information about what you would like help with. Jenergie uses this information to reply, discuss whether a service is suitable, arrange an appointment and keep appropriate records relating to the service you request. Please do not send information that is not needed for your enquiry.
+          The website links to Fresha for online booking. You can contact Jenergie directly by email or phone. The former Tally enquiry form is no longer embedded or linked on this website. Please do not include detailed medical or health information in a general enquiry. The website does not create customer accounts. You can also contact us by email or phone. An enquiry may include your name, contact details, availability and information about what you would like help with. Jenergie uses this information to reply, discuss whether a service is suitable, arrange an appointment and keep appropriate records relating to the service you request. Please do not send information that is not needed for your enquiry.
         </p>
       </section>
 
@@ -75,7 +75,7 @@ export default function PrivacyPage() {
       <section>
         <h2>External links and updates</h2>
         <p>
-          Tally&apos;s current <a href="https://tally.so/help/gdpr" target="_blank" rel="noopener noreferrer">data-protection information</a>, Proton Drive&apos;s <a href="https://proton.me/drive/privacy-policy" target="_blank" rel="noopener noreferrer">privacy information</a> and Google&apos;s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a> explain how those providers handle information. Other external websites may have their own privacy terms. This notice may be updated if the website, a provider or the way Jenergie handles information changes. The latest version will remain available at this address with its update date shown above.
+          Fresha&apos;s <a href="https://terms.fresha.com/privacy-policy" target="_blank" rel="noopener noreferrer">privacy policy</a>, Proton Drive&apos;s <a href="https://proton.me/drive/privacy-policy" target="_blank" rel="noopener noreferrer">privacy information</a> and Google&apos;s <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy</a> explain how those providers handle information. Other external websites may have their own privacy terms. This notice may be updated if the website, a provider or the way Jenergie handles information changes. The latest version will remain available at this address with its update date shown above.
         </p>
       </section>
     </InfoPage>

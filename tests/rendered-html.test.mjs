@@ -156,17 +156,17 @@ test("publishes the current Jenergie privacy notice consistently", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Jennifer Meadows, trading as Jenergie/);
-  assert.match(html, /Last updated 19 September 2026/);
+  assert.match(html, /Last updated 15 October 2026/);
   assert.match(html, /within 12 months of the last meaningful contact/);
   assert.match(html, /no longer than 14 months/);
-  assert.match(html, /Tally acts as a data processor/);
+  assert.match(html, /Existing Tally responses may still be retained/);
   assert.match(html, /Switzerland, Germany or Norway/);
-  assert.match(html, /href="https:\/\/tally\.so\/help\/gdpr"/);
+  assert.doesNotMatch(html, /https:\/\/tally\.so/);
   assert.match(html, /href="https:\/\/proton\.me\/drive\/privacy-policy"/);
 
   const markdown = await readFile(new URL("../public/privacy.md", import.meta.url), "utf8");
   assert.match(markdown, /Jennifer Meadows, trading as Jenergie/);
-  assert.match(markdown, /Last updated 19 September 2026/);
+  assert.match(markdown, /Last updated 15 October 2026/);
   assert.match(markdown, /within 12 months of the last meaningful contact/);
   assert.match(markdown, /no longer than 14 months/);
 });
@@ -206,16 +206,18 @@ test("answers appointment questions and links to Fresha booking", async () => {
   assert.equal((html.match(/<details>/g) ?? []).length, 8);
 });
 
-test("puts direct contact choices beside a wider enquiry form", async () => {
+test("provides Fresha and direct contact without Tally", async () => {
   const html = await (await render("/contact")).text();
   const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
   const markdown = await readFile(new URL("../public/contact.md", import.meta.url), "utf8");
 
   assert.match(html, /class="contact-enquiry"/);
   assert.match(html, /class="contact-options"/);
+  assert.doesNotMatch(html, /tally\.so|<iframe/);
+  assert.match(html, /Book now on Fresha/);
+  assert.doesNotMatch(markdown, /tally\.so/);
   assert.match(html, /href="tel:\+447547254349"/);
   assert.match(html, /href="mailto:Jen@jenergie\.co\.uk\?subject=Jenergie%20enquiry"/);
-  assert.ok(html.indexOf("class=\"contact-options\"") < html.indexOf("title=\"Contact Jenni enquiry form\""));
   assert.match(css, /\.contact-enquiry \{[^}]*grid-template-columns: minmax\(0, \.65fr\) minmax\(0, 1\.35fr\)/);
   assert.match(css, /\.contact-form-wrap iframe \{[^}]*width: 100%/);
   assert.match(css, /\.info-content > \.contact-enquiry \{[^}]*grid-template-columns: 1fr/);
