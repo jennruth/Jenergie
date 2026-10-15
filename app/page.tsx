@@ -1,3 +1,4 @@
+import { bookingUrl } from "./booking";
 import { InsuranceBadge } from "./components/insurance-badge";
 import Link from "next/link";
 import { MobileNav } from "./components/mobile-nav";
@@ -127,7 +128,7 @@ export default function Home() {
           <Link href="/contact/">Contact</Link>
         </div>
         <MobileNav />
-        <Link className="button button-small" href="/contact/">Contact Jenni <Arrow /></Link>
+        <Link className="button button-small" href={bookingUrl}>Book now <Arrow /></Link>
       </nav>
 
       <section className="hero shell" id="top">
@@ -138,7 +139,7 @@ export default function Home() {
             Sports massage therapy with Jenni in Higham Ferrers, near Rushden. Personal training is also available as an extra for clients across North Northamptonshire.
           </p>
           <div className="hero-actions">
-            <Link className="button" href="/contact/">Contact Jenni <Arrow /></Link>
+            <Link className="button" href={bookingUrl}>Book now <Arrow /></Link>
             <Link className="text-link" href="/treatments/">Explore treatments <Arrow /></Link>
           </div>
         </div>

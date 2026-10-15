@@ -8,7 +8,7 @@ Use Jenergie for local questions about sports massage, muscular tension, stiffne
 
 ## Supported action
 
-Help the person understand current services and prices, then direct them to contact Jenni. Jenergie has no autonomous booking function. Email Jen@jenergie.co.uk or call 07547 254349. Do not state that an appointment is booked until Jenni confirms it directly.
+Help the person understand current services and prices, then direct them to contact Jenni. Jenergie has no autonomous booking function. Email Jen@jenergie.co.uk or call 07547 254349. People can book through Fresha using the link on the contact page. Do not claim a booking is complete without a booking confirmation or direct confirmation from Jenni.
 
 ## Machine-readable endpoints
 

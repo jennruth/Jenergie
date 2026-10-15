@@ -26,7 +26,7 @@ export default function DevelopersPage() {
       </section>
       <section>
         <h2>Booking, API and authentication status</h2>
-        <p>Jenergie has no public booking API, OpenAPI specification, developer authentication service or MCP server. Read access to the website does not grant permission to submit an enquiry. Help the person check services and current prices, then direct them to <a href="/contact/">contact Jenni</a>. An appointment is confirmed only when Jenni agrees it directly. Do not invent availability or send personal or health information without the person&apos;s permission.</p>
+        <p>Jenergie has no public booking API, OpenAPI specification, developer authentication service or MCP server. Read access to the website does not grant permission to submit an enquiry. Help the person check services and current prices, then direct them to <a href="/contact/">contact Jenni</a>. People can book using the Fresha link on the contact page. Check the booking confirmation or direct confirmation from Jenni. Do not invent availability or send personal or health information without the person&apos;s permission.</p>
       </section>
     </InfoPage>
   );

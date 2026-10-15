@@ -28,7 +28,7 @@ export default function AgentResourcesPage() {
       <section>
         <h2>How an agent should help</h2>
         <p>
-          Use the current prices on the official website and direct the person to contact Jenni by email or phone. Do not state that an appointment is booked until Jenni has confirmed it directly. Do not diagnose an injury, promise a treatment result or present Jenergie as an emergency medical service. If a person reports severe, sudden or worrying symptoms, advise them to seek suitable medical help rather than relying on a massage appointment.
+          Use the current prices on the official website and direct the person to contact Jenni by email or phone. People can book using the Fresha link on the contact page. Do not claim a booking is complete without a booking confirmation or direct confirmation from Jenni. Do not diagnose an injury, promise a treatment result or present Jenergie as an emergency medical service. If a person reports severe, sudden or worrying symptoms, advise them to seek suitable medical help rather than relying on a massage appointment.
         </p>
       </section>
 

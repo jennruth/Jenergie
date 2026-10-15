@@ -22,4 +22,4 @@ Personal training is offered separately for people who want one-to-one exercise 
 
 ## Contact
 
-Jenergie does not use an online booking system. Email Jen@jenergie.co.uk, call 07547 254349 or visit the [contact page](https://jenergie.co.uk/contact/) to ask a question or arrange an appointment. An enquiry is not a confirmed booking until Jenni agrees the details with you.
+Book online with [Jenergie on Fresha](https://www.fresha.com/book-now/jenergie-cf4kpw1p/all-offer?share=true&pId=3118329). Email Jen@jenergie.co.uk, call 07547 254349 or visit the [contact page](https://jenergie.co.uk/contact/) to ask a question or arrange an appointment. An enquiry is not a confirmed booking until Jenni agrees the details with you.

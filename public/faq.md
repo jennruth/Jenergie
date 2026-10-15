@@ -20,7 +20,7 @@ No. One-to-one personal training and bespoke exercise plans are optional extras.
 
 ## How do I arrange an appointment?
 
-Use https://jenergie.co.uk/contact/, email Jen@jenergie.co.uk or call 07547 254349. Jenergie has no online booking system. An appointment is confirmed only when Jenni has agreed the details with you.
+Use https://jenergie.co.uk/contact/, email Jen@jenergie.co.uk or call 07547 254349. Book online with [Jenergie on Fresha](https://www.fresha.com/book-now/jenergie-cf4kpw1p/all-offer?share=true&pId=3118329). Check your Fresha booking confirmation or direct confirmation from Jenni.
 
 ## What if I feel unwell before my appointment?
 

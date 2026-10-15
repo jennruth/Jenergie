@@ -193,13 +193,14 @@ test("presents recovery as part of sports massage rather than a separate appoint
   assert.match(html, /Explore service/);
 });
 
-test("answers appointment questions without implying online booking", async () => {
+test("answers appointment questions and links to Fresha booking", async () => {
   const response = await render("/faq");
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Do I need to be an athlete to have a sports massage/);
   assert.match(html, /Your first sports massage appointment is 55 minutes/);
-  assert.match(html, /There is no online booking system/);
+  assert.match(html, /book online with Fresha/);
+  assert.match(html, /https:\/\/www\.fresha\.com\/book-now\/jenergie-cf4kpw1p\/all-offer\?share=true(?:&amp;|&)pId=3118329/);
   assert.match(html, /at least 24 hours/);
   assert.match(html, /href="\/cancellation-policy"/);
   assert.equal((html.match(/<details>/g) ?? []).length, 8);
@@ -317,7 +318,7 @@ test("exports explicit Markdown alternatives and agent instructions", async () =
     "utf8",
   );
   assert.match(instructions, /## When to use Jenergie/);
-  assert.match(instructions, /no online or autonomous booking system/i);
+  assert.match(instructions, /no autonomous booking API/i);
 });
 
 test("exports a dedicated 404 recovery document", async () => {

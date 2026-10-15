@@ -19,4 +19,4 @@ Personal training is an optional extra and is not required as part of sports mas
 
 ## Arranging an appointment
 
-Jenergie does not use an online booking system. Email Jen@jenergie.co.uk or call 07547 254349 to ask a question and discuss the most suitable appointment. A message is an enquiry until Jenni confirms the appointment directly.
+[Book online with Fresha](https://www.fresha.com/book-now/jenergie-cf4kpw1p/all-offer?share=true&pId=3118329). Email Jen@jenergie.co.uk or call 07547 254349 to ask a question and discuss the most suitable appointment. A message is an enquiry until Jenni confirms the appointment directly.

@@ -1,3 +1,4 @@
+import { bookingUrl } from "../booking";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { InsuranceBadge } from "./insurance-badge";
@@ -35,7 +36,7 @@ export function InfoPage({ eyebrow, title, intro, children }: InfoPageProps) {
           <Link href="/reviews/">Reviews</Link>
         </div>
         <MobileNav />
-        <Link className="button button-small" href="/contact/">Contact Jenni <Arrow /></Link>
+        <Link className="button button-small" href={bookingUrl}>Book now <Arrow /></Link>
       </nav>
 
       <section className="info-hero">

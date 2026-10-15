@@ -1,3 +1,4 @@
+import { bookingUrl } from "../booking";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { InfoPage } from "./info-page";
@@ -208,7 +209,7 @@ export function ServicePage({ serviceKey }: { serviceKey: ServiceKey }) {
       </section>
       <section>
         <h2>{service.priceSummary}</h2>
-        <div><p>{service.priceDetail}</p><Link className="button button-dark" href="/contact/">Contact Jenni <span aria-hidden="true">↗</span></Link></div>
+        <div><p>{service.priceDetail}</p><Link className="button button-dark" href={bookingUrl}>Book now <span aria-hidden="true">↗</span></Link></div>
       </section>
     </InfoPage>
   );
@@ -242,7 +243,7 @@ export function LocationPage({ locationKey }: { locationKey: LocationKey }) {
       </section>
       <section>
         <h2>Not sure where to start?</h2>
-        <div><p>Your first sports massage appointment is 55 minutes and costs £45. If you are unsure whether sports massage or personal training is right for you, contact Jenni and explain what you would like help with.</p><Link className="button button-dark" href="/contact/">Contact Jenni <span aria-hidden="true">↗</span></Link></div>
+        <div><p>Your first sports massage appointment is 55 minutes and costs £45. If you are unsure whether sports massage or personal training is right for you, contact Jenni and explain what you would like help with.</p><Link className="button button-dark" href={bookingUrl}>Book now <span aria-hidden="true">↗</span></Link></div>
       </section>
     </InfoPage>
   );
@@ -297,7 +298,7 @@ export function LocationServicePage({ locationKey, serviceKey }: { locationKey: 
       </section>
       <section>
         <h2>Ask about an appointment</h2>
-        <div><p>Tell Jenni which service you are interested in and that you will be travelling from {location.name}. Sending a message is an enquiry; the appointment is confirmed directly with Jenni.</p><Link className="button button-dark" href="/contact/">Contact Jenni <span aria-hidden="true">↗</span></Link></div>
+        <div><p>Tell Jenni which service you are interested in and that you will be travelling from {location.name}. Sending a message is an enquiry; the appointment is confirmed directly with Jenni.</p><Link className="button button-dark" href={bookingUrl}>Book now <span aria-hidden="true">↗</span></Link></div>
       </section>
     </InfoPage>
   );

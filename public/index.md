@@ -29,7 +29,7 @@ Jenergie provides sports massage therapy in Higham Ferrers, near Rushden, for cl
 
 ## Contact
 
-Jenergie does not use an online booking system. Email Jen@jenergie.co.uk or call 07547 254349 to ask a question or arrange an appointment.
+[Book online with Fresha](https://www.fresha.com/book-now/jenergie-cf4kpw1p/all-offer?share=true&pId=3118329). Email Jen@jenergie.co.uk or call 07547 254349 to ask a question or arrange an appointment.
 
 ## Official pages
 

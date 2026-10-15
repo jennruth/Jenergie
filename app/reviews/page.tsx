@@ -1,3 +1,4 @@
+import { bookingUrl } from "../booking";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { InfoPage } from "../components/info-page";
@@ -58,7 +59,7 @@ export default function ReviewsPage() {
           <p>
             Sports massage is the main service at Jenergie, with personal training available as an optional extra. If you would like to talk through what you need, contact me and I will help you choose the right appointment.
           </p>
-          <Link className="button button-dark" href="/contact/">Contact Jenni <span aria-hidden="true">↗</span></Link>
+          <Link className="button button-dark" href={bookingUrl}>Book now <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
     </InfoPage>

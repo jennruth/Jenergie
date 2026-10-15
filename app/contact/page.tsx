@@ -1,3 +1,4 @@
+import { bookingUrl } from "../booking";
 import type { Metadata } from "next";
 import { InfoPage } from "../components/info-page";
 
@@ -18,7 +19,7 @@ export default function ContactPage() {
       title="Ask a question or arrange a session."
       intro="Send me a message using the form below, or email or call me directly. I can help you choose the right appointment and confirm availability."
     >
-      <section className="contact-enquiry" aria-label="Contact Jenni">
+      <section><h2>Book your appointment</h2><p>Choose a service and see available appointments on Fresha. You can also get in touch below if you need help choosing.</p><a className="button button-dark" href={bookingUrl}>Book now on Fresha</a></section><section className="contact-enquiry" aria-label="Contact Jenni">
         <div className="contact-options">
           <h2>Email or call</h2>
           <p>I am happy to talk through the options before you decide.</p>

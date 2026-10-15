@@ -10,6 +10,6 @@ Jenergie welcomes Burton Latimer clients for sports massage, recovery and moveme
 
 ## Visiting Jenergie
 
-Contact Jenni before travelling for the exact appointment location and help choosing the right service. Jenergie is appointment based and does not use an online booking system. Your first sports massage appointment is 55 minutes and costs £45. Follow-up options start from £35. Personal training is available separately from £45.
+Contact Jenni before travelling for the exact appointment location and help choosing the right service. Jenergie is appointment based. [Book online with Fresha](https://www.fresha.com/book-now/jenergie-cf4kpw1p/all-offer?share=true&pId=3118329). Your first sports massage appointment is 55 minutes and costs £45. Follow-up options start from £35. Personal training is available separately from £45.
 
 Use the [contact page](https://jenergie.co.uk/contact/) to make an enquiry.

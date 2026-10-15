@@ -1,3 +1,4 @@
+import { bookingUrl } from "../booking";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { InfoPage } from "../components/info-page";
@@ -43,7 +44,7 @@ export default function FaqPage() {
           </details>
           <details>
             <summary>How do I arrange an appointment?</summary>
-            <p>Send me a message through the <Link href="/contact/">contact page</Link>, email <a href="mailto:Jen@jenergie.co.uk">Jen@jenergie.co.uk</a> or call <a href="tel:+447547254349">07547 254349</a>. There is no online booking system. Your appointment is confirmed when I have agreed the details with you.</p>
+            <p>Send me a message through the <Link href="/contact/">contact page</Link>, email <a href="mailto:Jen@jenergie.co.uk">Jen@jenergie.co.uk</a> or call <a href="tel:+447547254349">07547 254349</a>. You can also <a href={bookingUrl}>book online with Fresha</a>. Check your booking confirmation for appointment details.</p>
           </details>
           <details>
             <summary>What if I feel unwell before my appointment?</summary>
@@ -63,7 +64,7 @@ export default function FaqPage() {
         <h2>Still have a question?</h2>
         <div>
           <p>Tell me what you would like help with, and I can explain the options before you decide. Sending a message is an enquiry, not a confirmed booking.</p>
-          <Link className="button button-dark" href="/contact/">Contact Jenni <span aria-hidden="true">↗</span></Link>
+          <Link className="button button-dark" href={bookingUrl}>Book now <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
     </InfoPage>

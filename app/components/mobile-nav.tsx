@@ -1,3 +1,4 @@
+import { bookingUrl } from "../booking";
 import Link from "next/link";
 
 export function MobileNav() {
@@ -14,7 +15,7 @@ export function MobileNav() {
         <Link href="/about/">About</Link>
         <Link href="/faq/">FAQs</Link>
         <Link href="/reviews/">Reviews</Link>
-        <Link href="/contact/">Contact Jenni</Link>
+        <a href={bookingUrl}>Book now</a><Link href="/contact/">Contact Jenni</Link>
       </div>
     </details>
   );

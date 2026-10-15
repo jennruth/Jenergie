@@ -16,4 +16,4 @@ An unknown address returns HTTP 404. Check the [sitemap](https://jenergie.co.uk/
 
 ## Integration limits
 
-Jenergie has no public booking API, OpenAPI specification, developer authentication service or MCP server. Read access does not grant permission to submit an enquiry. Do not send personal or health information without the person's permission. Help the person understand services and current prices, then direct them to [contact Jenni](https://jenergie.co.uk/contact/). An appointment is confirmed only when Jenni agrees it directly.
+Jenergie has no public booking API, OpenAPI specification, developer authentication service or MCP server. Read access does not grant permission to submit an enquiry. Do not send personal or health information without the person's permission. Help the person understand services and current prices, then direct them to [contact Jenni](https://jenergie.co.uk/contact/). Check your Fresha booking confirmation or direct confirmation from Jenni.

@@ -1,3 +1,4 @@
+import { bookingUrl } from "../booking";
 import type { Metadata } from "next";
 import { InfoPage } from "../components/info-page";
 
@@ -67,7 +68,7 @@ export default function PricesPage() {
         <div>
           <p>Your first sports massage appointment is 55 minutes, allowing time to discuss what you would like help with before treatment begins. Follow-up appointments can focus on one area for 30 minutes or two areas for 60 minutes.</p>
           <p>Contact Jenni if you would like to talk through the options. Sending a message is an enquiry, and your appointment is confirmed directly with Jenni.</p>
-          <a className="button button-dark" href="/contact/">Contact Jenni <span aria-hidden="true">↗</span></a>
+          <a className="button button-dark" href={bookingUrl}>Book now <span aria-hidden="true">↗</span></a>
         </div>
       </section>
     </InfoPage>

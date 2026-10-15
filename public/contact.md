@@ -1,6 +1,6 @@
 # Contact Jenergie
 
-Jenergie does not use an online booking system. Contact Jenni directly to ask about sports massage, personal training or a bespoke exercise plan and to arrange an appointment.
+Book online with [Jenergie on Fresha](https://www.fresha.com/book-now/jenergie-cf4kpw1p/all-offer?share=true&pId=3118329). Contact Jenni directly to ask about sports massage, personal training or a bespoke exercise plan and to arrange an appointment.
 
 - Email: Jen@jenergie.co.uk
 - Phone: 07547 254349
