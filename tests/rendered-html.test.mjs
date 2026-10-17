@@ -250,6 +250,7 @@ test("exports a discoverable canonical sitemap", async () => {
   assert.match(sitemap, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
   assert.match(sitemap, /<loc>https:\/\/jenergie\.co\.uk\/<\/loc>/);
   assert.equal((sitemap.match(/<url>/g) ?? []).length, 27);
+  assert.equal((sitemap.match(/<lastmod>2026-10-17<\/lastmod>/g) ?? []).length, 27);
   for (const route of ["treatments", "prices", "about", "faq", "contact", "cancellation-policy", "privacy", "agent-resources", "developers", "smt", "rm", "burton-latimer", "irchester", "podington", "raunds", "wellingborough", "burton-latimer/smt", "burton-latimer/rm", "irchester/smt", "irchester/rm", "podington/smt", "podington/rm", "raunds/smt", "raunds/rm", "wellingborough/smt", "wellingborough/rm"]) {
     assert.match(sitemap, new RegExp(`<loc>https:\\/\\/jenergie\\.co\\.uk\\/${route}\\/</loc>`));
   }

@@ -60,6 +60,7 @@ test("discovery files present Jenergie as a massage-only practice", async () => 
   }
   assert.match(sitemap, /<loc>https:\/\/jenergie\.co\.uk\/smt\/<\/loc>/);
   assert.match(sitemap, /<loc>https:\/\/jenergie\.co\.uk\/rm\/<\/loc>/);
+  assert.match(sitemap, /<lastmod>2026-10-17<\/lastmod>/);
 });
 
 test("developer guidance is discoverable, branded and does not invent a booking integration", async () => {

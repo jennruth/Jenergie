@@ -30,10 +30,11 @@ export const publicPages = Object.freeze({
 });
 
 export const siteUrl = "https://jenergie.co.uk";
+export const siteLastModified = "2026-10-17";
 
 export function sitemapXml() {
   const urls = Object.keys(publicPages).map((route) =>
-    `  <url><loc>${siteUrl}${route === "/" ? "/" : `${route}/`}</loc></url>`,
+    `  <url><loc>${siteUrl}${route === "/" ? "/" : `${route}/`}</loc><lastmod>${siteLastModified}</lastmod></url>`,
   );
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`;
 }
