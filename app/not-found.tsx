@@ -12,7 +12,7 @@ export default function NotFound() {
         <h2>Where to look next</h2>
         <ul className="resource-list">
           <li><Link href="/">Jenergie homepage</Link><span>An introduction to the practice and links to each section.</span></li>
-          <li><Link href="/treatments/">Treatments</Link><span>Sports massage, recovery support and optional personal training.</span></li>
+          <li><Link href="/treatments/">Treatments</Link><span>Sports massage and recovery support.</span></li>
           <li><Link href="/prices/">Prices</Link><span>Current appointment lengths and prices.</span></li>
           <li><a href="/sitemap.xml">XML sitemap</a><span>All indexable pages on this website.</span></li>
           <li><a href="/llms.txt">llms.txt</a><span>Concise machine-readable site guide.</span></li>

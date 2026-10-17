@@ -40,7 +40,7 @@ export default function PrivacyPage() {
       <section>
         <h2>Who is responsible for your information</h2>
         <p>
-          Jennifer Meadows, trading as Jenergie, is the data controller responsible for personal information used in connection with this website and its services. Jenergie is a sports massage and personal training business based in Higham Ferrers, North Northamptonshire. If you have a privacy question, want to exercise a data protection right or want information corrected, email <a href="mailto:Jen@jenergie.co.uk">Jen@jenergie.co.uk</a> or call <a href="tel:+447547254349">07547 254349</a>.
+          Jennifer Meadows, trading as Jenergie, is the data controller responsible for personal information used in connection with this website and its services. Jenergie is a sports massage business based in Higham Ferrers, North Northamptonshire. If you have a privacy question, want to exercise a data protection right or want information corrected, email <a href="mailto:Jen@jenergie.co.uk">Jen@jenergie.co.uk</a> or call <a href="tel:+447547254349">07547 254349</a>.
         </p>
       </section>
 

@@ -1,6 +1,6 @@
 # Jenergie frequently asked questions
 
-These answers cover common questions about sports massage therapy and optional personal training with Jenni in Higham Ferrers, near Rushden. If you are unsure which appointment is right for you, contact Jenni before arranging a session.
+These answers cover common questions about sports massage therapy with Jenni in Higham Ferrers, near Rushden. If you are unsure which appointment is right for you, contact Jenni before arranging a session.
 
 ## Do I need to be an athlete to have a sports massage?
 
@@ -13,10 +13,6 @@ The first sports massage appointment is 55 minutes. It begins with a conversatio
 ## Which sports massage appointment should I choose?
 
 The initial 55-minute appointment costs £45. Follow-up options are one area for 30 minutes at £35, or two areas for 60 minutes at £55. Ask Jenni if you are unsure which option fits your needs. See https://jenergie.co.uk/prices/ for current prices.
-
-## Is personal training part of a massage appointment?
-
-No. One-to-one personal training and bespoke exercise plans are optional extras. A one-hour training session costs £45, and a bespoke exercise plan costs £70. Neither is required for sports massage.
 
 ## How do I arrange an appointment?
 

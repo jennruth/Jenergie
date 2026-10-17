@@ -1,7 +1,6 @@
 import { bookingUrl } from "../booking";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { InsuranceBadge } from "./insurance-badge";
 import { MobileNav } from "./mobile-nav";
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -23,7 +22,6 @@ export function InfoPage({ eyebrow, title, intro, children }: InfoPageProps) {
             <span className="lockup-copy">
               <strong>Jenergie</strong>
               <small>Sports Massage Therapy</small>
-              <i>Personal Training</i>
             </span>
           </span>
         </Link>
@@ -33,7 +31,6 @@ export function InfoPage({ eyebrow, title, intro, children }: InfoPageProps) {
           <Link href="/prices/">Prices</Link>
           <Link href="/about/">About</Link>
           <Link href="/faq/">FAQs</Link>
-          <Link href="/reviews/">Reviews</Link>
         </div>
         <MobileNav />
         <Link className="button button-small" href={bookingUrl}>Book now <Arrow /></Link>
@@ -55,13 +52,11 @@ export function InfoPage({ eyebrow, title, intro, children }: InfoPageProps) {
             <strong>Jenergie</strong>
             <p>Energy for your body. Care for your muscles.</p>
           </div>
-          <InsuranceBadge />
           <div className="info-footer-links">
             <Link href="/treatments/">Treatments</Link>
             <Link href="/prices/">Prices</Link>
             <Link href="/about/">About</Link>
             <Link href="/faq/">FAQs</Link>
-            <Link href="/reviews/">Reviews</Link>
             <Link href="/contact/">Contact</Link>
             <Link href="/cancellation-policy/">Cancellation policy</Link>
             <Link href="/privacy/">Privacy</Link>

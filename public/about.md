@@ -8,6 +8,4 @@ I hold a Focus Awards Level 3 Diploma in Sports Massage Therapy (RQF). I bring t
 
 We will start your appointment with a chat about how you are feeling and anything that could affect your treatment. I may also look at how you move before we begin. During the massage, I will explain what I am doing and check that you are comfortable. If it would help, I can give you a few simple ideas for looking after the area afterwards. There is no one-size-fits-all routine here. Your appointment is about you.
 
-I also offer one-to-one personal training and bespoke exercise plans. These are completely optional, but they may be useful if you would like more structure with strength, movement or feeling confident with exercise. If you are curious, just ask me and we can talk through whether it would suit you and your goals.
-
 If you are not sure which appointment is right for you, please get in touch. I am always happy to answer a question before you decide. Email me at Jen@jenergie.co.uk or call 07547 254349.

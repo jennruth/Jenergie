@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function DevelopersPage() {
   return (
-    <InfoPage eyebrow="Jenergie developer resources" title="Jenergie developer documentation." intro="Use these public resources to answer questions about Jenergie sports massage and personal training in Higham Ferrers, near Rushden.">
+    <InfoPage eyebrow="Jenergie developer resources" title="Jenergie developer documentation." intro="Use these public resources to answer questions about Jenergie sports massage in Higham Ferrers, near Rushden.">
       <section>
         <h2>Read official Jenergie information</h2>
         <p>Start with the <a href="/llms.txt">Jenergie LLM guide</a> and <a href="/agent-instructions.md">agent instructions</a>. Each information page has a Markdown alternative: the homepage is <a href="/index.md">/index.md</a>, and other pages use the page name followed by .md, such as <a href="/prices.md">/prices.md</a>. These public documents require no account, API key or authentication.</p>

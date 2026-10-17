@@ -1,5 +1,4 @@
 import { bookingUrl } from "./booking";
-import { InsuranceBadge } from "./components/insurance-badge";
 import Link from "next/link";
 import { MobileNav } from "./components/mobile-nav";
 
@@ -27,16 +26,15 @@ const structuredData = [
     logo: `${siteUrl}/brand/jenergie-icon.png`,
     image: `${siteUrl}/og.png`,
     description:
-      "Sports massage therapy and one-to-one personal training in Higham Ferrers, near Rushden, serving clients across North Northamptonshire.",
+      "Tailored sports massage therapy in Higham Ferrers, near Rushden, serving clients across North Northamptonshire.",
     telephone: "+447547254349",
     email: "Jen@jenergie.co.uk",
     priceRange: "£35 to £70",
     knowsAbout: [
       "Sports massage therapy",
       "Muscle tension and mobility",
-      "Exercise and recovery",
-      "One-to-one personal training",
-      "Bespoke exercise plans",
+      "Recovery and movement",
+      "Massage maintenance",
     ],
     address: {
       "@type": "PostalAddress",
@@ -51,14 +49,12 @@ const structuredData = [
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Jenergie treatments and training",
+      name: "Jenergie sports massage treatments",
       url: `${siteUrl}/prices/`,
       itemListElement: [
         { "@type": "Offer", price: "45", priceCurrency: "GBP", itemOffered: { "@type": "Service", name: "Initial sports massage appointment", serviceType: "Sports massage therapy" } },
         { "@type": "Offer", price: "35", priceCurrency: "GBP", itemOffered: { "@type": "Service", name: "30-minute sports massage", serviceType: "Sports massage therapy" } },
         { "@type": "Offer", price: "55", priceCurrency: "GBP", itemOffered: { "@type": "Service", name: "60-minute sports massage", serviceType: "Sports massage therapy" } },
-        { "@type": "Offer", price: "45", priceCurrency: "GBP", itemOffered: { "@type": "Service", name: "One-to-one personal training", serviceType: "Personal training" } },
-        { "@type": "Offer", price: "70", priceCurrency: "GBP", itemOffered: { "@type": "Service", name: "Bespoke exercise plan", serviceType: "Personal training" } },
       ],
     },
   },
@@ -71,7 +67,7 @@ const structuredData = [
     url: `${siteUrl}/`,
     logo: `${siteUrl}/brand/jenergie-icon.png`,
     description:
-      "Jenergie provides sports massage therapy in Higham Ferrers, near Rushden, with optional personal training for clients across North Northamptonshire.",
+      "Jenergie provides tailored sports massage therapy in Higham Ferrers, near Rushden, for clients across North Northamptonshire.",
     email: "Jen@jenergie.co.uk",
     telephone: "+447547254349",
     contactPoint: {
@@ -97,13 +93,12 @@ const BrandLockup = ({ dark = false }: { dark?: boolean }) => (
     <span className="lockup-copy">
       <strong>Jenergie</strong>
       <small>Sports Massage Therapy</small>
-      <i>Personal Training</i>
     </span>
   </span>
 );
 
 const pages = [
-  { number: "01", title: "Treatments", copy: "Explore sports massage, recovery support and optional personal training.", href: "/treatments/" },
+  { number: "01", title: "Treatments", copy: "Explore tailored sports massage, recovery support and regular maintenance.", href: "/treatments/" },
   { number: "02", title: "Prices", copy: "See appointment lengths and clear prices for every Jenergie service.", href: "/prices/" },
   { number: "03", title: "About Jenergie", copy: "Learn about Jenni's practical, personal approach and the local practice.", href: "/about/" },
   { number: "04", title: "FAQs", copy: "Find answers about your first visit, prices, booking and cancellations.", href: "/faq/" },
@@ -124,7 +119,6 @@ export default function Home() {
           <Link href="/prices/">Prices</Link>
           <Link href="/about/">About</Link>
           <Link href="/faq/">FAQs</Link>
-          <Link href="/reviews/">Reviews</Link>
           <Link href="/contact/">Contact</Link>
         </div>
         <MobileNav />
@@ -136,7 +130,7 @@ export default function Home() {
           <p className="eyebrow"><span className="pulse" /> Sports massage · Higham Ferrers</p>
           <h1 className="tagline-heading">Energy for your body.<br /><em>Care for your muscles.</em></h1>
           <p className="hero-intro">
-            Sports massage therapy with Jenni in Higham Ferrers, near Rushden. Personal training is also available as an extra for clients across North Northamptonshire.
+            Tailored sports massage therapy with Jenni in Higham Ferrers, near Rushden, for clients across North Northamptonshire.
           </p>
           <div className="hero-actions">
             <Link className="button" href={bookingUrl}>Book now <Arrow /></Link>
@@ -152,12 +146,12 @@ export default function Home() {
           <div className="system-card card-solar"><span className="system-icon tension-icon" aria-hidden="true" /><span><small>Release</small><strong>Muscular tension</strong></span><i className="status-dot" /></div>
           <div className="system-card card-home"><span className="system-icon mobility-icon" aria-hidden="true" /><span><small>Restore</small><strong>Better movement</strong></span><i className="status-dot" /></div>
           <div className="system-card card-battery"><span className="system-icon recovery-icon" aria-hidden="true" /><span><small>Support</small><strong>Recovery</strong></span><i className="status-dot" /></div>
-          <div className="stage-caption"><span>Sports massage therapy</span><span>Personal training available</span></div>
+          <div className="stage-caption"><span>Sports massage therapy</span><span>Recovery and maintenance</span></div>
         </div>
       </section>
 
       <section className="trust-strip" aria-label="Jenergie services">
-        <div className="shell trust-inner"><span>Release tension</span><i /><span>Move with confidence</span><i /><span>Support recovery</span><i /><span>Train with purpose</span></div>
+        <div className="shell trust-inner"><span>Release tension</span><i /><span>Move with confidence</span><i /><span>Support recovery</span><i /><span>Maintain movement</span></div>
       </section>
 
       <section className="home-pages section shell" aria-labelledby="explore-heading">
@@ -177,23 +171,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-reviews section shell" aria-labelledby="home-reviews-heading">
-        <div className="home-review-copy">
-          <p className="eyebrow">Client feedback</p>
-          <h2 id="home-reviews-heading">Kind words,<br /><em>shared on Google.</em></h2>
-          <p>Read verified feedback from Jenergie clients and follow the link to the original Google Business Profile.</p>
-          <Link className="text-link" href="/reviews/">Read all reviews <Arrow /></Link>
-        </div>
-        <article className="home-review-card">
-          <div className="review-card-top">
-            <span className="review-stars" aria-label="5 out of 5 stars">★★★★★</span>
-            <span>Google review</span>
-          </div>
-          <blockquote>“10/10 service, would recommend Jen to anyone looking for a personal trainer”</blockquote>
-          <footer><strong>Adam M.</strong><span>5.0 from 1 Google review</span></footer>
-        </article>
-      </section>
-
       <section className="home-areas section shell" id="areas" aria-labelledby="areas-heading">
         <div className="section-heading">
           <div><p className="eyebrow">Areas served</p><h2 id="areas-heading">Local care from<br /><em>Higham Ferrers.</em></h2></div>
@@ -210,10 +187,10 @@ export default function Home() {
 
       <footer className="footer">
         <div className="shell footer-main">
-          <div className="footer-brand-column"><Link className="brand footer-brand" href="/" aria-label="Jenergie home"><BrandLockup dark /></Link><InsuranceBadge /></div>
+          <div className="footer-brand-column"><Link className="brand footer-brand" href="/" aria-label="Jenergie home"><BrandLockup dark /></Link></div>
           <p>Move freely.<br />Feel stronger.</p>
           <div className="footer-links">
-            <div><span>Explore</span><Link href="/treatments/">Treatments</Link><Link href="/prices/">Prices</Link><Link href="/about/">About Jenergie</Link><Link href="/faq/">FAQs</Link><Link href="/reviews/">Reviews</Link><Link href="/cancellation-policy/">Cancellation policy</Link><Link href="/privacy/">Privacy</Link></div>
+            <div><span>Explore</span><Link href="/treatments/">Treatments</Link><Link href="/prices/">Prices</Link><Link href="/about/">About Jenergie</Link><Link href="/faq/">FAQs</Link><Link href="/cancellation-policy/">Cancellation policy</Link><Link href="/privacy/">Privacy</Link></div>
             <div><span>Connect</span><a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Jen@jenergie.co.uk</a><a href="tel:+447547254349">07547 254349</a><Link href="/contact/">Contact Jenni</Link></div>
           </div>
         </div>

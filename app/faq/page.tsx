@@ -23,7 +23,7 @@ export default function FaqPage() {
       <section className="faq-section">
         <div>
           <h2>Before your visit</h2>
-          <p>Sports massage is the main service at Jenergie. Personal training is there if you want it, but it is never required.</p>
+          <p>Sports massage appointments are shaped around what feels tight or uncomfortable and what you would like help with.</p>
         </div>
         <div className="faq-list">
           <details>
@@ -37,10 +37,6 @@ export default function FaqPage() {
           <details>
             <summary>Which sports massage appointment should I choose?</summary>
             <p>If it is your first visit, choose the 55-minute initial appointment at £45. Follow-up options are one area for 30 minutes at £35, or two areas for 60 minutes at £55. If you are unsure, <Link href="/contact/">contact me</Link> and we can talk it through.</p>
-          </details>
-          <details>
-            <summary>Is personal training part of a massage appointment?</summary>
-            <p>No. One-to-one personal training and bespoke exercise plans are optional extras. A one-hour training session is £45, and a bespoke exercise plan is £70. You do not need to book either to have sports massage.</p>
           </details>
           <details>
             <summary>How do I arrange an appointment?</summary>

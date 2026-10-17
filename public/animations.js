@@ -78,9 +78,6 @@
     [
       [".section-heading > *", ".section-heading", { stagger: 0.08 }],
       [".route-card", ".route-grid", { y: 38, stagger: 0.1 }],
-      [".home-review-copy > *", ".home-reviews", { stagger: 0.08 }],
-      [".home-review-card", ".home-reviews", { y: 38 }],
-      [".review-card", ".review-list-section", { y: 34 }],
       [".local-service-card", ".local-service-grid", { y: 36, stagger: 0.1 }],
       [".location-link-grid a", ".location-link-grid", { y: 24, stagger: 0.06 }],
       [".service-card", ".service-grid", { y: 46, stagger: 0.12 }],

@@ -5,7 +5,7 @@ import { InfoPage } from "./info-page";
 
 const siteUrl = "https://jenergie.co.uk";
 
-export type ServiceKey = "smt" | "rm" | "pt";
+export type ServiceKey = "smt" | "rm";
 export type LocationKey = "burton-latimer" | "irchester" | "podington" | "raunds" | "wellingborough";
 
 type Service = {
@@ -47,16 +47,6 @@ export const services: Record<ServiceKey, Service> = {
     priceSummary: "Included within sports massage appointments",
     priceDetail: "Choose an initial 55-minute appointment for £45, one area for 30 minutes at £35, or two areas for 60 minutes at £55.",
   },
-  pt: {
-    name: "One-to-one personal training",
-    navName: "Personal training",
-    eyebrow: "Personal training",
-    summary: "Individual exercise support for building strength, moving confidently and working towards realistic goals.",
-    description: "Personal training is an optional Jenergie service. Sessions are planned around your starting point, preferences and goals, without a one-size-fits-all programme. You can choose a one-to-one session or ask for a bespoke exercise plan.",
-    includes: ["A conversation about your goals and experience", "Exercises selected for your current level", "Clear guidance on technique and progression", "A practical plan that fits your routine"],
-    priceSummary: "One-to-one sessions from £45",
-    priceDetail: "One-to-one personal training: one hour, £45. Bespoke exercise plan: £70.",
-  },
 };
 
 export const locations: Record<LocationKey, Location> = {
@@ -67,7 +57,6 @@ export const locations: Record<LocationKey, Location> = {
     serviceNotes: {
       smt: "For Burton Latimer clients, sports massage can be shaped around gym training, running, physical work or the muscular tension that builds up through an ordinary week.",
       rm: "Recovery-focused massage may suit Burton Latimer clients who want support between training sessions or regular maintenance for areas that repeatedly feel tight.",
-      pt: "Personal training gives Burton Latimer clients one-to-one support without requiring a generic group programme or an online-only plan.",
     },
   },
   irchester: {
@@ -77,7 +66,6 @@ export const locations: Record<LocationKey, Location> = {
     serviceNotes: {
       smt: "Sports massage for Irchester clients is tailored to the area that needs attention, whether tension is linked to exercise, work or everyday movement.",
       rm: "Irchester clients can use a sports massage appointment for recovery, movement or ongoing muscular maintenance, with the session adapted to current needs.",
-      pt: "One-to-one personal training is available to Irchester clients who want practical guidance with strength, movement and a manageable exercise routine.",
     },
   },
   podington: {
@@ -87,7 +75,6 @@ export const locations: Record<LocationKey, Location> = {
     serviceNotes: {
       smt: "Podington clients can arrange a focused sports massage for muscular tension, stiffness or regular maintenance, without needing to be an athlete.",
       rm: "Recovery and movement work can be included in sports massage for Podington clients after training, during busy periods or as regular maintenance.",
-      pt: "Personal training is available to Podington clients who prefer individual support and exercises selected around their own goals and experience.",
     },
   },
   raunds: {
@@ -97,7 +84,6 @@ export const locations: Record<LocationKey, Location> = {
     serviceNotes: {
       smt: "Sports massage for Raunds clients can focus on one or two areas and is planned around what feels tight, tired or restricted on the day.",
       rm: "Raunds clients can choose a sports massage with a recovery and movement focus after activity or for regular muscular maintenance.",
-      pt: "One-to-one personal training gives Raunds clients an individual session or bespoke exercise plan built around realistic personal goals.",
     },
   },
   wellingborough: {
@@ -107,12 +93,11 @@ export const locations: Record<LocationKey, Location> = {
     serviceNotes: {
       smt: "Sports massage for Wellingborough clients is suitable for active people and anyone whose work or routine leaves muscles feeling tight or tired.",
       rm: "A recovery and movement focus can help Wellingborough clients use sports massage as part of training recovery or regular muscular maintenance.",
-      pt: "Personal training offers Wellingborough clients practical one-to-one support with strength, confidence and an exercise routine that fits everyday life.",
     },
   },
 };
 
-const serviceOrder: ServiceKey[] = ["smt", "rm", "pt"];
+const serviceOrder: ServiceKey[] = ["smt", "rm"];
 const locationOrder: LocationKey[] = ["wellingborough", "burton-latimer", "raunds", "podington", "irchester"];
 
 function pageAlternates(path: string) {
@@ -135,7 +120,7 @@ export function locationMetadata(locationKey: LocationKey): Metadata {
   const location = locations[locationKey];
   return {
     title: `Sports Massage near ${location.name} | Jenergie`,
-    description: `Sports massage and optional personal training near ${location.name}. Visit Jenergie in Higham Ferrers and contact Jenni to arrange an appointment.`,
+    description: `Sports massage and recovery-focused treatment near ${location.name}. Visit Jenergie in Higham Ferrers and contact Jenni to arrange an appointment.`,
     alternates: pageAlternates(`/${locationKey}`),
   };
 }
@@ -223,12 +208,12 @@ export function LocationPage({ locationKey }: { locationKey: LocationKey }) {
     "@type": "CollectionPage",
     name: `Jenergie services near ${location.name}`,
     url: `${siteUrl}${path}`,
-    description: `Sports massage, recovery and movement support, and optional personal training near ${location.name}.`,
+    description: `Sports massage, recovery and movement support near ${location.name}.`,
     about: { "@id": `${siteUrl}/#business` },
   };
 
   return (
-    <InfoPage eyebrow={`Serving ${location.name}`} title={`Sports massage near ${location.name}.`} intro={`Visit Jenergie in Higham Ferrers for tailored sports massage, recovery support and optional personal training. ${location.direction}`}>
+    <InfoPage eyebrow={`Serving ${location.name}`} title={`Sports massage near ${location.name}.`} intro={`Visit Jenergie in Higham Ferrers for tailored sports massage and recovery support. ${location.direction}`}>
       <JsonLd data={collectionSchema} />
       <section className="page-card-section">
         <div>
@@ -243,7 +228,7 @@ export function LocationPage({ locationKey }: { locationKey: LocationKey }) {
       </section>
       <section>
         <h2>Not sure where to start?</h2>
-        <div><p>Your first sports massage appointment is 55 minutes and costs £45. If you are unsure whether sports massage or personal training is right for you, contact Jenni and explain what you would like help with.</p><Link className="button button-dark" href={bookingUrl}>Book now <span aria-hidden="true">↗</span></Link></div>
+        <div><p>Your first sports massage appointment is 55 minutes and costs £45. If you are unsure which sports massage appointment is right for you, contact Jenni and explain what you would like help with.</p><Link className="button button-dark" href={bookingUrl}>Book now <span aria-hidden="true">↗</span></Link></div>
       </section>
     </InfoPage>
   );

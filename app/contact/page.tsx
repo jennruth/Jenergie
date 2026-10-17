@@ -5,7 +5,7 @@ import { InfoPage } from "../components/info-page";
 export const metadata: Metadata = {
   title: "Contact Jenergie | Higham Ferrers Sports Massage",
   description:
-    "Contact Jenni at Jenergie to ask about sports massage or personal training and arrange an appointment in Higham Ferrers, near Rushden.",
+    "Contact Jenni at Jenergie to ask about sports massage and arrange an appointment in Higham Ferrers, near Rushden.",
   alternates: {
     canonical: "/contact/",
     types: { "text/markdown": "/contact.md" },
@@ -32,14 +32,14 @@ export default function ContactPage() {
       <section>
         <h2>What to include in your message</h2>
         <p>
-          Let Jenni know whether you are asking about sports massage, personal training or an exercise plan, along with the days or times that usually work for you. Please keep detailed medical and health information for your consultation. Jenni will reply to discuss the most suitable appointment and confirm availability. Sending a message is an enquiry and does not create a booking until Jenni confirms it with you.
+          Let Jenni know which area you would like help with, along with the days or times that usually work for you. Please keep detailed medical and health information for your consultation. Jenni will reply to discuss the most suitable appointment and confirm availability. Sending a message is an enquiry and does not create a booking until Jenni confirms it with you.
         </p>
       </section>
 
       <section>
         <h2>Before your appointment</h2>
         <p>
-          If it is your first sports massage appointment, allow 55 minutes. This gives time to discuss your needs before treatment. Relevant injuries, health conditions and changes in how you feel will be covered securely as part of your consultation, so please do not include detailed health information in your initial enquiry. Jenergie provides sports massage and fitness support, not emergency or diagnostic medical care. If you have severe, sudden or worrying symptoms, seek advice from an appropriate healthcare professional or emergency service.
+          If it is your first sports massage appointment, allow 55 minutes. This gives time to discuss your needs before treatment. Relevant injuries, health conditions and changes in how you feel will be covered securely as part of your consultation, so please do not include detailed health information in your initial enquiry. Jenergie provides sports massage, not emergency or diagnostic medical care. If you have severe, sudden or worrying symptoms, seek advice from an appropriate healthcare professional or emergency service.
         </p>
       </section>
 

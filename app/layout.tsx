@@ -4,9 +4,9 @@ import { CookieConsent } from "./components/cookie-consent";
 import "./globals.css";
 
 const siteUrl = "https://jenergie.co.uk";
-const siteTitle = "Higham Ferrers Sports Massage & Personal Training | Jenergie";
+const siteTitle = "Sports Massage in Higham Ferrers | Jenergie";
 const siteDescription =
-  "Sports massage and one-to-one personal training in Higham Ferrers, near Rushden, serving clients across North Northamptonshire. Contact Jenergie to arrange an appointment.";
+  "Tailored sports massage in Higham Ferrers, near Rushden, serving clients across North Northamptonshire. Book a Jenergie appointment online.";
 const googleAnalyticsId = "G-T8LFTR9P1B";
 
 const analyticsScript = `
@@ -146,7 +146,7 @@ export const metadata: Metadata = {
     "Jenergie sports massage",
     "sports massage Higham Ferrers",
     "sports massage Rushden",
-    "personal training Higham Ferrers",
+    "recovery massage Higham Ferrers",
     "North Northamptonshire sports massage",
   ],
   alternates: {
@@ -165,7 +165,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1731,
         height: 909,
-        alt: "Jenergie sports massage and personal training in Higham Ferrers and Rushden",
+        alt: "Jenergie sports massage in Higham Ferrers near Rushden",
       },
     ],
   },

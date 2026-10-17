@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { InfoPage } from "../components/info-page";
 
 export const metadata: Metadata = {
-  title: "Sports Massage and Personal Training Prices | Jenergie",
+  title: "Sports Massage Prices in Higham Ferrers | Jenergie",
   description:
-    "See Jenergie sports massage and personal training prices in Higham Ferrers, near Rushden. Sports massage starts from £35.",
+    "See Jenergie sports massage prices in Higham Ferrers, near Rushden. Appointments start from £35.",
   alternates: {
     canonical: "/prices/",
     types: { "text/markdown": "/prices.md" },
@@ -17,7 +17,7 @@ export default function PricesPage() {
     <InfoPage
       eyebrow="Simple, transparent pricing"
       title="Choose the support your body needs."
-      intro="Sports massage is Jenergie's main service. Personal training is an optional extra if you would like help with strength, exercise or movement."
+      intro="Choose the sports massage appointment that best fits what you would like help with. If you are unsure, Jenni can talk you through the options."
     >
       <section className="page-pricing-section">
         <div className="pricing-grid">
@@ -41,24 +41,6 @@ export default function PricesPage() {
               </div>
             </div>
             <a href="mailto:Jen@jenergie.co.uk?subject=Sports%20massage%20enquiry">Enquire about sports massage <span aria-hidden="true">↗</span></a>
-          </article>
-
-          <article className="price-panel price-panel-secondary">
-            <div className="price-panel-top">
-              <div><span>Optional extra</span><h2>Personal training</h2></div>
-              <span className="price-badge">PT</span>
-            </div>
-            <div className="price-list">
-              <div className="price-row">
-                <div><strong>One-to-one session</strong><small>Personal training planned around you</small></div>
-                <span>1 hour</span><b>£45</b>
-              </div>
-              <div className="price-row">
-                <div><strong>Bespoke exercise plan</strong><small>A plan built around your goals</small></div>
-                <span>One-off</span><b>£70</b>
-              </div>
-            </div>
-            <a href="mailto:Jen@jenergie.co.uk?subject=Personal%20training%20enquiry">Ask about personal training <span aria-hidden="true">↗</span></a>
           </article>
         </div>
       </section>

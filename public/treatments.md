@@ -1,6 +1,6 @@
 # Jenergie Treatments
 
-Jenergie provides sports massage therapy in Higham Ferrers, near Rushden, for people from across North Northamptonshire. Sports massage is the main service. One-to-one personal training is available as an optional extra.
+Jenergie provides sports massage therapy in Higham Ferrers, near Rushden, for people from across North Northamptonshire.
 
 ## Sports massage therapy
 
@@ -9,9 +9,5 @@ Focused, hands-on treatment is planned around what feels tight or uncomfortable,
 ## Recovery and movement within sports massage
 
 Sports massage may support tired muscles after training, everyday stiffness and movement confidence. This is a focus for your massage, not a separate appointment. Each session starts with a conversation, followed by a simple movement assessment where useful. Jenni then focuses the treatment on what you have discussed and explains any straightforward aftercare.
-
-## Personal training
-
-One-to-one personal training is available as an extra for people who want support with strength, exercise confidence or movement. It is not required as part of sports massage.
 
 Contact Jenni at Jen@jenergie.co.uk or 07547 254349 to ask a question or arrange an appointment. Current prices are at https://jenergie.co.uk/prices/.

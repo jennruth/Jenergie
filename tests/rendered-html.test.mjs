@@ -24,7 +24,7 @@ test("renders the Jenergie sports massage homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Higham Ferrers Sports Massage &amp; Personal Training \| Jenergie/);
+  assert.match(html, /Sports Massage in Higham Ferrers \| Jenergie/);
   assert.match(html, /Energy for your body/);
   assert.match(html, /Care for your muscles/);
   assert.match(html, /Everything you need/);
@@ -33,12 +33,11 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.doesNotMatch(html, /without the long scroll|Each area now has its own page/);
   assert.match(html, /Contact Jenni/);
   assert.doesNotMatch(html, /Book your treatment/);
-  assert.match(html, /Personal training/);
-  assert.match(html, /One-to-one personal training/);
+  assert.doesNotMatch(html, /Personal training|Personal trainer|Bespoke exercise plan/i);
   assert.match(html, /href="\/treatments"/);
   assert.match(html, /href="\/prices"/);
   assert.match(html, /href="\/faq"/);
-  assert.match(html, /href="\/reviews"/);
+  assert.doesNotMatch(html, /href="\/pt|href="\/reviews/);
   assert.match(html, /href="\/cancellation-policy"/);
   assert.match(html, /Jen@jenergie\.co\.uk/);
   assert.match(html, /North Northamptonshire/);
@@ -56,9 +55,7 @@ test("renders the Jenergie sports massage homepage", async () => {
   assert.match(html, /data-jenergie-animation="gsap"/);
   assert.match(html, /data-jenergie-animation="scroll-trigger"/);
   assert.match(html, /data-jenergie-animation="setup"/);
-  assert.match(html, /href="https:\/\/www\.insure4sport\.co\.uk\/covertypes\/ptandfitnessinstructor\/ref=badge"/);
-  assert.match(html, /src="\/trust\/insure4sport-insured-badge\.png"/);
-  assert.match(html, /alt="Insure4Sport Personal Trainer Insurance"/);
+  assert.doesNotMatch(html, /Insure4Sport|ptandfitnessinstructor/);
   assert.doesNotMatch(html, />Agent resources</);
   assert.doesNotMatch(html, /—/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/);
@@ -71,7 +68,6 @@ test("renders substantial Jenergie trust and agent resource pages", async () => 
     ["/about", "About Jenergie", "https://jenergie.co.uk/about/", "/about.md"],
     ["/faq", "Frequently asked questions", "https://jenergie.co.uk/faq/", "/faq.md"],
     ["/contact", "Contact Jenergie", "https://jenergie.co.uk/contact/", "/contact.md"],
-    ["/reviews", "Jenergie reviews", "https://jenergie.co.uk/reviews/", "/reviews.md"],
     ["/cancellation-policy", "Cancellation and Appointment Policy", "https://jenergie.co.uk/cancellation-policy/", "/cancellation-policy.md"],
     ["/privacy", "Privacy Notice", "https://jenergie.co.uk/privacy/", "/privacy.md"],
     ["/agent-resources", "Jenergie Agent and Developer Resources", "https://jenergie.co.uk/agent-resources/", "/agent-resources.md"],
@@ -87,7 +83,7 @@ test("renders substantial Jenergie trust and agent resource pages", async () => 
     assert.ok(html.includes(`rel="canonical" href="${canonical}"`), `${path} canonical`);
     assert.ok(html.includes('type="text/markdown"'), `${path} markdown alternate type`);
     assert.ok(html.includes(`href="${markdown}"`) || html.includes(`href="https://jenergie.co.uk${markdown}"`), `${path} markdown alternate URL`);
-    assert.match(html, /Insure4Sport Personal Trainer Insurance/, `${path} insurance badge`);
+    assert.doesNotMatch(html, /Personal training|Personal trainer|Bespoke exercise plan|Insure4Sport/i, `${path} massage-only focus`);
     assert.match(html, /data-cookie-settings/, `${path} cookie settings control`);
     assert.match(html, /id="analytics-consent"/, `${path} privacy choices banner`);
     assert.match(html, /data-analytics-choice="denied"/, `${path} necessary-only choice`);
@@ -95,23 +91,8 @@ test("renders substantial Jenergie trust and agent resource pages", async () => 
   }
 });
 
-test("publishes verified Google feedback without ineligible self-serving review schema", async () => {
-  const response = await render("/reviews");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  const markdown = await readFile(new URL("../public/reviews.md", import.meta.url), "utf8");
-
-  for (const body of [html, markdown]) {
-    assert.match(body, /10\/10 service, would recommend Jen to anyone looking for a personal trainer/);
-    assert.match(body, /5\.0/);
-    assert.match(body, /1 (?:public )?Google review/i);
-    assert.match(body, /https:\/\/maps\.app\.goo\.gl\/WaAbT69aPrdSKALi8/);
-    assert.doesNotMatch(body, /aggregateRating|"@type"\s*:\s*"Review"/);
-  }
-});
-
 test("publishes substantial service and nearby-town pages with honest local signals", async () => {
-  const serviceRoutes = ["smt", "rm", "pt"];
+  const serviceRoutes = ["smt", "rm"];
   const towns = ["burton-latimer", "irchester", "podington", "raunds", "wellingborough"];
   const seenTitles = new Set();
 
@@ -203,7 +184,7 @@ test("answers appointment questions and links to Fresha booking", async () => {
   assert.match(html, /https:\/\/www\.fresha\.com\/book-now\/jenergie-cf4kpw1p\/all-offer\?share=true(?:&amp;|&)pId=3118329/);
   assert.match(html, /at least 24 hours/);
   assert.match(html, /href="\/cancellation-policy"/);
-  assert.equal((html.match(/<details>/g) ?? []).length, 8);
+  assert.equal((html.match(/<details>/g) ?? []).length, 7);
 });
 
 test("provides Fresha and direct contact without Tally", async () => {
@@ -268,10 +249,11 @@ test("exports a discoverable canonical sitemap", async () => {
   assert.match(sitemap, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
   assert.match(sitemap, /<urlset xmlns="http:\/\/www\.sitemaps\.org\/schemas\/sitemap\/0\.9">/);
   assert.match(sitemap, /<loc>https:\/\/jenergie\.co\.uk\/<\/loc>/);
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 34);
-  for (const route of ["treatments", "prices", "about", "faq", "reviews", "contact", "cancellation-policy", "privacy", "agent-resources", "developers", "smt", "rm", "pt", "burton-latimer", "irchester", "podington", "raunds", "wellingborough", "burton-latimer/smt", "burton-latimer/rm", "burton-latimer/pt", "irchester/smt", "irchester/rm", "irchester/pt", "podington/smt", "podington/rm", "podington/pt", "raunds/smt", "raunds/rm", "raunds/pt", "wellingborough/smt", "wellingborough/rm", "wellingborough/pt"]) {
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 27);
+  for (const route of ["treatments", "prices", "about", "faq", "contact", "cancellation-policy", "privacy", "agent-resources", "developers", "smt", "rm", "burton-latimer", "irchester", "podington", "raunds", "wellingborough", "burton-latimer/smt", "burton-latimer/rm", "irchester/smt", "irchester/rm", "podington/smt", "podington/rm", "raunds/smt", "raunds/rm", "wellingborough/smt", "wellingborough/rm"]) {
     assert.match(sitemap, new RegExp(`<loc>https:\\/\\/jenergie\\.co\\.uk\\/${route}\\/</loc>`));
   }
+  assert.doesNotMatch(sitemap, /\/pt\/|\/reviews\//);
   assert.match(robots, /Sitemap: https:\/\/jenergie\.co\.uk\/sitemap\.xml/);
 });
 
@@ -300,7 +282,6 @@ test("exports explicit Markdown alternatives and agent instructions", async () =
     "prices.md",
     "about.md",
     "faq.md",
-    "reviews.md",
     "contact.md",
     "cancellation-policy.md",
     "privacy.md",
@@ -363,8 +344,15 @@ test("keeps mobile contact aligned and exposes the full menu on every page", asy
   for (const path of ["/", "/about", "/treatments", "/prices", "/faq", "/contact", "/privacy"]) {
     const html = await (await render(path)).text();
     assert.match(html, /<details class="mobile-menu">/, path);
-    for (const label of ["Home", "Treatments", "Prices", "About", "FAQs", "Reviews", "Contact Jenni"]) {
+    for (const label of ["Home", "Treatments", "Prices", "About", "FAQs", "Contact Jenni"]) {
       assert.match(html, new RegExp(`>${label}</a>`), `${path}: ${label}`);
     }
+  }
+});
+
+test("retires personal-training and review routes with real 404 responses", async () => {
+  for (const path of ["/pt", "/reviews", "/burton-latimer/pt", "/irchester/pt", "/podington/pt", "/raunds/pt", "/wellingborough/pt"]) {
+    const response = await render(path);
+    assert.equal(response.status, 404, path);
   }
 });

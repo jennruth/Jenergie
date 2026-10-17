@@ -1,6 +1,6 @@
 # Jenergie Prices
 
-These are the current prices for sports massage therapy and optional personal training with Jenergie in Higham Ferrers, near Rushden, North Northamptonshire.
+These are the current prices for sports massage therapy with Jenergie in Higham Ferrers, near Rushden, North Northamptonshire.
 
 ## Sports massage therapy
 
@@ -9,13 +9,6 @@ These are the current prices for sports massage therapy and optional personal tr
 - Two areas: 60 minutes, £55
 
 The initial appointment allows time to discuss what you would like help with before treatment begins. A 30-minute appointment provides focused treatment for one area. A 60-minute appointment allows extended treatment across two areas.
-
-## Personal training
-
-- One-to-one personal training session: one hour, £45
-- Bespoke exercise plan: one-off, £70
-
-Personal training is an optional extra and is not required as part of sports massage. It may suit people who want individual help with strength, exercise confidence or movement.
 
 ## Arranging an appointment
 

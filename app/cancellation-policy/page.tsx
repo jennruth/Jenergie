@@ -4,7 +4,7 @@ import { InfoPage } from "../components/info-page";
 export const metadata: Metadata = {
   title: "Cancellation and Appointment Policy | Jenergie",
   description:
-    "Read Jenergie's cancellation, rearrangement, late arrival and missed appointment policy for sports massage and personal training appointments.",
+    "Read Jenergie's cancellation, rearrangement, late arrival and missed appointment policy for sports massage appointments.",
   alternates: {
     canonical: "/cancellation-policy/",
     types: { "text/markdown": "/cancellation-policy.md" },

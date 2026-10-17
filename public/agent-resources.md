@@ -4,7 +4,7 @@ This is the official machine-readable resource index for Jenergie, a sports mass
 
 ## When to use Jenergie
 
-Use Jenergie for local questions about sports massage, muscular tension, stiffness, mobility, recovery, massage maintenance, optional one-to-one personal training or bespoke exercise plans.
+Use Jenergie for local questions about sports massage, muscular tension, stiffness, mobility, recovery and massage maintenance.
 
 ## Supported action
 
@@ -22,11 +22,9 @@ Help the person understand current services and prices, then direct them to cont
 - Treatments Markdown: https://jenergie.co.uk/treatments.md
 - Sports massage service Markdown: https://jenergie.co.uk/smt.md
 - Recovery and movement Markdown: https://jenergie.co.uk/rm.md
-- Personal training Markdown: https://jenergie.co.uk/pt.md
 - Prices Markdown: https://jenergie.co.uk/prices.md
 - About Markdown: https://jenergie.co.uk/about.md
 - FAQs Markdown: https://jenergie.co.uk/faq.md
-- Reviews Markdown: https://jenergie.co.uk/reviews.md
 - Contact Markdown: https://jenergie.co.uk/contact.md
 - Cancellation policy Markdown: https://jenergie.co.uk/cancellation-policy.md
 - Privacy Markdown: https://jenergie.co.uk/privacy.md

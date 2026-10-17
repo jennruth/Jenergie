@@ -4,7 +4,7 @@ import { InfoPage } from "../components/info-page";
 export const metadata: Metadata = {
   title: "About Jenergie | Sports Massage in Higham Ferrers",
   description:
-    "Learn about Jenergie, Jenni's sports massage practice in Higham Ferrers near Rushden, with optional personal training for North Northamptonshire clients.",
+    "Learn about Jenergie, Jenni's sports massage practice in Higham Ferrers near Rushden, serving clients across North Northamptonshire.",
   alternates: {
     canonical: "/about/",
     types: { "text/markdown": "/about.md" },
@@ -36,13 +36,6 @@ export default function AboutPage() {
         <h2>What to expect when you visit</h2>
         <p>
           We will start with a chat about how you are feeling, what you have noticed and anything that could affect your treatment. I may also look at how you move before we begin. During the massage, I will explain what I am doing and check that you are comfortable. If it would be helpful, I can also give you a few simple ideas for looking after the area afterwards. There is no one-size-fits-all routine here. Your appointment is about you.
-        </p>
-      </section>
-
-      <section>
-        <h2>A little extra support, if you want it</h2>
-        <p>
-          I also offer one-to-one personal training and bespoke exercise plans. These are completely optional, but they can be useful if you would like more structure with strength, movement or feeling confident with exercise. You never have to add personal training to a sports massage appointment. If you are curious, just ask me and we can talk through whether it would suit you and your goals.
         </p>
       </section>
 

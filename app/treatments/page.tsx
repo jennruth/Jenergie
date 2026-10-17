@@ -4,7 +4,7 @@ import { InfoPage } from "../components/info-page";
 export const metadata: Metadata = {
   title: "Sports Massage Treatments in Higham Ferrers | Jenergie",
   description:
-    "Explore sports massage therapy, recovery support and optional personal training with Jenergie in Higham Ferrers, near Rushden.",
+    "Explore sports massage therapy and recovery support with Jenergie in Higham Ferrers, near Rushden.",
   alternates: {
     canonical: "/treatments/",
     types: { "text/markdown": "/treatments.md" },
@@ -26,13 +26,6 @@ const services = [
     tag: "Part of sports massage",
     enquiry: "sports massage",
     href: "/rm/",
-  },
-  {
-    number: "03",
-    title: "One-to-one personal training",
-    copy: "Individual sessions for people who want help building strength and moving well. Personal training is available as an extra alongside sports massage.",
-    tag: "Available as an extra",
-    href: "/pt/",
   },
 ];
 
